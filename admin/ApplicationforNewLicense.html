@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:20 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <title>Htax - Dashboard</title>
+		
+		<!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+		
+		<!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<!-- Fontawesome CSS -->
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		
+		<!-- Feathericon CSS -->
+        <link rel="stylesheet" href="assets/css/feathericon.min.css">
+		
+		<link rel="stylesheet" href="assets/plugins/morris/morris.css">
+		
+		<!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/style.css">
+		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+		<style>
+			
+			.page-wrapper {
+ 
+    padding-top: 80px;
+ 
+}
+.user-menu {
+margin: 10px 0px;
+    }
+.sidebar {
+    top: 80px;
+}
+.header {
+	height: 80px;
+}
+@media only screen and (min-width: 992px) {
+    #toggle_btn{
+		height: 80px;
+	}
+	.dashboard-box {
+    width: 320px;
+    padding: 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.dashboard-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.dashboard-box h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.dashboard-box p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.btn-click {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(135deg, #007BFF, #0056D2);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-click:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.2);
+}
+.header .header-left .logo img {
+	max-height: 70px;
+        width: auto;
+        margin-top: 5px;
+}
+.sidebar {
+    background-color: #0b3654 !important;
+}
+
+
+.sidebar-menu > ul > li > a:hover {
+    *background: linear-gradient(135deg, #007BFF, #0056D2);
+	background: linear-gradient(135deg, #1858b0, #2462b9);
+    color: #fff;
+}
+.sidebar-menu li.active a {
+	*background: linear-gradient(135deg, #007BFF, #0056D2);
+	background: linear-gradient(135deg, #1858b0, #2462b9);
+    color: #fff;
+}
+.top-nav-search {
+    position: absolute;
+    right: 38%;
+}
+div#datetime {
+    position: fixed;
+    top: 9px;
+    right: 147px;
+    z-index: 99999;
+}
+legend {
+        display: block;
+        max-width: 100%;
+        padding: 0;
+        margin-bottom: .5rem;
+        line-height: inherit;
+        color: inherit;
+        white-space: normal;
+        background: #12676e;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 18px;
+        font-weight: 600 !important;
+        font-family: sans-serif;
+    }
+	fieldset.border.p-2 {
+        border-radius: 4px;
+        margin-bottom: 12px;
+        padding-bottom: 8px !important;
+        box-shadow: 0px 3px 3px #ccc;
+    }
+	.form-control {
+        height: 30px !important;
+		padding: 0px 8px !important;
+    }
+	label {
+    padding-bottom: 0px;
+    margin-bottom: 0 !important;
+    font-size: inherit;
+    line-height: 1.5;
+}
+legend.w-auto {
+        margin-bottom: -7px;
+    }
+	
+.card-body {
+    padding: 0px 15px;
+}
+.row {
+    margin-bottom: -6px;
+}
+.card-header {
+    border-bottom: 1px solid #e6e6e6;
+    padding: 5px 21px;
+}
+.content.container-fluid {
+    padding: 10px;
+}
+.breadcrumb {
+    padding: 2px 24px;
+        border-radius: 0px !important;
+        margin-bottom: 5px !important;
+}
+a {
+    color: #0b3654;
+}
+.form-control:focus {
+    border-color: #0b3654;
+    box-shadow: none;
+    outline: 0 none;
+}
+.form-group {
+    margin-bottom: 1.1rem;
+}
+hr {
+    margin: 1px 0px 4px !important;
+}
+h5 {
+        margin-bottom: 1px !important;
+        color: #0b3654;
+    }
+
+	.modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+		.modal-dialog {
+        max-width: 900px;
+        margin: 1.75rem auto;
+    }
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 2px;
+            border: 1px solid #888;
+            border-radius: 8px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+		.page-wrapper {
+    margin-left: 0px;
+}
+.btn-outline-danger, button.btn.btn-outline-secondary.btn-lg {
+    background: #e9ecef;
+}
+		</style>
+    </head>
+    <body>
+	
+		<!-- Main Wrapper -->
+        <div class="main-wrapper">
+		
+			<!-- Header -->
+            <div class="header">
+			
+				<!-- Logo -->
+                
+				<!-- /Logo -->
+				
+				
+				<div class="header-left">
+                    <a href="index.html" class="logo">
+						<img src="assets/img/logo.png" alt="Logo">
+					</a>
+					<a href="index.html" class="logo logo-small">
+						<img src="assets/img/logo.png" alt="Logo" width="30" height="30">
+					</a>
+                </div>
+				
+				
+				<!-- Mobile Menu Toggle -->
+				<a class="mobile_btn" id="mobile_btn">
+					<i class="fa fa-bars"></i>
+				</a>
+				<!-- /Mobile Menu Toggle -->
+				
+				
+				<!-- Header Right Menu -->
+				<ul class="nav user-menu">
+
+					<!-- Notifications -->
+					<li class="nav-item dropdown noti-dropdown">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+							<i class="fe fe-bell"></i> <span class="badge badge-pill">3</span>
+						</a>
+						<div class="dropdown-menu notifications">
+							<div class="topnav-dropdown-header">
+								<span class="notification-title">Notifications</span>
+								<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+							</div>
+							<div class="noti-content">
+								<ul class="notification-list">
+									<li class="notification-message">
+										<a href="#">
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/doctors/doctor-thumb-01.jpg">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"><span class="noti-title">Dr. Ruby Perrin</span> Schedule <span class="noti-title">her appointment</span></p>
+													<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient1.jpg">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"><span class="noti-title">Charlene Reed</span> has booked her appointment to <span class="noti-title">Dr. Ruby Perrin</span></p>
+													<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient2.jpg">
+												</span>
+												<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Travis Trimble</span> sent a amount of $210 for his <span class="noti-title">appointment</span></p>
+												<p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient3.jpg">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"><span class="noti-title">Carl Kelly</span> send a message <span class="noti-title"> to his doctor</span></p>
+													<p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href="#">View all Notifications</a>
+							</div>
+						</div>
+					</li>
+					<!-- /Notifications -->
+					
+					<!-- User Menu -->
+					<li class="nav-item dropdown has-arrow">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+							<span class="user-img"><img class="rounded-circle" src="assets/img/profiles/avatar-01.jpg" width="31" alt="Ryan Taylor"></span>
+						</a>
+						<div class="dropdown-menu">
+							<div class="user-header">
+								<div class="avatar avatar-sm">
+									<img src="assets/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
+								</div>
+								<div class="user-text">
+									<h6>Ryan Taylor</h6>
+									<p class="text-muted mb-0">Administrator</p>
+								</div>
+							</div>
+							<a class="dropdown-item" href="profile.html">My Profile</a>
+							<a class="dropdown-item" href="settings.html">Settings</a>
+							<a class="dropdown-item" href="../index.html">Logout</a>
+						</div>
+					</li>
+					<!-- /User Menu -->
+					
+				</ul>
+				<!-- /Header Right Menu -->
+				
+            </div>
+			<!-- /Header -->
+			
+			<!-- Sidebar -->
+           
+			<!-- /Sidebar -->
+			
+			<!-- Page Wrapper -->
+            <div class="page-wrapper" style="min-height: 326px;">
+                <div class="content container-fluid">
+				
+					<!-- Page Header -->
+					<nav aria-label="breadcrumb" class=" d-flex justify-content-between">
+			<ol class="breadcrumb mb-0 w-100">
+				<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+				<li class="breadcrumb-item"><a href="index.html">Application for Other License/Permit</a></li>
+
+				<li class="breadcrumb-item active" aria-current="page">Application for New License (Except L-2/L-14A)
+				</li>
+
+			</ol>
+			<ol class="breadcrumb mb-0">
+				<li class="breadcrumb-item"><a href="index.html" class="btn btn-secondary btn-sm">Back</a></li>
+				
+			
+		</nav>
+					<!-- /Page Header -->
+					
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title">Application for New License (Except L-2/L-14A)</h4>
+								</div>
+								<div class="card-body">
+									<fieldset class="w-100 border p-2">
+										<legend class="w-auto">Applicant Details</legend>
+										<div class="row">
+											<div class="col-md-3">
+												<div class="form-group">
+													<label>License Type</label>
+													<select class="form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+																<option value="0" selected="selected">Select License Type</option>
+																
+																<option value="L-12A">L-12A</option>
+																<option value="L-9(CSD)">L-9(CSD)</option>
+																<option value="L-1(CSD)">L-1(CSD)</option>
+																<option value="L-9(PMF)">L-9(PMF)</option>
+																<option value="BWH-2(CSD)">BWH-2(CSD)</option>
+		
+															</select>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="form-group">
+													<label>License Description</label>
+													<input type="text" class="form-control" placeholder="">
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="form-group">
+													<label>Business Entity Name</label>
+													<input type="text" class="form-control" placeholder="">
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="form-group">
+													<label>PAN</label>
+													<input type="text" class="form-control" placeholder="" maxlength="10" oninput="restrictPANInput(this)">
+												</div>
+											</div>
+											</div>
+											<div class="row">
+											<div class="col-md-3">
+												<div class="form-group">
+													<label>Constitution of Business</label>
+													<select class="form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+																<option value="0" selected="selected">Select Constitution of Business</option>
+																
+																<option value="A Body Incorporated Under the Indian Companys Act">A Body Incorporated Under the Indian Company's Act</option>
+																<option value="A Society Registered Under The Punjab Co-operative Societies">A Society Registered Under The Punjab Co-operative Societies</option>
+																<option value="Government Department">Government Department</option>
+																<option value="Individual (Proprietor)">Individual (Proprietor)</option>
+																<option value="Partnership Firm">Partnership Firm</option>
+																<option value="Association of Person">Association of Person</option>
+		
+															</select>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="form-group">
+													<label>Capacity</label>
+													<select class="form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+														<option value="0" selected="selected">Select Capacity</option>
+														</select>
+													
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="form-group">
+													<label>VAT Registration (TIN)</label>
+													<input type="text" class="form-control" placeholder="Starts With 06 and have 11 Digits">
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="form-group">
+													<label>Adhar Number</label>
+													<input type="text" class="form-control" placeholder="" maxlength="12" oninput="restrictAadhaarnput(this)">
+												</div>
+											</div>
+											</div>
+									</fieldset>
+
+									<fieldset class="border p-2">
+															<legend class="w-auto">Address of Registered Office</legend>
+															<div class="row">
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>House / Building No.</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Street / Area</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>City / Village</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>District </label>
+														<select class="form-control">
+															<option value="0" selected="selected">Select District</option>
+															<option value="11#Ambala">Ambala</option><option value="15#Gurugram (West)">Gurugram (West)</option><option value="22#Kaithal">Kaithal</option><option value="24#Kurukshetra">Kurukshetra</option><option value="25#Narnaul">Narnaul</option><option value="31#Sonepat">Sonepat</option><option value="30#Sirsa">Sirsa</option><option value="33#Palwal">Palwal</option><option value="32#Mewat">Mewat</option><option value="20#Jhajjar">Jhajjar</option><option value="16#Fatehabad">Fatehabad</option><option value="19#Jagadhari">Jagadhari</option><option value="21#Jind">Jind</option><option value="27#Panipat">Panipat</option><option value="29#Rohtak">Rohtak</option><option value="98#Dummy Sonepat">Dummy Sonepat</option><option value="12#Bhiwani">Bhiwani</option><option value="18#Hisar">Hisar</option><option value="14#Gurugram (East)">Gurugram (East)</option><option value="28#Rewari">Rewari</option><option value="26#Panchkula">Panchkula</option><option value="13#Faridabad">Faridabad</option><option value="23#Karnal">Karnal</option>
+														</select>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Pin Code</label>
+														<input class="form-control" type="text" placeholder="" maxlength="6" oninput="restrictAadhaarnput1(this)">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Communication Email ID*</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+											
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Mobile No</label>
+														<input class="form-control" type="text" placeholder="" maxlength="10" oninput="restrictAadhaarnput1(this)">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Telephone No</label>
+														<input class="form-control" type="text" placeholder="" maxlength="11" oninput="restrictAadhaarnput1(this)">
+													</div>
+												</div>
+												
+											</div>
+									</fieldset>	
+
+									<fieldset class="border p-2">
+															<legend class="w-auto">Address of Proposed Place of Business</legend>
+															<div class="row">
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>House / Building No.</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Street / Area</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>City / Village</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>District </label>
+														<select class="form-control">
+															<option value="0" selected="selected">Select District</option>
+															<option value="11#Ambala">Ambala</option><option value="15#Gurugram (West)">Gurugram (West)</option><option value="22#Kaithal">Kaithal</option><option value="24#Kurukshetra">Kurukshetra</option><option value="25#Narnaul">Narnaul</option><option value="31#Sonepat">Sonepat</option><option value="30#Sirsa">Sirsa</option><option value="33#Palwal">Palwal</option><option value="32#Mewat">Mewat</option><option value="20#Jhajjar">Jhajjar</option><option value="16#Fatehabad">Fatehabad</option><option value="19#Jagadhari">Jagadhari</option><option value="21#Jind">Jind</option><option value="27#Panipat">Panipat</option><option value="29#Rohtak">Rohtak</option><option value="98#Dummy Sonepat">Dummy Sonepat</option><option value="12#Bhiwani">Bhiwani</option><option value="18#Hisar">Hisar</option><option value="14#Gurugram (East)">Gurugram (East)</option><option value="28#Rewari">Rewari</option><option value="26#Panchkula">Panchkula</option><option value="13#Faridabad">Faridabad</option><option value="23#Karnal">Karnal</option>
+														</select>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Pin Code</label>
+														<input class="form-control" type="text" placeholder="" maxlength="6" oninput="restrictAadhaarnput1(this)">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Communication Email ID*</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+											
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Mobile No</label>
+														<input class="form-control" type="text" placeholder="" maxlength="10" oninput="restrictAadhaarnput1(this)">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Telephone No</label>
+														<input class="form-control" type="text" placeholder="" maxlength="11" oninput="restrictAadhaarnput1(this)">
+													</div>
+												</div>
+												
+											</div>
+									</fieldset>
+
+									<fieldset class="border p-2">
+															<legend class="w-auto">Correspondence Postal Address
+																<span class="ml-5 font-weight-light" style="font-size: 14px;margin-top: 5px;"> <input type="checkbox" value=""> Same as
+																	above</span>
+																</legend>
+															<div class="row">
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>House / Building No.</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Street / Area</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>City / Village / Tehsil</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>District </label>
+														<select class="form-control">
+															<option value="0" selected="selected">Select District</option>
+															<option value="11#Ambala">Ambala</option><option value="15#Gurugram (West)">Gurugram (West)</option><option value="22#Kaithal">Kaithal</option><option value="24#Kurukshetra">Kurukshetra</option><option value="25#Narnaul">Narnaul</option><option value="31#Sonepat">Sonepat</option><option value="30#Sirsa">Sirsa</option><option value="33#Palwal">Palwal</option><option value="32#Mewat">Mewat</option><option value="20#Jhajjar">Jhajjar</option><option value="16#Fatehabad">Fatehabad</option><option value="19#Jagadhari">Jagadhari</option><option value="21#Jind">Jind</option><option value="27#Panipat">Panipat</option><option value="29#Rohtak">Rohtak</option><option value="98#Dummy Sonepat">Dummy Sonepat</option><option value="12#Bhiwani">Bhiwani</option><option value="18#Hisar">Hisar</option><option value="14#Gurugram (East)">Gurugram (East)</option><option value="28#Rewari">Rewari</option><option value="26#Panchkula">Panchkula</option><option value="13#Faridabad">Faridabad</option><option value="23#Karnal">Karnal</option>
+														</select>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>State</label>
+														<select class="form-control">
+															<option value="0" selected="selected">Select State</option>
+															<option value="Andaman and Nicobar Islands (U.T.)">Andaman and Nicobar Islands (U.T.)</option><option value="Andaman and Nicobar Islands (U.T.)">Andaman and Nicobar Islands (U.T.)</option><option value="Andhra Pradesh">Andhra Pradesh</option><option value="Arunachal Pradesh">Arunachal Pradesh</option><option value="Assam">Assam</option><option value="Bihar">Bihar</option><option value="Chandigarh (U.T.)">Chandigarh (U.T.)</option><option value="Chennai">Chennai</option><option value="Chhattisgarh">Chhattisgarh</option><option value="Dadra and Nagar Haveli (U.T.)">Dadra and Nagar Haveli (U.T.)</option><option value="Daman and Diu (U.T.)">Daman and Diu (U.T.)</option><option value="Delhi">Delhi</option><option value="Goa">Goa</option><option value="Gujarat">Gujarat</option><option value="Haryana">Haryana</option><option value="Himachal Pradesh">Himachal Pradesh</option><option value="Jammu and Kashmir">Jammu and Kashmir</option><option value="Jharkhand">Jharkhand</option><option value="Karnataka">Karnataka</option><option value="Kerala">Kerala</option><option value="Ladakh">Ladakh</option><option value="Lakshadweep Islands (U.T.)">Lakshadweep Islands (U.T.)</option><option value="Madhya Pradesh">Madhya Pradesh</option><option value="Maharashtra">Maharashtra</option><option value="Manipur">Manipur</option><option value="Meghalaya">Meghalaya</option><option value="Mizoram">Mizoram</option><option value="Nagaland">Nagaland</option><option value="Odisha">Odisha</option><option value="Outside Country">Outside Country</option><option value="Puducherry (U.T.)">Puducherry (U.T.)</option><option value="Punjab">Punjab</option><option value="Rajasthan">Rajasthan</option><option value="Sikkim">Sikkim</option><option value="Tamil Nadu">Tamil Nadu</option><option value="Telangana">Telangana</option><option value="Tripura">Tripura</option><option value="Uttar Pradesh">Uttar Pradesh</option><option value="Uttarakhand">Uttarakhand</option><option value="West Bengal">West Bengal</option>	
+														</select>
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Pin Code</label>
+														<input class="form-control" type="text" placeholder="" maxlength="6" oninput="restrictAadhaarnput1(this)">
+														</div>
+												</div>
+												
+											
+												<!--<div class="col-md-3">
+													<div class="form-group">
+														<label>Mobile No</label>
+														<input class="form-control" type="text" placeholder="" maxlength="10" oninput="restrictAadhaarnput1(this)">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Telephone No</label>
+														<input class="form-control" type="text" placeholder="" maxlength="11" oninput="restrictAadhaarnput1(this)">
+													</div>
+												</div>-->
+											
+												
+											</div>
+											<h5>Application Details :</h5>
+											<hr/>
+											<div class="row">
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Applicant Name</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Middle Name</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+											
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Last Name</label>
+														<input class="form-control" type="text" placeholder="" maxlength="10" oninput="restrictAadhaarnput1(this)">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Father's Name</label>
+														<input class="form-control" type="text" placeholder="">
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Date of Birth</label>
+														<input class="form-control" type="date" placeholder="">
+														</div>
+												</div>
+											</div>
+									</fieldset>
+
+									<fieldset class="border p-2">
+															<legend class="w-auto">Address of Registered Office</legend>
+															<div class="row">
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>House / Building No.</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Street / Area</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>City / Village</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>District </label>
+														<select class="form-control">
+															<option value="0" selected="selected">Select District</option>
+															<option value="11#Ambala">Ambala</option><option value="15#Gurugram (West)">Gurugram (West)</option><option value="22#Kaithal">Kaithal</option><option value="24#Kurukshetra">Kurukshetra</option><option value="25#Narnaul">Narnaul</option><option value="31#Sonepat">Sonepat</option><option value="30#Sirsa">Sirsa</option><option value="33#Palwal">Palwal</option><option value="32#Mewat">Mewat</option><option value="20#Jhajjar">Jhajjar</option><option value="16#Fatehabad">Fatehabad</option><option value="19#Jagadhari">Jagadhari</option><option value="21#Jind">Jind</option><option value="27#Panipat">Panipat</option><option value="29#Rohtak">Rohtak</option><option value="98#Dummy Sonepat">Dummy Sonepat</option><option value="12#Bhiwani">Bhiwani</option><option value="18#Hisar">Hisar</option><option value="14#Gurugram (East)">Gurugram (East)</option><option value="28#Rewari">Rewari</option><option value="26#Panchkula">Panchkula</option><option value="13#Faridabad">Faridabad</option><option value="23#Karnal">Karnal</option>
+														</select>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>State</label>
+														<select class="form-control">
+															<option value="0" selected="selected">Select State</option>
+															<option value="Andaman and Nicobar Islands (U.T.)">Andaman and Nicobar Islands (U.T.)</option><option value="Andaman and Nicobar Islands (U.T.)">Andaman and Nicobar Islands (U.T.)</option><option value="Andhra Pradesh">Andhra Pradesh</option><option value="Arunachal Pradesh">Arunachal Pradesh</option><option value="Assam">Assam</option><option value="Bihar">Bihar</option><option value="Chandigarh (U.T.)">Chandigarh (U.T.)</option><option value="Chennai">Chennai</option><option value="Chhattisgarh">Chhattisgarh</option><option value="Dadra and Nagar Haveli (U.T.)">Dadra and Nagar Haveli (U.T.)</option><option value="Daman and Diu (U.T.)">Daman and Diu (U.T.)</option><option value="Delhi">Delhi</option><option value="Goa">Goa</option><option value="Gujarat">Gujarat</option><option value="Haryana">Haryana</option><option value="Himachal Pradesh">Himachal Pradesh</option><option value="Jammu and Kashmir">Jammu and Kashmir</option><option value="Jharkhand">Jharkhand</option><option value="Karnataka">Karnataka</option><option value="Kerala">Kerala</option><option value="Ladakh">Ladakh</option><option value="Lakshadweep Islands (U.T.)">Lakshadweep Islands (U.T.)</option><option value="Madhya Pradesh">Madhya Pradesh</option><option value="Maharashtra">Maharashtra</option><option value="Manipur">Manipur</option><option value="Meghalaya">Meghalaya</option><option value="Mizoram">Mizoram</option><option value="Nagaland">Nagaland</option><option value="Odisha">Odisha</option><option value="Outside Country">Outside Country</option><option value="Puducherry (U.T.)">Puducherry (U.T.)</option><option value="Punjab">Punjab</option><option value="Rajasthan">Rajasthan</option><option value="Sikkim">Sikkim</option><option value="Tamil Nadu">Tamil Nadu</option><option value="Telangana">Telangana</option><option value="Tripura">Tripura</option><option value="Uttar Pradesh">Uttar Pradesh</option><option value="Uttarakhand">Uttarakhand</option><option value="West Bengal">West Bengal</option>	
+														</select>
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Pin Code</label>
+														<input class="form-control" type="text" placeholder="" maxlength="6" oninput="restrictAadhaarnput1(this)">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Communication Email ID*</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+											
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Mobile No</label>
+														<input class="form-control" type="text" placeholder="" maxlength="10" oninput="restrictAadhaarnput1(this)">
+														</div>
+												</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Telephone No</label>
+														<input class="form-control" type="text" placeholder="" maxlength="11" oninput="restrictAadhaarnput1(this)">
+													</div>
+												</div>
+												
+											</div>
+									</fieldset>	
+
+									<fieldset class="border p-2">
+															<legend class="w-auto">Fee Details</legend>
+															<div class="row">
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Total Amount Payable</label>
+														<input class="form-control" type="text" placeholder="">
+														</div>
+												</div>
+												
+												
+												
+											</div>
+
+											
+									</fieldset>
+									<!--<fieldset class="border p-2">
+															<legend class="w-auto">Fee Details</legend>
+
+															<div class="col-md-3">
+													<div class="row">
+														<label></label>
+														<input class="form-control" type="text" placeholder="">
+													</div>
+												</div>
+															
+
+
+														</fieldset>-->
+<h5 class="text-danger font-weight-600 mb-3">Note: License Type, Business District and Constitution of Business cannot be changed after saving the Application form.</h5>
+<div class="col-md-12 d-flex" id="bidding">
+
+<div class="col-md-12 justify-content" style="text-align: center;">
+<div class="form-group">
+
+
+
+<button class="btn btn-lg  btn-outline-danger">Reset</button>
+<button class="btn btn-success btn-lg">Save</button>
+<button class="btn btn-outline-secondary btn-lg">Cancel</button>
+
+<button class="btn btn-info btn-lg">Proceed</button>
+
+
+
+
+</div>
+</div>
+</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				
+				</div>			
+			</div>
+			<!-- /Page Wrapper -->
+
+			<div id="myModal" class="modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Welcome to Application for New License (Except L-2/L-14A)</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+    <ul>
+        <li>Please be ready with all <b>details</b> to be filled and <b>attachments to be Uploaded</b>.</li>
+        <li>By submitting this application, you agree that the information provided is accurate and complete. Any false information may result in the rejection of your application.</li>
+        <li>We reserve the right to verify the information provided in your application. Providing false or misleading information may result in disqualification.
+
+        </li>
+        <li>If your application is successful, you agree to comply with all relevant terms of service and policies of our organization.</li>
+    </ul>
+</p>
+<p><b><i class="fi fi-br-triangle-warning"></i>Disclaimer!</b> : Incomplete application and irrelevant documents will be returned to the applicant.</p>
+      </div>
+      <!--<div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>-->
+    </div>
+  </div>
+</div>
+
+			
+        </div>
+		<script>
+    // Show the modal when the page loads
+    window.onload = function() {
+        var modal = document.getElementById("myModal");
+        var closeBtn = document.querySelector(".close");
+
+        // Show the modal
+        modal.style.display = "block";
+
+        // Close the modal when the close button is clicked
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        // Close the modal if the user clicks outside the content
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    };
+</script>
+<script>
+function restrictPANInput(input) {
+    input.value = input.value.replace(/[^A-Za-z0-9]/g, '').toUpperCase(); // Remove special characters & convert to uppercase
+}
+
+function checkPAN() {
+    const pan = document.getElementById("panInput").value.trim();
+    const panRegex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+    const result = document.getElementById("result");
+
+    if (panRegex.test(pan)) {
+        result.innerHTML = "✅ Valid PAN Number";
+        result.style.color = "green";
+    } else {
+        result.innerHTML = "❌ Invalid PAN Number";
+        result.style.color = "red";
+    }
+}
+
+function restrictAadhaarnput(input) {
+    input.value = input.value.replace(/[^1-9]/g, '').toUpperCase(); // Remove special characters & convert to uppercase
+}
+function restrictAadhaarnput1(input) {
+    input.value = input.value.replace(/[^0-9]/g, '').toUpperCase(); // Remove special characters & convert to uppercase
+}
+</script>
+		<!-- /Main Wrapper -->
+		
+		<!-- jQuery -->
+        <script src="assets/js/jquery-3.2.1.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- Slimscroll JS -->
+        <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+		
+		<script src="assets/plugins/raphael/raphael.min.js"></script>    
+		<script src="assets/plugins/morris/morris.min.js"></script>  
+		<script src="assets/js/chart.morris.js"></script>
+		
+		<!-- Custom JS -->
+		<script  src="assets/js/script.js"></script>
+		<script>
+		function startTime() {
+			var today = new Date();
+			var day = today.getDate();
+			var month = today.getMonth();
+			var year = today.getFullYear();
+			var h = today.getHours();
+			var m = today.getMinutes();
+			var s = today.getSeconds();
+			m = checkTime(m);
+			s = checkTime(s);
+			document.getElementById('txt').innerHTML = "Date: " + day + "/" + month + "/" + year + " " + ": " + h + ":" + m + ":" + s;
+			var t = setTimeout(function () { startTime() }, 500);
+		}
+
+		function checkTime(i) {
+			if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+			return i;
+		}
+	</script>
+    </body>
+
+<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:34 GMT -->
+</html>

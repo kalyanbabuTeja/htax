@@ -1,0 +1,135 @@
+/* ======================== General Button Styles ======================== */
+.btn {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    margin: 8px 10px;
+}
+
+/* Hover Effect */
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Active Pressed Effect */
+.btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ripple Effect */
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: width 0.4s ease-in-out, height 0.4s ease-in-out, top 0.4s ease-in-out, left 0.4s ease-in-out;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.btn:hover::before {
+    width: 0;
+    height: 0;
+}
+
+button {
+    color: #fff !important;
+}
+
+/* ======================== Button Types ======================== */
+
+/* ✅ Save Button */
+.btn-save {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: white;
+}
+
+/* ❌ Cancel Button */
+.btn-cancel {
+    background: linear-gradient(135deg, #9E9E9E, #616161);
+    color: white;
+}
+
+/* 📩 Submit Button */
+.btn-submit {
+    background: linear-gradient(135deg, #008CFF, #005BB5);
+    color: white;
+}
+
+/* 🚨 Clear All Button */
+.btn-clear {
+    background: linear-gradient(135deg, #ff4d4d, #cc0000);
+    color: white;
+}
+
+/* ⏭️ Next Button */
+.btn-next {
+    background: linear-gradient(135deg, #FF9800, #E65100);
+    color: white;
+}
+
+/* ⏮️ Previous Button */
+.btn-previous {
+    background: linear-gradient(135deg, #607D8B, #37474F);
+    color: white;
+}
+
+/* 🔙 Back Button */
+.btn-back {
+    background: linear-gradient(135deg, #FF5722, #D84315);
+    color: white;
+}
+
+/* ⏩ Continue Button */
+.btn-continue {
+    background: linear-gradient(135deg, #009688, #00695C);
+    color: white;
+}
+
+/* 📤 Upload Button */
+.btn-upload {
+    background: linear-gradient(135deg, #3F51B5, #1A237E);
+    color: white;
+}
+
+/* 📥 Download Button */
+.btn-download {
+    background: linear-gradient(135deg, #FFEB3B, #FBC02D);
+    color: black;
+}
+
+/* ✏️ Edit Button */
+.btn-edit {
+    background: linear-gradient(135deg, #03A9F4, #0288D1);
+    color: white;
+}
+
+/* 🗑️ Delete Button */
+.btn-delete {
+    background: linear-gradient(135deg, #D50000, #B71C1C);
+    color: white;
+}
+
+/* 🔄 Reset Button */
+.btn-reset {
+    background: linear-gradient(135deg, #673AB7, #4527A0);
+    color: white;
+}
+
+/* 🖨️ Print Button */
+.btn-print {
+    background: linear-gradient(135deg, #607D8B, #455A64);
+    color: white;
+}
