@@ -23,208 +23,14 @@
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
 		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
 		
-
-<style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f5f7fa;
-    }
-section#menubar {
-    position: fixed;
-    top: 80px;
-    left: 0;
-    z-index: 999;
-    width: 100%;
-}
-    nav {
-      background: linear-gradient(90deg, #ff512f, #dd2476, #1e3c72, #2a5298);
-      background-size: 300% 300%;
-      animation: gradientBG 10s ease infinite;
-      padding: 4px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: white;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      position: relative;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .logo {
-      font-size: 1.6rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      list-style: none;
-      align-items: center;
-	  margin-bottom: 0px;
-    }
-
-    .nav-links li {
-      position: relative;
-    }
-
-    .nav-links li a {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: 0.3s ease;
-      position: relative;
-      padding: 16px 4px;
-      border-radius: 6px;
-      background: transparent;
-    }
-
-    .nav-links li a:hover {
-      background: linear-gradient(to right, #00BCD4, #185a9d);
-      color: #fff;
-    }
-.fa-solid, .fas {
-    font-weight: 900;
-    float: right;
-}
-i.fas.fa-chevron-down {
-    margin-top: 4px;
-    margin-left: 2px;
-}
-ul.sub-submenu li {
-    list-style: none;
-}
-    /* Submenu styles */
-   .submenu {
-      display: none;
-      position: absolute;
-      top: 150%;
-      left: 0;
-      background: white;
-      min-width: 200px;
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      flex-direction: column;
-      animation: fadeDown 0.3s ease;
-    }
-
-    .submenu li a {
-    padding: 10px 18px;
-    color: #333;
-    text-decoration: none;
-    font-size: 15px;
-    display: block;
-    font-weight: 600;
-}
-
-    .submenu li a:hover {
-      background: linear-gradient(to right, #2575fc, #6a11cb);
-      color: white;
-          border-radius: 30px 0px;
-          
-    }
-
-    .nav-links li:hover > .submenu {
-      display: flex;
-    }
-
-    /* Sub-submenu with separate class */
-    .sub-submenu {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 120%;
-      background: #f5f7fa;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      min-width: 180px;
-      flex-direction: column;
-      animation: fadeDown 0.3s ease;
-    }
-
-    .sub-submenu li a {
-      padding: 12px 18px;
-      color: #333;
-      text-decoration: none;
-    }
-
-    .sub-submenu li a:hover {
-      background: linear-gradient(to right, #ff9966, #ff5e62);
-      color: white;
-    }
-
-    .submenu li:hover > .sub-submenu {
-      display: flex;
-    }
-
-    /* Animation */
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-        display: none;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .submenu, .sub-submenu {
-        position: static;
-        box-shadow: none;
-        border-radius: 0;
-        background: none;
-      }
-
-      .nav-links li:hover > .submenu,
-      .submenu li:hover > .sub-submenu {
-        display: block;
-      }
-    }
-	i.fi.fi-sr-house-chimney, i.fi.fi-sr-admin-alt, i.fi.fi-sr-payment-pos, i.fi.fi-sr-link, i.fi.fi-tr-address-book {
-    background: none !important;
-    box-shadow: none !important;
-    display: contents;
-}
-  </style>
-
-
-
-
 		<style>
 			.page-wrapper {
  
-    padding-top: 120px;
+    padding-top: 80px;
  
 }
 .user-menu {
@@ -329,6 +135,8 @@ div#datetime {
 }
 		</style>
 		<style>
+			
+
 			.accordion-content p {
     color: #fff;
 }
@@ -434,33 +242,7 @@ i.fi.fi-tr-multiple, i.fi.fi-sr-multiple {
 span.disabled {
     color: #ccc;
 }
-i.fi.fi-sr-house-chimney, i.fi.fi-sr-admin-alt, i.fi.fi-sr-payment-pos, i.fi.fi-sr-link, i.fi.fi-tr-address-book {
-    background: none !important;
-    box-shadow: none !important;
-    display: contents;
-}
-ul.sub-submenu, ul.submenu a {
-    width: 120%;
-    background-color: #fff;
-}
-ul#quick-links {
-    min-width: 350px !important;
-}
-.table td, .table th {
-    padding: 10px;
-    vertical-align: middle;
-}
-.accordion-button.active + .accordion-content {
-    max-height: 375px;
-    padding: 1rem;
-}
-.accordion-content td:hover {
-    font-weight: 600;
-}
 			</style>
-			
-				
-
     </head>
     <body>
 	
@@ -611,108 +393,8 @@ ul#quick-links {
 				
             </div>
 			<!-- /Header -->
-
 			
 			
-			<section id="menubar">
-				<nav>
-    
-   
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#"><i class="fi fi-sr-house-chimney"></i> Home</a></li>
-      <li>
-        <a href="#"><i class="fi fi-sr-admin-alt"></i> e-Services <i class="fas fa-chevron-down"></i></a>
-        <ul class="submenu">
-          <li>
-            <a href="#">Permit <i class="fas fa-chevron-right"></i></a>
-            <ul class="sub-submenu">
-              <li><a href="#">New Permit Application</a></li>
-              <li><a href="#">List of Permit Request</a></li>
-              <li><a href="#">Pending Permits for Supply</a></li>
-              <li><a href="#">Revalidation of Permit</a></li>
-              <li><a href="#">Cancellation of Permit</a></li>
-            </ul>
-          </li>
-          <li><a href="#">List of Approved Pass</a></li>
-          <li><a href="#">Apply for New License</a></li>
-          <li>
-            <a href="#">License Management <i class="fas fa-chevron-right"></i></a>
-            <ul class="sub-submenu">
-              <li><a href="#">Amendment of License</a></li>
-              <li><a href="#">Renewal of License</a></li>
-              <li><a href="#">Surrender of License</a></li>
-              
-            </ul>
-          </li>
-          <li>
-            <a href="#">Stock <i class="fas fa-chevron-right"></i></a>
-            <ul class="sub-submenu">
-              <li><a href="#">Stock against Pass</a></li>
-              <li><a href="#">Stock against Drafted Pass </a></li>
-              <li><a href="#">Stock Ledger of Bottled spirit</a></li>
-              <li><a href="#">Enter Stock Breakage </a></li>
-              
-            </ul>
-          </li>
-          <li><a href="#">Application for Refund</a></li>
-          <li>
-            <a href="#">Application for Brand/Label <i class="fas fa-chevron-right"></i></a>
-            <ul class="sub-submenu">
-              <li><a href="#">New Brand/Label Registration </a></li>
-              
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><a href="#"><i class="fi fi-sr-payment-pos"></i> Licensee Leder</a></li>
-      <li>
-        <a href="#"><i class="fi fi-sr-link"></i> Quick Links  <i class="fas fa-chevron-down"></i></a>
-        <ul class="submenu" id="quick-links">
-          <li><a href="exciseGetFeeDetails.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL">Payment of License fee and corpus
-													(advance amount) creation for other excise levies</a></li>
-											
-											<!-- <li><a href="#" class="DealerL" onMouseOver="divA()" onMouseOut="divJ()">Permit</a></li> -->
-											<li><a href="pass.html?_synchronizerToken=17470355479042489972416684306432">Pending
-													Permits for Supply</a></li>
-											<li><a href="raisePermit.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL">New Permit Application</a></li>
-											<li><a href="exciseFeePayment.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL">Fee Payment</a></li>
-
-
-											<li><a href="listPendingRequest.html?error_msg=&amp;&amp;_synchronizerToken=17470355479042489972416684306432" class="DealerL">Applications pending for payment</a></li>
-											<!--                   <li><a href="#" class="DealerL" onclick="javascript:$('#registrationDashBoard').show();">Apply for New Registration</a></li> -->
-
-											<!-- <li><a href="#" class="DealerL"
-												onclick="javascript:$('#ExciseDashBoard').hide();$('#licensedetails').show();">License
-													Details</a></li> -->
-											<li style="display: none;"><a href="quotaHistory.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL">Quota Details</a></li>
-											<li style="display: ;"><a href="iflQuotaHistory.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL">IFL Quota Details</a></li>
-											<li><a href="stockBalanceStateView.html?search=balance&amp;_synchronizerToken=17470355479042489972416684306432">Stock
-													Ledger of Bottled spirit</a></li>
-											<li><a href="permitPassView.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL">Verify genuiness of permit and pass</a></li>
-												
-												<li><a href="brandLabelView.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL">Verify validity of Brand/Label verification</a></li>
-												
-											<!-- <li><a href="#" class="DealerL">Track Application
-													Status</a></li> -->
-											<!-- <li><a href="excisePaymentHistory.html" class="DealerL">Payment History</a></li> -->
-											<!-- <li><a href="licenseeLedgerView.html" class="DealerL">Licensee Ledger</a></li> -->
-
-
-        </ul>
-      </li>
-      <li>
-        <a href="#"><i class="fi fi-sr-link"></i> My Profile  <i class="fas fa-chevron-down"></i></a>
-        <ul class="submenu">
-          <li><a href="#">Download License </a></li>
-          <li><a href="#">Download L-1C Copy </a></li>
-        </ul>
-      </li>
-      
-    </ul>
-	
-	<div class="logo" style="font-size: 12px;line-height: 42px;">"Your License, Your Responsibility — Together for Transparent Governance."</div>
-  </nav>
-				</section>
 			
 			<!-- Page Wrapper -->
             <div class="page-wrapper">
@@ -750,32 +432,7 @@ ul#quick-links {
 									    <span class="accordion-icon"><i class="fi fi-sr-multiple"></i></span>
 									</button>
   									<div class="accordion-content">
-  									 <div class="row">
-								<div class="col-xl-4 col-sm-6 col-12">
-									<div class="dashboard-box">
-										<h2>Application <br/>for <br/>LOI</h2>
-										<!-- <p>Manage your tasks and track your progress with ease.</p> -->
-										<a href="ApplicationforNewLicense.html" target="_blank"><button class="btn-click">Get Started</button></a>
-									</div>
-								</div>
-								<div class="col-xl-4 col-sm-6 col-12">
-									<div class="dashboard-box">
-										<h2>Application for Revalidation/Extenstion of LOI</h2>
-										<!-- <p>Manage your tasks and track your progress with ease.</p> -->
-										<button class="btn-click">Get Started</button>
-									</div>
-									
-								</div>
-								<div class="col-xl-4 col-sm-6 col-12">
-									<div class="dashboard-box">
-										<h2>Application for Manufacturing Unit<br/> License</h2>
-										<!-- <p>Manage your tasks and track your progress with ease.</p> -->
-										<button class="btn-click">Get Started</button>
-									</div>
-									
-								</div>
-								
-							</div>
+  									  <p>Application for Manufacturing Unit License.</p>
  									 </div>
 									</div>
 
@@ -785,40 +442,32 @@ ul#quick-links {
 									    <span class="accordion-icon"><i class="fi fi-sr-multiple"></i></span>
 									</button>
   									<div class="accordion-content">
-  									  <table class="table bg-white table-striped table-hover">
-  <tbody>
-    <tr>
-      
-      <td>Application for Fixed License (Except L-2/L-14A)</td>
-      <td><a href="ApplicationforNewLicense.html"><button class="btn-click">Get Started</button></a></td>
-      
-    </tr>
-    <tr>
-      
-      <td>Application for Bar License	</td>
-      <td><button class="btn-click">Get Started</button></td>
-      
-    </tr>
-    <tr>
-      
-      <td>Application for Whole Sale License (L-1/L-13)</td>
-      <td><button class="btn-click">Get Started</button></td>
-      
-    </tr>
-    <tr>
-      
-      <td>Apply for Additonal points for Bar License</td>
-      <td><button class="btn-click">Get Started</button></td>
-      
-    </tr>
-    <tr>
-      
-      <td>My Applications</td>
-      <td><button class="btn-click">Get Started</button></td>
-      
-    </tr>
-  </tbody>
-</table>
+  									  <div class="row">
+								<div class="col-xl-4 col-sm-6 col-12">
+									<div class="dashboard-box">
+										<h2>Application for New License (Except L-2/L-14A)</h2>
+										<!-- <p>Manage your tasks and track your progress with ease.</p> -->
+										<a href="ApplicationforNewLicense.html" target="_blank"><button class="btn-click">Get Started</button></a>
+									</div>
+								</div>
+								<div class="col-xl-4 col-sm-6 col-12">
+									<div class="dashboard-box">
+										<h2>Application for Bar License<br>&nbsp;</h2>
+										<!-- <p>Manage your tasks and track your progress with ease.</p> -->
+										<button class="btn-click">Get Started</button>
+									</div>
+									
+								</div>
+								<div class="col-xl-4 col-sm-6 col-12">
+									<div class="dashboard-box">
+										<h2>My Applications<br>&nbsp;</h2>
+										<!-- <p>Manage your tasks and track your progress with ease.</p> -->
+										<button class="btn-click">Get Started</button>
+									</div>
+									
+								</div>
+								
+							</div>
  									 </div>
 									</div>
 
@@ -875,14 +524,13 @@ ul#quick-links {
 
 		<script>
   function toggleAccordion(button) {
-	button.classList.toggle("active");
-	const content = button.nextElementSibling;
-	const isExpanded = button.classList.contains("active");
+    button.classList.toggle("active");
+    const content = button.nextElementSibling;
+    const isExpanded = button.classList.contains("active");
 
-	// Optional accessibility support
-	button.setAttribute("aria-expanded", isExpanded);
+    // Optional accessibility support
+    button.setAttribute("aria-expanded", isExpanded);
   }
-
 </script>
 
 		
@@ -922,15 +570,7 @@ ul#quick-links {
 			return i;
 		}
 	</script>
-	
-
-	<script>
-     function toggleMenu() {
-      const nav = document.getElementById('navLinks');
-      nav.classList.toggle('active');
-    }
-  </script>
     </body>
 
-
+<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:34 GMT -->
 </html>
