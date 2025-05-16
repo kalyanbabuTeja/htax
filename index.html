@@ -340,6 +340,13 @@ ul.hover-list li:hover {
     background: #fff;
     color: #2b6fff;
 }
+a{
+  color:#fff;
+}
+li {a:hover{
+  color:#2b6fff;
+}
+}
 .hover-list {
     position: absolute;
         bottom: -195%;
@@ -384,6 +391,19 @@ p#usefulllinks {
     font-weight: 600;
     color: #0078d7;
 }
+@keyframes zoomInThenOut {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); /* adjust zoom level */
+  }
+}
+
+.zoom-in-out-once {
+  animation: zoomInThenOut 3s infinite ease-in-out;
+}
+
     </style>
 </head>
 
@@ -430,11 +450,14 @@ p#usefulllinks {
     <div class="top_nav" style="background-color: #01315c;">
         <div class="container">
             <div class="row">
-                <div class="col-sm-7" style="color: #fff;margin-top: 5px;"><i class="fi fi-rr-phone-rotary"></i> Help Desk : 0172-2740229 &nbsp;| <span id='ct5' style="color: #fff !important;"></span> &nbsp;| <a href="#headpara" title="Skip to Main Contact">Skip to Content</a></div>
-                <div class="col-sm-5">
+                <div class="col-sm-8" style="color: #fff;margin-top: 5px;"><i class="fi fi-rr-phone-rotary"></i> Help Desk : 0172-2740229 &nbsp;| <span id='ct5' style="color: #fff !important;"></span> &nbsp;| <a href="#headpara" title="Skip to Main Contact">Skip to Content</a> | Moblie App Download <img class="zoom-in-out-once" src="img/Appicon.png" style="width: 3%;margin-bottom: 4px;" alt="Mobile App Icon"></div>
+                <div class="col-sm-4">
     
                     
                        <div class="btn-group btn-group-sm pull-right">
+                        <a href="" class="text-white mt-2 mr-3"><i class="fi fi-rr-house-chimney" title="Home Page"></i> </a>
+                        <a href="" class="text-white mt-2"><i class="fi fi-rr-tally-1"></i></a>
+                        <a href="" class="text-white mt-2 mr-2"><i class="fi fi-rr-sitemap" title="Sitemap"></i></a>
                               <a class="increase btn btn-info accessibility" href="javascript:void(0);" onclick="set_font_size('increase')"> A+ </a>
                            <a class="reset btn btn-info accessibility" href="javascript:void(0);" onclick="set_font_size('')"> A&nbsp; </a>
                            <a class="decrease btn btn-info accessibility" href="javascript:void(0);" onclick="set_font_size('decrease')"> A- </a>
@@ -541,7 +564,7 @@ p#usefulllinks {
                                 </li>
                                 <li><a href="./about.html">Excise Policy</a></li>
                                 <li><a href="./about.html">Government Orders</a></li>
-                                <li><a href="./contact.html">Usefull Information</a></li>
+                                <li><a href="./contact.html">Useful Information</a></li>
                                 <li><a href="./contact.html">Help</a></li>
                                 <li><a href="./contact.html">RTI</a></li>
                                 <li><a href="./contact.html">Defaulters</a></li>
@@ -643,8 +666,9 @@ p#usefulllinks {
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6  p-0">
+                          <a href="https://industries.telangana.gov.in/Library/MSME%20Policy%20Booklet%20English1.pdf" target="_blank">
                             <div class="hero__inside__item set-bg" data-setbg="img/hero/hero42.jpg">
-                            </div>
+                            </div></a>
                         </div>
                     </div>
                 </div>
@@ -708,8 +732,9 @@ p#usefulllinks {
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 p-0">
+                            <a href="https://industries.telangana.gov.in/Library/MSME%20Policy%20Booklet%20English1.pdf" target="_blank">
                             <div class="hero__inside__item set-bg" data-setbg="img/hero/hero42.jpg">
-                                
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -773,6 +798,11 @@ p#usefulllinks {
         </div>
       </div>
 
+
+
+
+
+      
       <section class="policy_section bg-light">
         <div class="container">
             <!-- <img src="img/floating-glass.svg" alt=".." class="floatingicon"> -->
@@ -932,7 +962,7 @@ p#usefulllinks {
       <!--  -->
 
     <section id="faq" class="faq section-bg">
-        <div class="container aos-init aos-animate" data-aos="">
+        <div class="container aos-init aos-animate" data-aos=""   id="headpara">
   
 
             
@@ -1012,8 +1042,9 @@ p#usefulllinks {
                   <div class="default-text">OTS</div>
                   <ul class="hover-list">
                     <h3>OTS</h3>
-                    <li>Apply for OTS Scheme, 2025</li>
-                    <li>Apply for OTS Scheme, 2023</li>
+                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/excisePolicyETendering.jsp?excisePolicyData=2025_27" target="_blank">Excise Policy 2025-27</a></li>
+                    <li><a href="https://haryanatax.gov.in/OTS2025/login.html" target="_blank">Apply for OTS Scheme, 2025</a></li>
+                    <li><a href="https://haryanatax.gov.in/OTSAPP/login.html" target="_blank">OTS Scheme, 2023</a></li>
                    <!-- <li>Users Payments</li> -->
                   </ul>
                 </div>
@@ -1021,12 +1052,12 @@ p#usefulllinks {
               <div class="card">
                 <div class="card-content">
                     <i data-lucide="edit"></i>
-                  <div class="default-text">Application</div>
+                  <div class="default-text">EODB</div>
                   <ul class="hover-list">
-                    <h3>Registration</h3>
-                    <li>Excise</li>
-                    <li>Transit Slip</li>
-                    <li>GST Kosh</li>
+                    <h3>Ease of Doing Business<br/><br/></h3>
+                    
+                    <li><a href="https://haryanatax.gov.in/HEX/EOB.html" target="_blank">Click Here</a></li>
+                    
                    
                   </ul>
                 </div>
@@ -1034,12 +1065,16 @@ p#usefulllinks {
               <div class="card">
                 <div class="card-content">
                     <i data-lucide="laptop"></i>
-                  <div class="default-text">Other Application</div>
+                  <div class="default-text">GST</div>
                   <ul class="hover-list">
-                    <h3>Other Application</h3>
-                    <li>Mera Bill, Mera Adhikaar</li>
-                    <li>Parivar Pechan Patra</li>
-                   <li>Mukhyamantri Vyapari</li>
+                    <h3>GST</h3>
+                    
+                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/GST_Queries_and_help.jsp" target="_blank">Queries and Help</a></li>
+                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/GST_acts_rules.jsp" target="_blank">Acts and Rules</a></li>
+                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/GST_FAQ_USER_MANUAL.jsp" target="_blank">FAQ/User Manual</a></li>
+                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/GST_helpdesk.jsp" target="_blank">Gov. Dept.</a></li>
+                    
+                    <!-- GST_Corner -->
                    <!-- <li>Excise Unregistered 
                     Users Payment</li> -->
                   </ul>
@@ -1048,24 +1083,20 @@ p#usefulllinks {
               <div class="card">
                 <div class="card-content">
                     <i data-lucide="user"></i>
-                  <div class="default-text">Get Involved</div>
+                  <div class="default-text">E-Way Bill</div>
                   <ul class="hover-list">
-                    <h3>Get Involved</h3>
-                    <li>Dealer Payments</li>
-                    <li>Dealer Appeal</li>
-                   <li>Users Payments</li>
+                    <h3>E-Way Bill<br/><br/></h3>
+                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/eway.jsp" target="_blank">Click Here</a></li>
                   </ul>
                 </div>
               </div>
               <div class="card">
                 <div class="card-content">
                     <i data-lucide="monitor"></i>
-                  <div class="default-text">Help Desk</div>
+                  <div class="default-text">GST Corner</div>
                   <ul class="hover-list">
-                    <h3>Help Desk</h3>
-                    <li>Dealer Payments</li>
-                    <li>Dealer Appeal</li>
-                   <li>Users Payments</li>
+                    <h3>GST Corner<br/><br/></h3>
+                    <li><a href="https://haryanatax.gov.in/HEX/GST_Corner.html" target="_blank">Click Here</a></li>
                   </ul>
                 </div>
               </div>
@@ -1075,60 +1106,53 @@ p#usefulllinks {
             <div class="card">
                 <div class="card-content">
                     <i data-lucide="banknote-arrow-down"></i>
-                  <div class="default-text">GST</div>
+                  <div class="default-text">Licensee Search</div>
                   <ul class="hover-list">
-                    <h3>GST</h3>
-                    <li>Dealer Payments</li>
-                    <li>Dealer Appeal</li>
-                   <li>Users Payments</li>
+                    <h3>Licensee Search<br/><br/></h3>
+                    <li><a href="https://haryanatax.gov.in/HEXWAR/searchLicensesDetails.html" target="_blank">Click Here</a></li>
                   </ul>
                 </div>
               </div>
               <div class="card">
                 <div class="card-content">
                     <i data-lucide="log-in"></i>
-                  <div class="default-text">Login's</div>
+                  <div class="default-text">Dept. Login</div>
                   <ul class="hover-list">
-                    <h3>Login's</h3>
-                    <li>Dealer Payments</li>
-                    <li>Dealer Appeal</li>
-                   <li>Users Payments</li>
+                    <h3>Dept. Login<br/><br/></h3>
+                    <li><a href="https://vanijya.haryanatax.gov.in:4443/oam/server/obrareq.cgi?encquery%3DMbaJjTv%2BTo5mcXwi6CxQ3RPjpcNP1wembWJjz2cwI4cOYIWThB7sDybK2yFsabksM5HZzOk6k9GDoKPBNff%2FiPs1PfUuNuvWRj51XglrVw%2B9Q1e4xAcQSeaaEqu2jO8d%2BWHIP0n%2BglfEOgMM5XHmlsqshEnY9NbnR8KV%2FS7pqqlSFXjYLrvpl1tLnJdJd37w8S5slkXBVvJTY8oOb3fbwtZLReToC3XFjEKZAW%2FABHs%2F%2BcE0lSFtHFmZqWuwAD9g%2Bh5np3pq0wAJdVPuR05WRq3VLISIOsnFGUEj%2Bf23%2FSDfb5w7Ine4DaOQwunnmRq1%20agentid%3DHEX_11g%20ver%3D1%20crmethod%3D2" target="_blank">Click Here</a></li>
                   </ul>
                 </div>
               </div>
               <div class="card">
                 <div class="card-content">
                     <i data-lucide="search"></i>
-                  <div class="default-text">Search</div>
+                  <div class="default-text">Dealer Search</div>
                   <ul class="hover-list">
-                    <h3>Search</h3>
-                    <li>Dealer Payments</li>
-                    <li>Dealer Appeal</li>
-                   <li>Users Payments</li>
+                    <h3>Dealer Search<br/><br/></h3>
+                    <li><a href="https://haryanatax.gov.in/HEXWAR/searchdealerDetails.html" target="_blank">Click Here</a></li>
                   </ul>
                 </div>
               </div>
               <div class="card">
                 <div class="card-content">
                     <i data-lucide="shield-check"></i>
-                  <div class="default-text">Application</div>
+                  <div class="default-text"><br/><br/>Download Dealer Utility Tool Returns</div>
                   <ul class="hover-list">
-                    <h3>Application</h3>
-                    <li>Dealer Payments</li>
-                    <li>Dealer Appeal</li>
-                   <li>Users Payments</li>
+                    <h3>Dealer Utility<br/><br/></h3>
+                    <li><a href="#" target="_blank">Click Here</a></li>
+                  
                   </ul>
                 </div>
               </div>
               <div class="card">
                 <div class="card-content">
                     <i data-lucide="building-2"></i>
-                  <div class="default-text">EODB</div>
+                  <div class="default-text"><br/>Digital Signature Verfication</div>
                   <ul class="hover-list">
-                    <h3>EODB</h3>
-                    <li>Dealer Payments</li>
-                    <li>Dealer Appeal</li>
-                   <li>Users Payments</li>
+                    <h3>Digital Signature Verfication<br/><br/></h3>
+                    <li><a href="http://secmsgdemo.emudhra.com/emvv_admin/Wipro/Haryana_Excise/emSigner-SetupFiles_151216.zip" target="_blank">Click Here</a></li>
+                    
+                   
                   </ul>
                 </div>
               </div>
@@ -1149,7 +1173,7 @@ p#usefulllinks {
       </section>
 
 
-      <section class="service"  id="headpara">
+      <section class="service">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -1161,14 +1185,14 @@ p#usefulllinks {
                              </div> -->
                              <div class="get-involved-links">
                                 
-                                 <div class="tab-link active"><a href="#" rel="tab-1" class="do-icon" title="Do/Task"><i class="fi fi-rr-assessment"></i>(OTS), 2025</a></div>
-                                 <div class="tab-link"><a href="#" rel="tab-2" class="discuss-icon" title="Discuss"><i class="fi fi-rr-document"></i>Dearl Search</a></div>
-                                 <div class="tab-link"><a href="#" rel="tab-3" class="poll-icon" title="Poll/Survey"><i class="fi fi-rr-folder"></i>EODB Initiatives</a></div>
-                                 <div class="tab-link"><a href="#" rel="tab-4" class="blog-icon" title="Blog"><i class="fi fi-rr-thumbs-up-trust"></i>GST Queries and Help</a></div>
-                                 <div class="tab-link"><a href="#" rel="tab-5" class="talk-icon" title="Talk"><i class="fi fi-rr-users-alt"></i>GST Acts and Rules</a></div>
-                                 <div class="tab-link"><a href="#" rel="tab-6" class="quiz-icon" title="Quiz"><i class="fi fi-rr-system-cloud"></i>GST FAQs / User Manual</a></div>
-                                 <div class="tab-link"><a href="#" rel="tab-7" class="prime-icon" title="MG Prime"><i class="fi fi-rr-newspaper"></i>GST Helpdesk</a></div>
-                                 <div class="tab-link"><a href="#" rel="tab-8" class="campaign-icon" title="Campaign"><i class="fi fi-rr-corporate"></i>EWay Bill</a></div>
+                                 <div class="tab-link active"><a href="https://haryanatax.gov.in/OTS2025/login.html" target="_blank"  rel="tab-1" class="do-icon" title="Do/Task"><i class="fi fi-rr-assessment"></i>(OTS), 2025</a></div>
+                                 <div class="tab-link"><a href="https://investharyana.in" target="_blank" rel="tab-2" class="discuss-icon" title="Discuss"><i class="fi fi-rr-document"></i>Excise Registration</a></div>
+                                 <div class="tab-link"><a href="https://cridverify.edisha.gov.in/" target="_blank" rel="tab-3" class="poll-icon" title="Poll/Survey"><i class="fi fi-rr-folder"></i>Update Your Parivar Pehchan Patra</a></div>
+                                 <div class="tab-link"><a href="https://www.mygov.in/group-issue/simplified-gst-return-principles-and-draft-return-formats/" target="_blank" rel="tab-4" class="blog-icon" title="Blog"><i class="fi fi-rr-thumbs-up-trust"></i>GST-RDPF</a></div>
+                                 <div class="tab-link"><a href="https://selfservice.gstsystem.in/" target="_blank" rel="tab-5" class="talk-icon" title="Talk"><i class="fi fi-rr-users-alt"></i>GST Helpdesk</a></div>
+                                 <div class="tab-link"><a href="https://cform.haryanatax.gov.in:8080/HETD/" target="_blank" rel="tab-6" class="quiz-icon" title="Quiz"><i class="fi fi-rr-system-cloud"></i>Apply C Form</a></div>
+                                 <div class="tab-link"><a href="https://cform.haryanatax.gov.in:8080/HETD/verifyCForm" target="_blank" rel="tab-7" class="prime-icon" title="MG Prime"><i class="fi fi-rr-newspaper"></i>Verify C Form</a></div>
+                                 <div class="tab-link"><a href="https://cmharyanacell.nic.in/" target="_blank" rel="tab-8" class="campaign-icon" title="Campaign"><i class="fi fi-rr-corporate"></i>Grievance Redressal</a></div>
                                  <!-- <div class="tab-link"><a href="#" rel="tab-9" class="pledge-icon" title="Pledge"><i></i>Pledge</a></div>
                                  <div class="tab-link"><a href="#" rel="tab-10" class="podcast-icon" title="Podcast"><i></i>Podcast</a></div> -->
                              </div>
@@ -1185,12 +1209,11 @@ p#usefulllinks {
             <div class="row">
                 
                 <div class="col-md-12">
-                    <div class="section-title" style="
-                margin-bottom: 10px !important;padding-top: 10px;">
-                        <h2>How do we Work?</h2>
+                    <div class="section-title">
+                        <!-- <h2>How do we Work?</h2> -->
                        
                       </div>
-                    <img src="img/flowchart.jpg" alt="flowchart"/>
+                    <img src="img/city.jpg" class="w-100" alt="flowchart"/>
                 </div>
                 </div>
                 </div>
@@ -1199,10 +1222,10 @@ p#usefulllinks {
     <section class="categories spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="categories__item set-bg" data-setbg="img/categories/cat-1.jpg">
+                <div class="col-lg-2 col-md-2 col-sm-6">
+                    <div class="categories__item set-bg" data-setbg="img/categories/gas.jpg">
                         <div class="textcat">
-                            <h5>Commissioner of Industries</h5>
+                            <h5>Treasuries and Account</h5>
                         </div>
                         <!-- <div class="categories__hover__text">
                             <h5>Commissioner of Industries</h5>
@@ -1210,7 +1233,7 @@ p#usefulllinks {
                         </div> -->
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="col-lg-2 col-md-2 col-sm-6">
                     <a href="https://investharyana.in/" target="_blank" title="Invest Haryana">
                     <div class="categories__item set-bg" data-setbg="img/categories/cat-2.jpg">
                         <div class="textcat">
@@ -1223,7 +1246,7 @@ p#usefulllinks {
                     </div></a>
 
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="col-lg-2 col-md-2 col-sm-6">
                     <a href="https://haryana.gov.in/"  target="_blank" title="Haryana State Portal">
                     <div class="categories__item set-bg" data-setbg="img/categories/cat-3.jpg">
                         <div class="textcat">
@@ -1236,11 +1259,39 @@ p#usefulllinks {
                     </div>
                 </a>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="col-lg-2 col-md-2 col-sm-6">
                     <a href="https://www.nsws.gov.in/" target="_blank" title="NSWS">
-                    <div class="categories__item set-bg" data-setbg="img/categories/cat-4.jpg" alt="NSWS">
+                    <div class="categories__item set-bg" data-setbg="img/categories/cat-7.jpg" alt="NSWS">
                         <div class="textcat">
-                            <h5>NSWS</h5>
+                            <h5>NSDL</h5>
+                        </div>
+                        <!-- <div class="categories__hover__text">
+                            <h5></h5>
+                            <p>Click Here !</p>
+                        </div> -->
+                    </div>
+                </a>
+                </div>
+
+                <div class="col-lg-2 col-md-2 col-sm-6">
+                    <a href="https://www.nsws.gov.in/" target="_blank" title="NSWS">
+                    <div class="categories__item set-bg" data-setbg="img/categories/cat-6.jpg" alt="NSWS">
+                        <div class="textcat">
+                            <h5>Startup India</h5>
+                        </div>
+                        <!-- <div class="categories__hover__text">
+                            <h5></h5>
+                            <p>Click Here !</p>
+                        </div> -->
+                    </div>
+                </a>
+                </div>
+
+                <div class="col-lg-2 col-md-2 col-sm-6">
+                    <a href="https://www.nsws.gov.in/" target="_blank" title="NSWS">
+                    <div class="categories__item set-bg" data-setbg="img/categories/cat-5.jpg" alt="NSWS">
+                        <div class="textcat">
+                            <h5>Service Delivery</h5>
                         </div>
                         <!-- <div class="categories__hover__text">
                             <h5></h5>
@@ -1446,8 +1497,8 @@ var x = new Date()
 var ampm = x.getHours( ) >= 12 ? ' PM' : ' AM';
 hours = x.getHours( ) % 12;
 hours = hours ? hours : 12;
-var x1=x.getMonth() + 1+ "/" + x.getDate() + "/" + x.getFullYear(); 
-x1 = x1 + " - " +  hours + ":" +  x.getMinutes() + ":" +  x.getSeconds() + ":" + ampm;
+var x1=  x.getDate() + "/" + (x.getMonth()+1) + "/" + x.getFullYear(); 
+x1 = x1 + " - " +  hours + ":" +  x.getMinutes() + ":" +  x.getSeconds() + "" + ampm;
 document.getElementById('ct5').innerHTML = x1;
 display_c5();
  }

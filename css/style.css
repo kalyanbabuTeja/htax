@@ -747,11 +747,12 @@ ol {
 
 .hero__inside__item {
 	position: relative;
-	height: 633px;
+	height: 420px;
 	margin-bottom: 11px;
 	margin-right: 11px;
 	border-radius: 20px;
     box-shadow: 1px 3px 6px #ccc;
+	background-position: bottom;
 }
 
 .hero__slider {
@@ -872,7 +873,7 @@ ol {
 }
 
 .hero__inside__item--small {
-	height: 311px;
+	height: 205px;
 }
 
 .hero__inside__item__text {
@@ -974,7 +975,7 @@ ol {
 }
 
 .categories__item {
-	height: 270px;
+	height: 160px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -984,7 +985,7 @@ ol {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	margin-bottom: 30px;
+	margin-bottom: 33px;
 	border-radius: 20px;
 }
 
@@ -3350,8 +3351,8 @@ header.header {
 }
 
 section.categories.spad1 {
-    background: #ecf0f3;
-    padding-bottom: 0rem !important;
+    *background: #ecf0f3;
+    padding-bottom: 2rem !important;
     padding-top: 2rem !important;
 }
 
@@ -3440,13 +3441,21 @@ footer.main-footer.style-two.style-four.home-5 {
     position: absolute;
     background: #fff;
     bottom: 32px;
-    width: 90%;
+    width: 85%;
     height: 35px;
     padding: 6px;
     border-radius: 0px 0px 20px 20px;
-    left: 13px;
+    left: 15px;
     box-shadow: 3px 4px 5px #000;
     text-align: center;
+}
+.textcat h5 {
+	color: #000;
+	font-size: 14px;
+	font-weight: 600;
+	margin-top: 4px;
+	text-transform: capitalize;
+	font-family: "Trebuchet MS","Myriad Pro",Arial,sans-serif;
 }
 a.login {
     background: linear-gradient(to right, #2196F3, #015caf);

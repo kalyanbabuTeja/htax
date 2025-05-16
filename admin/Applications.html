@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:20 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <title>Htax - Dashboard</title>
+		
+		<!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+		
+		<!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<!-- Fontawesome CSS -->
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		
+		<!-- Feathericon CSS -->
+        <link rel="stylesheet" href="assets/css/feathericon.min.css">
+		
+		<link rel="stylesheet" href="assets/plugins/morris/morris.css">
+		
+		<!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/style.css">
+		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+		
+		<style>
+			.page-wrapper {
+ 
+    padding-top: 80px;
+ 
+}
+.user-menu {
+margin: 10px 0px;
+    }
+.sidebar {
+    top: 80px;
+}
+.header {
+	height: 80px;
+}
+@media only screen and (min-width: 992px) {
+    #toggle_btn{
+		height: 80px;
+	}
+	.dashboard-box {
+    width: 320px;
+    padding: 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.dashboard-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.dashboard-box h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.dashboard-box p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.btn-click {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(135deg, #007BFF, #0056D2);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-click:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.2);
+}
+.header .header-left .logo img {
+	max-height: 70px;
+        width: auto;
+        margin-top: 5px;
+}
+.sidebar {
+    background-color: #0b3654 !important;
+}
+.page-wrapper {
+    background: linear-gradient(45deg, rgb(255 255 255 / 71%) 0%, rgb(255 255 255/ 65%) 100%), url(assets/img/dbbg.jpg) center center no-repeat;;
+    background-position: center;
+    background-size: cover;
+	opacity: 1;
+}
+.card {
+    border-radius: 10px;
+    margin-bottom: 1.875rem;
+}
+.sidebar-menu > ul > li > a:hover {
+    background: linear-gradient(135deg, #007BFF, #0056D2);
+    color: #fff;
+}
+.sidebar-menu li.active a {
+	background: linear-gradient(135deg, #007BFF, #0056D2);
+    color: #fff;
+}
+.top-nav-search {
+    position: absolute;
+    right: 38%;
+}
+div#datetime {
+    position: fixed;
+    top: 9px;
+    right: 147px;
+    z-index: 99999;
+}
+.sidebar-menu ul ul a {
+    padding: 7px 10px 7px 9px !important;
+}
+		</style>
+
+		<style>
+			.accordion-content p {
+    color: #fff;
+}
+			.accordion-button.active {
+  background: linear-gradient(135deg, #f9f9f9, #8fd3f4); /* Bright green-blue gradient */
+  color: #000;
+}
+			.accordion-button:hover {
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+}
+			.accordion {
+  width: 100%;
+  
+  margin: 1rem auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.accordion-button {
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+
+
+.accordion-button .accordion-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 0 1rem;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.accordion-content p {
+  margin: 1rem 0;
+}
+
+
+.accordion-button.active .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-button.active + .accordion-content {
+  max-height: 200px;
+  padding: 1rem;
+}
+i.fi {
+    background: #033355;
+    border-radius: 50%;
+    padding: 8px 17px;
+    color: #fff;
+    box-shadow: 1px 2px 3px #ccc;
+    display: flex;
+    width: 8%;
+    height: 9%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
+span.accordion-title {
+    color: #3468b5;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+}
+.card-body {
+    padding: 1px 1px !important;
+}
+.accordion-content {
+    background: #2c3e50;
+    background: -webkit-linear-gradient(to top, #3498db, #2c3e50);
+    background: linear-gradient(to top, #3498db, #2c3e50);
+}
+i.fi.fi-tr-multiple, i.fi.fi-sr-multiple {
+    background: none;
+    color: #033355 !important;
+    padding: 0px !important;
+    box-shadow: none !important;
+    display: contents !important;
+} 
+span.disabled {
+    color: #ccc;
+}
+i.fi.fi-sr-house-chimney, i.fi.fi-sr-admin-alt, i.fi.fi-sr-payment-pos, i.fi.fi-sr-link, i.fi.fi-tr-address-book {
+    background: none !important;
+    box-shadow: none !important;
+    display: contents;
+}
+ul.sub-submenu, ul.submenu a {
+    width: 120%;
+    background-color: #fff;
+}
+ul#quick-links {
+    min-width: 350px !important;
+}
+.table td, .table th {
+    padding: 10px;
+    vertical-align: middle;
+}
+.accordion-button.active + .accordion-content {
+    max-height: 450px;
+    padding: 1rem;
+}
+.accordion-content td:hover {
+    font-weight: 600;
+}
+ul.list-group.list-group-flush li a {
+    position: relative;
+    display: block;
+    padding: .35rem .75rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .125);
+    font-weight: 600;
+    color: #033050;
+    font-family: 'Mada';
+    font-size: 16px !important;
+}
+ul.list-group.list-group-flush li {
+    list-style: none;
+}
+.news-marquee {
+  position: absolute;
+  top: 10px; /* Adjust if you change heading size */
+  left: 0;
+  right: 0;
+  height: 450px;
+  overflow: hidden;
+}
+
+.news-marquee ul {
+  display: inline-block;
+  animation: scrollUp 10s linear infinite;
+}
+
+@keyframes scrollUp {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-100%); }
+}
+
+.news-marquee ul:hover {
+  animation-play-state: paused; /* Pause on hover */
+}
+ul.list-group.list-group-flush li a:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #007BFF, #0056D2);
+}
+.card-header.bg-info.border-primary {
+    border-radius: 10px;
+    background: linear-gradient(135deg, #007BFF, #0056D2) !important;
+    color: #fff;
+    font-weight: 900 !important;
+}
+			</style>
+
+				<style>
+			.accordion-content p {
+    color: #fff;
+}
+			.accordion-button.active {
+  background: linear-gradient(135deg, #f9f9f9, #8fd3f4); /* Bright green-blue gradient */
+  color: #000;
+}
+			.accordion-button:hover {
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+}
+			.accordion {
+  width: 100%;
+  
+  margin: 1rem auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.accordion-button {
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+
+
+.accordion-button .accordion-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 0 1rem;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.accordion-content p {
+  margin: 1rem 0;
+}
+
+
+.accordion-button.active .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-button.active + .accordion-content {
+  max-height: 200px;
+  padding: 1rem;
+}
+i.fi {
+    background: #033355;
+    border-radius: 50%;
+    padding: 8px 17px;
+    color: #fff;
+    box-shadow: 1px 2px 3px #ccc;
+    display: flex;
+    width: 8%;
+    height: 9%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
+span.accordion-title {
+    color: #3468b5;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+}
+.card-body {
+    padding: 1px 25px !important;
+}
+.accordion-content {
+    background: #2c3e50;
+    background: -webkit-linear-gradient(to top, #3498db, #2c3e50);
+    background: linear-gradient(to top, #3498db, #2c3e50);
+}
+i.fi.fi-tr-multiple, i.fi.fi-sr-multiple {
+    background: none;
+    color: #033355 !important;
+    padding: 0px !important;
+    box-shadow: none !important;
+    display: contents !important;
+} 
+span.disabled {
+    color: #ccc;
+}
+i.fi.fi-sr-house-chimney, i.fi.fi-sr-admin-alt, i.fi.fi-sr-payment-pos, i.fi.fi-sr-link, i.fi.fi-tr-address-book {
+    background: none !important;
+    box-shadow: none !important;
+    display: contents;
+}
+ul.sub-submenu, ul.submenu a {
+    width: 120%;
+    background-color: #fff;
+}
+ul#quick-links {
+    min-width: 350px !important;
+}
+.table td, .table th {
+    padding: 10px;
+    vertical-align: middle;
+}
+.accordion-button.active + .accordion-content {
+    max-height: 450px;
+    padding: 1rem;
+}
+.accordion-content td:hover {
+    font-weight: 600;
+}
+
+			</style>
+    </head>
+    <body>
+	
+		<!-- Main Wrapper -->
+        <div class="main-wrapper">
+		
+			<!-- Header -->
+            <div class="header">
+			
+				<!-- Logo -->
+                
+				<!-- /Logo -->
+				
+				<a href="javascript:void(0);" id="toggle_btn">
+					<i class="fe fe-text-align-left"></i>
+				</a>
+				<div class="header-left">
+                    <a href="index.html" class="logo">
+						<img src="assets/img/logo.png" alt="Logo">
+					</a>
+					<a href="index.html" class="logo logo-small">
+						<img src="assets/img/logo.png" alt="Logo" width="30" height="30">
+					</a>
+                </div>
+				<div class="top-nav-search">
+					<form>
+						<p style="
+    width: 200%;
+    margin-top: 26px;
+">Helpdesk Landline Numbers: <b>011-23370705, 011-23379752</b>,</p>
+<div id="datetime">
+
+<body onload="startTime()">
+
+	<div id="txt" class="mt-3 font-weight-600"></div>
+
+</body>
+</div>
+
+					</form>
+				</div>
+				
+				<!-- Mobile Menu Toggle -->
+				<a class="mobile_btn" id="mobile_btn">
+					<i class="fa fa-bars"></i>
+				</a>
+				<!-- /Mobile Menu Toggle -->
+				
+				
+				<!-- Header Right Menu -->
+				<ul class="nav user-menu">
+
+					<!-- Notifications -->
+					<li class="nav-item dropdown noti-dropdown">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+							<i class="fe fe-bell"></i> <span class="badge badge-pill">3</span>
+						</a>
+						<div class="dropdown-menu notifications">
+							<div class="topnav-dropdown-header">
+								<span class="notification-title">Notifications</span>
+								<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+							</div>
+							<div class="noti-content">
+								<ul class="notification-list">
+									<li class="notification-message">
+										<a href="#">
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/doctors/doctor-thumb-01.jpg">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"><span class="noti-title">Dr. Ruby Perrin</span> Schedule <span class="noti-title">her appointment</span></p>
+													<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient1.jpg">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"><span class="noti-title">Charlene Reed</span> has booked her appointment to <span class="noti-title">Dr. Ruby Perrin</span></p>
+													<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient2.jpg">
+												</span>
+												<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Travis Trimble</span> sent a amount of $210 for his <span class="noti-title">appointment</span></p>
+												<p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient3.jpg">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"><span class="noti-title">Carl Kelly</span> send a message <span class="noti-title"> to his doctor</span></p>
+													<p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href="#">View all Notifications</a>
+							</div>
+						</div>
+					</li>
+					<!-- /Notifications -->
+					
+					<!-- User Menu -->
+					<li class="nav-item dropdown has-arrow">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+							<span class="user-img"><img class="rounded-circle" src="assets/img/profiles/avatar-01.jpg" width="31" alt="Ryan Taylor"></span>
+						</a>
+						<div class="dropdown-menu">
+							<div class="user-header">
+								<div class="avatar avatar-sm">
+									<img src="assets/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
+								</div>
+								<div class="user-text">
+									<h6>Ryan Taylor</h6>
+									<p class="text-muted mb-0">Administrator</p>
+								</div>
+							</div>
+							<a class="dropdown-item" href="profile.html">My Profile</a>
+							<a class="dropdown-item" href="settings.html">Settings</a>
+							<a class="dropdown-item" href="login.html">Logout</a>
+						</div>
+					</li>
+					<!-- /User Menu -->
+					
+				</ul>
+				<!-- /Header Right Menu -->
+				
+            </div>
+			<!-- /Header -->
+			
+			<!-- Sidebar -->
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-inner slimscroll">
+					<div id="sidebar-menu" class="sidebar-menu">
+						<ul>
+							<li class="menu-title"> 
+								<span>Main</span>
+							</li>
+							<li  class="active"> 
+								<a href="Dashboard.html"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+							</li>
+
+							<li class="submenu">
+								<a href="javascript:void(0);"><i class="fe fe-layout"></i> <span>e-Services</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li class="submenu">
+										<a href="javascript:void(0);"> <span>Permit</span> <span class="menu-arrow"></span></a>
+										<ul style="display: none;">
+											
+											<li><a href="#">New Permit Application</a></li>
+              <li><a href="#">List of Permit Request</a></li>
+              <li><a href="#">Pending Permits for Supply</a></li>
+              <li><a href="#">Revalidation of Permit</a></li>
+              <li><a href="#">Cancellation of Permit</a></li>
+										</ul>
+									</li>
+
+									<li>
+										<a href="javascript:void(0);"> <span>List of Approved Pass</span></a>
+									</li>
+									<li>
+										<a href="javascript:void(0);"> <span>Apply for New License</span></a>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);"> <span>License Management </span> <span class="menu-arrow"></span></a>
+										<ul style="display: none;">
+											
+											<li><a href="#">Amendment of License</a></li>
+              <li><a href="#">Renewal of License</a></li>
+              <li><a href="#">Surrender of License</a></li>
+              
+										</ul>
+									</li>
+
+									<li class="submenu">
+										<a href="javascript:void(0);"> <span>Stock </span> <span class="menu-arrow"></span></a>
+										<ul style="display: none;">
+											
+											<li><a href="#">Stock against Pass</a></li>
+              <li><a href="#">Stock against Drafted Pass </a></li>
+              <li><a href="#">Stock Ledger of Bottled spirit</a></li>
+              <li><a href="#">Enter Stock Breakage </a></li>
+       
+										</ul>
+									</li>
+
+
+
+									<li>
+										<a href="javascript:void(0);"> <span>Application for Refund</span></a>
+									</li>
+
+									<li class="submenu">
+										<a href="javascript:void(0);"> <span>Application for Brand/Label  </span> <span class="menu-arrow"></span></a>
+										<ul style="display: none;">
+											
+											<li><a href="#">New Brand/Label Registration </a></li>
+       
+										</ul>
+									</li>
+									
+								</ul>
+							</li>
+							
+							<li> 
+								<a href="#"><i class="fe fe-users"></i> <span>Licensee Leder</span></a>
+							</li>
+							
+							
+
+					<li class="submenu">
+								<a href="#"><i class="fe fe-document"></i> <span> My Profile</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="#">Download License </a></li>
+									<li><a href="#">Download L-1C Copy</a></li>
+								</ul>
+							</li>
+
+
+							<li><a href="index.html"><i class="fi fi-sr-payment-pos"></i> Index-1</a></li>
+
+
+							<!-- <li> 
+								<a href="transactions-list.html"><i class="fe fe-activity"></i> <span>Transactions</span></a>
+							</li>
+							<li> 
+								<a href="settings.html"><i class="fe fe-vector"></i> <span>Settings</span></a>
+							</li>
+							
+							<li class="menu-title"> 
+								<span>Pages</span>
+							</li>
+							<li> 
+								<a href="profile.html"><i class="fe fe-user-plus"></i> <span>Profile</span></a>
+							</li>
+							<li class="submenu">
+								<a href="#"><i class="fe fe-document"></i> <span> Authentication </span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="login.html"> Login </a></li>
+									<li><a href="register.html"> Register </a></li>
+									<li><a href="forgot-password.html"> Forgot Password </a></li>
+									<li><a href="lock-screen.html"> Lock Screen </a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#"><i class="fe fe-warning"></i> <span> Error Pages </span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="error-404.html">404 Error </a></li>
+									<li><a href="error-500.html">500 Error </a></li>
+								</ul>
+							</li>
+							<li> 
+								<a href="blank-page.html"><i class="fe fe-file"></i> <span>Blank Page</span></a>
+							</li>
+							<li class="menu-title"> 
+								<span>UI Interface</span>
+							</li>
+							<li> 
+								<a href="components.html"><i class="fe fe-vector"></i> <span>Components</span></a>
+							</li>
+							<li class="submenu">
+								<a href="#"><i class="fe fe-layout"></i> <span> Forms </span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="form-basic-inputs.html">Basic Inputs </a></li>
+									<li><a href="form-input-groups.html">Input Groups </a></li>
+									<li><a href="form-horizontal.html">Horizontal Form </a></li>
+									<li><a href="form-vertical.html"> Vertical Form </a></li>
+									<li><a href="form-mask.html"> Form Mask </a></li>
+									<li><a href="form-validation.html"> Form Validation </a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#"><i class="fe fe-table"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="tables-basic.html">Basic Tables </a></li>
+									<li><a href="data-tables.html">Data Table </a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);"><i class="fe fe-code"></i> <span>Multi Level</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li class="submenu">
+										<a href="javascript:void(0);"> <span>Level 1</span> <span class="menu-arrow"></span></a>
+										<ul style="display: none;">
+											<li><a href="javascript:void(0);"><span>Level 2</span></a></li>
+											<li class="submenu">
+												<a href="javascript:void(0);"> <span> Level 2</span> <span class="menu-arrow"></span></a>
+												<ul style="display: none;">
+													<li><a href="javascript:void(0);">Level 3</a></li>
+													<li><a href="javascript:void(0);">Level 3</a></li>
+												</ul>
+											</li>
+											<li><a href="javascript:void(0);"> <span>Level 2</span></a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="javascript:void(0);"> <span>Level 1</span></a>
+									</li>
+								</ul>
+							</li> -->
+						</ul>
+					</div>
+                </div>
+            </div>
+			<!-- /Sidebar -->
+			
+			<!-- Page Wrapper -->
+            <div class="page-wrapper">
+			
+            <div class="content container-fluid">
+
+					<div class="">
+						
+						<div class="card-body">
+							<div class="row">
+								<div class="col-md-8 card">
+									<div class="card-header"><h4>Apply for New License</h4></div>
+										<div class="card-body">
+							<div class="row">
+								<div class="col-md-12">
+
+                  <div class="accordion">
+ 									 <button class="accordion-button collapsed" onclick="toggleAccordion(this)">
+ 									   <span class="accordion-title"><i class="fi fi-tr-convert-document"></i> <span>Application for Registration for e-Tendering</span></span>
+									    <span class="accordion-icon"><i class="fi fi-sr-multiple"></i></span>
+									</button>
+  									<div class="accordion-content">
+  									  <table class="table bg-white table-striped table-hover">
+  <tbody>
+    <tr>
+      
+      <td style="width: 70%;">Application for Tender registration</td>
+      <td><a href="ApplicationforNewLicense.html"><button class="btn-click">Get Started</button></a></td>
+      
+    </tr>
+    <tr>
+      
+      <td>Create/Increase corpus (Advance amount)</td>
+      <td><button class="btn-click">Get Started</button></td>
+      
+    </tr>
+    <tr>
+      
+      <td>Submit Tender</td>
+      <td><button class="btn-click">Get Started</button></td>
+      
+    </tr>
+    <tr>
+      
+      <td>View</td>
+      <td><button class="btn-click">Get Started</button></td>
+      
+    </tr>
+    <tr>
+      
+      <td>My Payment Status</td>
+      <td><button class="btn-click">Get Started</button></td>
+      
+    </tr>
+    <tr>
+      
+      <td>Payment of 5% security out of corpus amount</td>
+      <td><button class="btn-click">Get Started</button></td>
+      
+    </tr>
+  </tbody>
+</table>
+ 									 </div>
+									</div>
+
+								<!--	<div class="accordion">
+ 									 <button class="accordion-button collapsed" onclick="toggleAccordion(this)">
+ 									   <span class="accordion-title"><i class="fi fi-tr-member-list"></i> Registration Allotment of Zones Retail Vends</span>
+									    <span class="accordion-icon"><i class="fi fi-sr-multiple"></i></span>
+									</button>
+  									<div class="accordion-content">
+  									  <p>This is the hidden content revealed when the accordion is expanded.</p>
+ 									 </div>
+									</div>-->
+
+									<!--<div class="accordion">
+ 									 <button class="accordion-button collapsed" onclick="toggleAccordion(this)">
+ 									   <span class="accordion-title"><i class="fi fi-tr-admin-alt"></i> Temporary Registration</span>
+									    <span class="accordion-icon"><i class="fi fi-sr-multiple"></i></span>
+									</button>
+  									<div class="accordion-content">
+  									  <p>This is the hidden content revealed when the accordion is expanded.</p>
+ 									 </div>
+									</div>-->
+
+									<div class="accordion">
+ 									 <button class="accordion-button collapsed" onclick="toggleAccordion(this)">
+ 									   <span class="accordion-title"><i class="fi fi-tr-document"></i><span><span> Application for Manufacturing Unit License</span></span></span>
+									    <span class="accordion-icon"><i class="fi fi-sr-multiple"></i></span>
+									</button>
+  									<div class="accordion-content">
+  									 
+
+                      <table class="table bg-white table-striped table-hover">
+  <tbody>
+    <tr>
+      
+      <td style="width: 70%;">Application for LOI</td>
+      <td><a href="ApplicationforNewLicense.html"><button class="btn-click">Get Started</button></a></td>
+      
+    </tr>
+    <tr>
+      
+      <td>Application for Revalidation/Extenstion of LOI</td>
+      <td><button class="btn-click">Get Started</button></td>
+      
+    </tr>
+    <tr>
+      
+      <td>Application for Manufacturing Unit License</td>
+      <td><button class="btn-click">Get Started</button></td>
+      
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+								
+								
+							
+ 									 </div>
+									</div>
+
+									<div class="accordion">
+ 									 <button class="accordion-button collapsed" onclick="toggleAccordion(this)">
+ 									   <span class="accordion-title"><i class="fi fi-tr-convert-document"></i> <span>Application for Other License/Permit</span></span>
+									    <span class="accordion-icon"><i class="fi fi-sr-multiple"></i></span>
+									</button>
+  									<div class="accordion-content">
+  									  <table class="table bg-white table-striped table-hover">
+  <tbody>
+    <tr>
+      
+      <td style="width: 70%;">Application for Fixed License (Except L-2/L-14A)</td>
+      <td><a href="ApplicationforNewLicense.html"><button class="btn-click">Get Started</button></a></td>
+      
+    </tr>
+    <tr>
+      
+      <td>Application for Bar License	</td>
+      <td><button class="btn-click">Get Started</button></td>
+      
+    </tr>
+    <tr>
+      
+      <td>Application for Whole Sale License (L-1/L-13)</td>
+      <td><button class="btn-click">Get Started</button></td>
+      
+    </tr>
+    <tr>
+      
+      <td>Apply for Additonal points for Bar License</td>
+      <td><button class="btn-click">Get Started</button></td>
+      
+    </tr>
+    <tr>
+      
+      <td>My Applications</td>
+      <td><button class="btn-click">Get Started</button></td>
+      
+    </tr>
+  </tbody>
+</table>
+ 									 </div>
+									</div>
+
+									<!--<div class="accordion">
+ 									 <button class="accordion-button collapsed">
+ 									   <span class="accordion-title"><i class="fi fi-tr-wallet-arrow"></i> <span class="disabled">Fee Payment</span></span>
+									    <span class="accordion-icon"><i class="fi fi-sr-multiple"></i></span>
+									</button>
+  									<div class="accordion-content">
+  									  <p>Fee Payment.</p>
+ 									 </div>
+									</div>-->
+
+									<!--<div class="accordion">
+ 									 <button class="accordion-button collapsed">
+ 									   <span class="accordion-title"><i class="fi fi-tr-wallet-buyer"></i> <span>Applications Pending for Payment</span></span>
+									    <span class="accordion-icon"><i class="fi fi-sr-multiple"></i></span>
+									</button>
+  									<div class="accordion-content">
+  									  <p>Applications Pending for Payment.</p>
+ 									 </div>
+									</div>-->
+
+
+								</div>
+							</div>
+						</div>
+								
+								</div>
+								<div class="col-md-4">
+									<div class="card flex-fill">
+										<div class="card-header bg-info border-primary">
+											<h5 class="card-title mb-0"> Quick Links  </h5>
+										</div>
+										<div class="news-marquee bg-white overflow-hidden position-relative" style="height: 380px;">
+										<ul class="list-group list-group-flush">
+											<li><a href="exciseGetFeeDetails.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Payment of License fee and corpus
+													(advance amount) creation for other excise levies</a></li>
+											
+											<!-- <li><a href="#" class="DealerL" onMouseOver="divA()" onMouseOut="divJ()">Permit</a></li> -->
+											<li><a href="pass.html?_synchronizerToken=17470355479042489972416684306432"><i class="fa fa-external-link" aria-hidden="true"></i> Pending
+													Permits for Supply</a></li>
+											<li><a href="raisePermit.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> New Permit Application</a></li>
+											<li><a href="exciseFeePayment.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Fee Payment</a></li>
+
+
+											<li><a href="listPendingRequest.html?error_msg=&amp;&amp;_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Applications pending for payment</a></li>
+											
+											<li style="display: none;"><a href="quotaHistory.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Quota Details</a></li>
+
+											
+											<li><a href="stockBalanceStateView.html?search=balance&amp;_synchronizerToken=17470355479042489972416684306432"><i class="fa fa-external-link" aria-hidden="true"></i> Stock
+													Ledger of Bottled spirit</a></li>
+
+											<li><a href="permitPassView.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Verify genuiness of permit and pass</a></li>
+												
+											<li><a href="brandLabelView.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Verify validity of Brand/Label verification</a></li>
+												
+											
+
+										</ul>
+										</div>
+									</div>
+									</div>
+							</div>
+						</div>
+					</div>
+
+
+					
+					<!-- Page Header -->
+					
+					<!-- /Page Header -->
+
+					
+					
+					
+					
+					
+					
+					
+				</div>		
+			</div>
+			<!-- /Page Wrapper -->
+		
+        </div>
+		<!-- /Main Wrapper -->
+		
+		<!-- jQuery -->
+        <script src="assets/js/jquery-3.2.1.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- Slimscroll JS -->
+        <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+		
+		<script src="assets/plugins/raphael/raphael.min.js"></script>    
+		<script src="assets/plugins/morris/morris.min.js"></script>  
+		<script src="assets/js/chart.morris.js"></script>
+		
+		<!-- Custom JS -->
+		<script  src="assets/js/script.js"></script>
+		<script>
+		function startTime() {
+			var today = new Date();
+			var day = today.getDate();
+			var month = today.getMonth();
+			var year = today.getFullYear();
+			var h = today.getHours();
+			var m = today.getMinutes();
+			var s = today.getSeconds();
+			m = checkTime(m);
+			s = checkTime(s);
+			document.getElementById('txt').innerHTML = "Date: " + day + "/" + month + "/" + year + " " + ": " + h + ":" + m + ":" + s;
+			var t = setTimeout(function () { startTime() }, 500);
+		}
+
+		function checkTime(i) {
+			if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+			return i;
+		}
+	</script>
+	<script>
+  function toggleAccordion(button) {
+	button.classList.toggle("active");
+	const content = button.nextElementSibling;
+	const isExpanded = button.classList.contains("active");
+
+	// Optional accessibility support
+	button.setAttribute("aria-expanded", isExpanded);
+  }
+
+</script>
+  <script>
+     function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+  </script>
+	</body>
+</html>

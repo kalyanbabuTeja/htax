@@ -103,7 +103,7 @@ margin: 10px 0px;
 	opacity: 1;
 }
 .card {
-    border: 1px dotted #8509a5;
+    border-radius: 10px;
     margin-bottom: 1.875rem;
 }
 .sidebar-menu > ul > li > a:hover {
@@ -218,7 +218,7 @@ span.accordion-title {
     align-items: center;
 }
 .card-body {
-    padding: 1px 25px !important;
+    padding: 1px 1px !important;
 }
 .accordion-content {
     background: #2c3e50;
@@ -261,15 +261,49 @@ ul#quick-links {
 ul.list-group.list-group-flush li a {
     position: relative;
     display: block;
-    padding: .75rem 1.25rem;
+    padding: .35rem .75rem;
     margin-bottom: -1px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, .125);
     font-weight: 600;
-    color: #3468bb;
+    color: #033050;
+    font-family: 'Mada';
+    font-size: 16px !important;
 }
 ul.list-group.list-group-flush li {
     list-style: none;
+}
+.news-marquee {
+  position: absolute;
+  top: 10px; /* Adjust if you change heading size */
+  left: 0;
+  right: 0;
+  height: 450px;
+  overflow: hidden;
+}
+
+.news-marquee ul {
+  display: inline-block;
+  animation: scrollUp 10s linear infinite;
+}
+
+@keyframes scrollUp {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-100%); }
+}
+
+.news-marquee ul:hover {
+  animation-play-state: paused; /* Pause on hover */
+}
+ul.list-group.list-group-flush li a:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #007BFF, #0056D2);
+}
+.card-header.bg-info.border-primary {
+    border-radius: 10px;
+    background: linear-gradient(135deg, #007BFF, #0056D2) !important;
+    color: #fff;
+    font-weight: 900 !important;
 }
 			</style>
     </head>
@@ -434,7 +468,7 @@ ul.list-group.list-group-flush li {
 								<span>Main</span>
 							</li>
 							<li  class="active"> 
-								<a href="index_1.html"><i class="fe fe-home"></i> <span>Home</span></a>
+								<a href="Dashboard.html"><i class="fe fe-home"></i> <span>Dashboard</span></a>
 							</li>
 
 							<li class="submenu">
@@ -610,218 +644,53 @@ ul.list-group.list-group-flush li {
 						
 						<div class="card-body">
 							<div class="row">
-								<div class="col-md-6 card">
+								<div class="col-md-8 card">
 
-                  <div class="accordion">
- 									 <button class="accordion-button collapsed" onclick="toggleAccordion(this)">
- 									   <span class="accordion-title"><i class="fi fi-tr-convert-document"></i> <span>Application for Registration for e-Tendering</span></span>
-									    <span class="accordion-icon"><i class="fi fi-sr-multiple"></i></span>
-									</button>
-  									<div class="accordion-content">
-  									  <table class="table bg-white table-striped table-hover">
-  <tbody>
-    <tr>
-      
-      <td style="width: 70%;">Application for Tender registration</td>
-      <td><a href="ApplicationforNewLicense.html"><button class="btn-click">Get Started</button></a></td>
-      
-    </tr>
-    <tr>
-      
-      <td>Create/Increase corpus (Advance amount)</td>
-      <td><button class="btn-click">Get Started</button></td>
-      
-    </tr>
-    <tr>
-      
-      <td>Submit Tender</td>
-      <td><button class="btn-click">Get Started</button></td>
-      
-    </tr>
-    <tr>
-      
-      <td>View</td>
-      <td><button class="btn-click">Get Started</button></td>
-      
-    </tr>
-    <tr>
-      
-      <td>My Payment Status</td>
-      <td><button class="btn-click">Get Started</button></td>
-      
-    </tr>
-    <tr>
-      
-      <td>Payment of 5% security out of corpus amount</td>
-      <td><button class="btn-click">Get Started</button></td>
-      
-    </tr>
-  </tbody>
-</table>
- 									 </div>
-									</div>
+									<div class="card-header">
+										<h5 class="card-title mb-0">"Your License, Your Responsibility — Together for Transparent Governance." </h5>
+												</div>
 
-									<div class="accordion">
- 									 <button class="accordion-button collapsed" onclick="toggleAccordion(this)">
- 									   <span class="accordion-title"><i class="fi fi-tr-member-list"></i> Registration Allotment of Zones Retail Vends</span>
-									    <span class="accordion-icon"><i class="fi fi-sr-multiple"></i></span>
-									</button>
-  									<div class="accordion-content">
-  									  <p>This is the hidden content revealed when the accordion is expanded.</p>
- 									 </div>
-									</div>
+									<div class="card-body mt-4">
+										<h4>Welcome, Kalyanbabu! <br/><br/> Let's get started with your application journey.
 
-									<div class="accordion">
- 									 <button class="accordion-button collapsed" onclick="toggleAccordion(this)">
- 									   <span class="accordion-title"><i class="fi fi-tr-admin-alt"></i> Temporary Registration</span>
-									    <span class="accordion-icon"><i class="fi fi-sr-multiple"></i></span>
-									</button>
-  									<div class="accordion-content">
-  									  <p>This is the hidden content revealed when the accordion is expanded.</p>
- 									 </div>
-									</div>
-
-									<div class="accordion">
- 									 <button class="accordion-button collapsed" onclick="toggleAccordion(this)">
- 									   <span class="accordion-title"><i class="fi fi-tr-document"></i><span><span> Application for Manufacturing Unit License</span></span></span>
-									    <span class="accordion-icon"><i class="fi fi-sr-multiple"></i></span>
-									</button>
-  									<div class="accordion-content">
-  									 
-
-                      <table class="table bg-white table-striped table-hover">
-  <tbody>
-    <tr>
-      
-      <td style="width: 70%;">Application for LOI</td>
-      <td><a href="ApplicationforNewLicense.html"><button class="btn-click">Get Started</button></a></td>
-      
-    </tr>
-    <tr>
-      
-      <td>Application for Revalidation/Extenstion of LOI</td>
-      <td><button class="btn-click">Get Started</button></td>
-      
-    </tr>
-    <tr>
-      
-      <td>Application for Manufacturing Unit License</td>
-      <td><button class="btn-click">Get Started</button></td>
-      
-    </tr>
-  </tbody>
-</table>
-
-
-
-
+											<button class="btn btn-primary btn-click" onclick="window.location.href='Applications.html'">Click Here</button>
+</h4>
+										</div>
 								
-								
-							
- 									 </div>
-									</div>
-
-									<div class="accordion">
- 									 <button class="accordion-button collapsed" onclick="toggleAccordion(this)">
- 									   <span class="accordion-title"><i class="fi fi-tr-convert-document"></i> <span>Application for Other License/Permit</span></span>
-									    <span class="accordion-icon"><i class="fi fi-sr-multiple"></i></span>
-									</button>
-  									<div class="accordion-content">
-  									  <table class="table bg-white table-striped table-hover">
-  <tbody>
-    <tr>
-      
-      <td style="width: 70%;">Application for Fixed License (Except L-2/L-14A)</td>
-      <td><a href="ApplicationforNewLicense.html"><button class="btn-click">Get Started</button></a></td>
-      
-    </tr>
-    <tr>
-      
-      <td>Application for Bar License	</td>
-      <td><button class="btn-click">Get Started</button></td>
-      
-    </tr>
-    <tr>
-      
-      <td>Application for Whole Sale License (L-1/L-13)</td>
-      <td><button class="btn-click">Get Started</button></td>
-      
-    </tr>
-    <tr>
-      
-      <td>Apply for Additonal points for Bar License</td>
-      <td><button class="btn-click">Get Started</button></td>
-      
-    </tr>
-    <tr>
-      
-      <td>My Applications</td>
-      <td><button class="btn-click">Get Started</button></td>
-      
-    </tr>
-  </tbody>
-</table>
- 									 </div>
-									</div>
-
-									<div class="accordion">
- 									 <button class="accordion-button collapsed">
- 									   <span class="accordion-title"><i class="fi fi-tr-wallet-arrow"></i> <span class="disabled">Fee Payment</span></span>
-									    <span class="accordion-icon"><i class="fi fi-sr-multiple"></i></span>
-									</button>
-  									<div class="accordion-content">
-  									  <p>Fee Payment.</p>
- 									 </div>
-									</div>
-
-									<div class="accordion">
- 									 <button class="accordion-button collapsed">
- 									   <span class="accordion-title"><i class="fi fi-tr-wallet-buyer"></i> <span>Applications Pending for Payment</span></span>
-									    <span class="accordion-icon"><i class="fi fi-sr-multiple"></i></span>
-									</button>
-  									<div class="accordion-content">
-  									  <p>Applications Pending for Payment.</p>
- 									 </div>
-									</div>
-
-
 								</div>
-								<div class="col-md-6">
-									<div class="card flex-fill ">
-										<div class="card-header">
+								<div class="col-md-4">
+									<div class="card flex-fill">
+										<div class="card-header bg-info border-primary">
 											<h5 class="card-title mb-0"> Quick Links  </h5>
 										</div>
+										<div class="news-marquee bg-white overflow-hidden position-relative" style="height: 380px;">
 										<ul class="list-group list-group-flush">
-											<li><a href="exciseGetFeeDetails.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL">Payment of License fee and corpus
+											<li><a href="exciseGetFeeDetails.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Payment of License fee and corpus
 													(advance amount) creation for other excise levies</a></li>
 											
 											<!-- <li><a href="#" class="DealerL" onMouseOver="divA()" onMouseOut="divJ()">Permit</a></li> -->
-											<li><a href="pass.html?_synchronizerToken=17470355479042489972416684306432">Pending
+											<li><a href="pass.html?_synchronizerToken=17470355479042489972416684306432"><i class="fa fa-external-link" aria-hidden="true"></i> Pending
 													Permits for Supply</a></li>
-											<li><a href="raisePermit.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL">New Permit Application</a></li>
-											<li><a href="exciseFeePayment.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL">Fee Payment</a></li>
+											<li><a href="raisePermit.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> New Permit Application</a></li>
+											<li><a href="exciseFeePayment.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Fee Payment</a></li>
 
 
-											<li><a href="listPendingRequest.html?error_msg=&amp;&amp;_synchronizerToken=17470355479042489972416684306432" class="DealerL">Applications pending for payment</a></li>
-											<!--                   <li><a href="#" class="DealerL" onclick="javascript:$('#registrationDashBoard').show();">Apply for New Registration</a></li> -->
+											<li><a href="listPendingRequest.html?error_msg=&amp;&amp;_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Applications pending for payment</a></li>
+											
+											<li style="display: none;"><a href="quotaHistory.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Quota Details</a></li>
 
-											<!-- <li><a href="#" class="DealerL"
-												onclick="javascript:$('#ExciseDashBoard').hide();$('#licensedetails').show();">License
-													Details</a></li> -->
-											<li style="display: none;"><a href="quotaHistory.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL">Quota Details</a></li>
-											<li style="display: ;"><a href="iflQuotaHistory.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL">IFL Quota Details</a></li>
-											<li><a href="stockBalanceStateView.html?search=balance&amp;_synchronizerToken=17470355479042489972416684306432">Stock
+											
+											<li><a href="stockBalanceStateView.html?search=balance&amp;_synchronizerToken=17470355479042489972416684306432"><i class="fa fa-external-link" aria-hidden="true"></i> Stock
 													Ledger of Bottled spirit</a></li>
-											<li><a href="permitPassView.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL">Verify genuiness of permit and pass</a></li>
+
+											<li><a href="permitPassView.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Verify genuiness of permit and pass</a></li>
 												
-												<li><a href="brandLabelView.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL">Verify validity of Brand/Label verification</a></li>
+											<li><a href="brandLabelView.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Verify validity of Brand/Label verification</a></li>
 												
-											<!-- <li><a href="#" class="DealerL">Track Application
-													Status</a></li> -->
-											<!-- <li><a href="excisePaymentHistory.html" class="DealerL">Payment History</a></li> -->
-											<!-- <li><a href="licenseeLedgerView.html" class="DealerL">Licensee Ledger</a></li> -->
+											
 
 										</ul>
+										</div>
 									</div>
 									</div>
 							</div>
