@@ -3430,18 +3430,18 @@ footer.main-footer.style-two.style-four.home-5 {
 	height: auto;
   }
   section.categories.spad {
-	background: url(../img/servicebg3.png);
+	background: url(../img/bgfotter.gif);
     background-size: contain;
-    border-top: 1px dotted #eff1f6;
+    
 }
 .categories__item.set-bg:hover {
-    box-shadow: 2px 4px 9px blue;
+    box-shadow: 4px 4px 4px rgb(179 164 164 / 57%), 4px 5px 5px 5px rgb(155 142 142 / 79%);
 }
 .textcat {
     position: absolute;
     background: #fff;
     bottom: 32px;
-    width: 85%;
+    width: 84.5%;
     height: 35px;
     padding: 6px;
     border-radius: 0px 0px 20px 20px;

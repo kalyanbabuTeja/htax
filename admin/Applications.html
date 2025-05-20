@@ -302,7 +302,7 @@ ul.list-group.list-group-flush li a:hover {
     background: linear-gradient(135deg, #007BFF, #0056D2);
 }
 .card-header.bg-info.border-primary {
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
     background: linear-gradient(135deg, #007BFF, #0056D2) !important;
     color: #fff;
     font-weight: 900 !important;
@@ -397,9 +397,7 @@ span.accordion-title {
     align-content: center;
     align-items: center;
 }
-.card-body {
-    padding: 1px 25px !important;
-}
+
 .accordion-content {
     background: #2c3e50;
     background: -webkit-linear-gradient(to top, #3498db, #2c3e50);
@@ -432,13 +430,28 @@ ul#quick-links {
     vertical-align: middle;
 }
 .accordion-button.active + .accordion-content {
-    max-height: 450px;
     padding: 1rem;
+	max-height: 240px;
+    padding: 1rem;
+    height: 240px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .accordion-content td:hover {
     font-weight: 600;
 }
-
+ul.list-group.list-group-flush {
+    height: 362px;
+    overflow-y: scroll;
+}
+.card .card-header {
+    background-color: #ffffff00;
+    border-bottom: 1px solid #eaeaea;
+}
+.page-wrapper > .content {
+    padding: 10px 2px 10px 20px !important;
+	
+}
 			</style>
     </head>
     <body>
@@ -778,7 +791,7 @@ ul#quick-links {
 						
 						<div class="card-body">
 							<div class="row">
-								<div class="col-md-8 card">
+								<div class="col-md-9 card">
 									<div class="card-header"><h4>Apply for New License</h4></div>
 										<div class="card-body">
 							<div class="row">
@@ -828,6 +841,7 @@ ul#quick-links {
       <td><button class="btn-click">Get Started</button></td>
       
     </tr>
+	 
   </tbody>
 </table>
  									 </div>
@@ -962,15 +976,14 @@ ul#quick-links {
 						</div>
 								
 								</div>
-								<div class="col-md-4">
+								<div class="col-md-3">
 									<div class="card flex-fill">
 										<div class="card-header bg-info border-primary">
 											<h5 class="card-title mb-0"> Quick Links  </h5>
 										</div>
-										<div class="news-marquee bg-white overflow-hidden position-relative" style="height: 380px;">
+										<div class="bg-white overflow-hidden position-relative" style="height: 380px;">
 										<ul class="list-group list-group-flush">
-											<li><a href="exciseGetFeeDetails.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Payment of License fee and corpus
-													(advance amount) creation for other excise levies</a></li>
+											<li><a href="exciseGetFeeDetails.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Excise License Fee & Corpus Payment Entry</a></li>
 											
 											<!-- <li><a href="#" class="DealerL" onMouseOver="divA()" onMouseOut="divJ()">Permit</a></li> -->
 											<li><a href="pass.html?_synchronizerToken=17470355479042489972416684306432"><i class="fa fa-external-link" aria-hidden="true"></i> Pending

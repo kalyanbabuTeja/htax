@@ -300,34 +300,31 @@ ul.list-group.list-group-flush li a:hover {
     background: linear-gradient(135deg, #007BFF, #0056D2);
 }
 .card-header.bg-info.border-primary {
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px;
     background: linear-gradient(135deg, #007BFF, #0056D2) !important;
     color: #fff;
     font-weight: 900 !important;
 }
-.col-md-9.card {
-    box-shadow: 1px 2px 3px 4px #ccc;
-	background: url(../img/dashbg.jpg) center;
-    background-size: cover;
-}
-ul.list-group.list-group-flush {
-    height: 362px;
-    overflow-y: scroll;
-}
-.card .card-header {
-    background-color: #ffffff00;
-    border-bottom: 1px solid #eaeaea;
-}
-.page-wrapper > .content {
-    padding: 10px 2px 10px 20px !important;
-	
-}
-.col-md-9.card .card {
-    margin-top: 20px;
-    padding: 20px;
-    background: #eceefb;
-    box-shadow: 1px 2px 3px #ccc;
-}
+
+.card {
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .icon-circle {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f0f0;
+      margin-right: 1rem;
+    }
 			</style>
     </head>
     <body>
@@ -471,7 +468,7 @@ ul.list-group.list-group-flush {
 							</div>
 							<a class="dropdown-item" href="profile.html">My Profile</a>
 							<a class="dropdown-item" href="settings.html">Settings</a>
-							<a class="dropdown-item" href="login.html">Logout</a>
+							<a class="dropdown-item" href="../login.html">Logout</a>
 						</div>
 					</li>
 					<!-- /User Menu -->
@@ -666,62 +663,89 @@ ul.list-group.list-group-flush {
 					<div class="">
 						
 						<div class="card-body">
-							<div class="row">
-								<div class="col-md-9 card">
-
-									<div class="card-header">
-										<h5 class="card-title mb-0">"Your License, Your Responsibility — Together for Transparent Governance." </h5>
-												</div>
-<div class="card">
-	<div class="card-body mt-4">
-										<h4>Welcome, Kalyanbabu! <br/><br/> Let's get started with your application journey.
-
-											<button class="btn btn-primary btn-click" onclick="window.location.href='Applications.html'">Click Here</button>
-</h4>
+							<div class="card">
+								<div class="card-body">
+									<div class="table table-bordered">
+										<div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+											
+											<div class="row"><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table class="datatable table table-hover table-center mb-0 dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+											<thead>
+												<tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Invoice Number: activate to sort column descending" style="width: 120.031px;">Licensee Name</th>
+													<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Patient ID: activate to sort column ascending" style="width: 73.7969px;">Date of Registration</th>
+													<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Patient Name: activate to sort column ascending" style="width: 149.453px;">Licensee Number</th>
+													<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Created Date: activate to sort column ascending" style="width: 98.7031px;">Licensee Applied Date</th>
+													<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Total Amount: activate to sort column ascending" style="width: 101.312px;">Date of License Grant</th>
+													
+													<th class="text-center sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 62px;">Status</th>
+													<th class="text-center sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 124.609px;">Actions</th>
+													</tr>
+											</thead>
+											<tbody>
+												
+												
+												
+												
+												
+												
+												
+												
+												
+												
+											<tr role="row" class="odd">
+													<td class="sorting_1"><a href="invoice.html">L12A</a></td>
+													<td>12-May-2025</td>
+													<td>
+														<h2 class="table-avatar">
+															120520250001
+														</h2>
+													</td>
+													<td>10-May-2025</td>
+													<td>20-May-2025</td>
+													
+													<td class="text-center">
+														<span class="badge badge-pill bg-success inv-badge">Active</span>
+													</td>
+													<td class="text-center">
+														<div class="actions">
+															
+															<a data-toggle="modal" href="#edit_invoice_report" class="btn btn-sm bg-success-light mr-2">
+																<i class="fe fe-pencil"></i> View
+															</a>
+															
+														</div>
+													</td>
+												</tr>
+												<tr role="row" class="odd">
+													<td class="sorting_1"><a href="invoice.html">L12A</a></td>
+													<td>12-May-2025</td>
+													<td>
+														<h2 class="table-avatar">
+															120520250001
+														</h2>
+													</td>
+													<td>10-May-2025</td>
+													<td>20-May-2025</td>
+													
+													<td class="text-center">
+														<span class="badge badge-pill bg-danger inv-badge">Inactive</span>
+													</td>
+													<td class="text-center">
+														<div class="actions">
+															
+															<a data-toggle="modal" href="#edit_invoice_report" class="btn btn-sm bg-success-light mr-2">
+																<i class="fe fe-pencil"></i> View
+															</a>
+															
+														</div>
+													</td>
+												</tr>
+												
+												</tbody>
+										</table></div></div>
+										
 										</div>
-	</div>
-									
-								
+									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="card flex-fill">
-										<div class="card-header bg-info border-primary">
-											<h5 class="card-title mb-0"> Quick Links  </h5>
-										</div>
-										<div class="bg-white overflow-hidden position-relative" style="height: 380px;">
-										<ul class="list-group list-group-flush">
-											<li><a href="exciseGetFeeDetails.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Excise License Fee & Corpus Payment Entry</a></li>
-											
-											<!-- <li><a href="#" class="DealerL" onMouseOver="divA()" onMouseOut="divJ()">Permit</a></li> -->
-											<li><a href="pass.html?_synchronizerToken=17470355479042489972416684306432"><i class="fa fa-external-link" aria-hidden="true"></i> Pending
-													Permits for Supply</a></li>
-											<li><a href="raisePermit.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> New Permit Application</a></li>
-											<li><a href="exciseFeePayment.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Fee Payment</a></li>
-
-
-											<li><a href="listPendingRequest.html?error_msg=&amp;&amp;_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Applications pending for payment</a></li>
-											
-											<li style="display: none;"><a href="quotaHistory.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Quota Details</a></li>
-
-											
-											<li><a href="stockBalanceStateView.html?search=balance&amp;_synchronizerToken=17470355479042489972416684306432"><i class="fa fa-external-link" aria-hidden="true"></i> Stock
-													Ledger of Bottled spirit</a></li>
-
-											<li><a href="permitPassView.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Verify genuiness of permit and pass</a></li>
-												
-											<li><a href="brandLabelView.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Verify validity of Brand/Label verification</a></li>
-												
-											<li><a href="exciseFeePayment.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Fee Payment</a></li>
-
-
-											<li><a href="listPendingRequest.html?error_msg=&amp;&amp;_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Applications pending for payment</a></li>
-											
-											<li style="display: none;"><a href="quotaHistory.html?_synchronizerToken=17470355479042489972416684306432" class="DealerL"><i class="fa fa-external-link" aria-hidden="true"></i> Quota Details</a></li>
-
-										</ul>
-										</div>
-									</div>
-									</div>
 							</div>
 						</div>
 					</div>
@@ -743,7 +767,8 @@ ul.list-group.list-group-flush {
 					
 					
 					
-				</div>		
+				</div>	
+				
 			</div>
 			<!-- /Page Wrapper -->
 		
@@ -777,7 +802,7 @@ ul.list-group.list-group-flush {
 			var s = today.getSeconds();
 			m = checkTime(m);
 			s = checkTime(s);
-			document.getElementById('txt').innerHTML = "Date: " + day + "/" + (month+1) + "/" + year + " " + ": " + h + ":" + m + ":" + s;
+			document.getElementById('txt').innerHTML = "Date: " + day + "/" + month + "/" + year + " " + ": " + h + ":" + m + ":" + s;
 			var t = setTimeout(function () { startTime() }, 500);
 		}
 
