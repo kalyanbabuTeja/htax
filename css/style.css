@@ -3650,7 +3650,8 @@ a.campaign-icon i.fi{
 	
 }
 section.service {
-    background: url(../img/bg1.svg);
+    background: url(../img/bg6.jpg) center center no-repeat;
+    background-size: cover;
 }
 
 .dsc-banner-outer {

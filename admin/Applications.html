@@ -74,16 +74,17 @@ margin: 10px 0px;
 }
 
 .btn-click {
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    background: linear-gradient(135deg, #007BFF, #0056D2);
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 6px 24px;
+        font-size: 13px;
+        font-weight: bold;
+        margin: 2px 0px;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        background: linear-gradient(135deg, #007BFF, #0056D2);
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .btn-click:hover {
@@ -270,7 +271,7 @@ ul.list-group.list-group-flush li a {
     font-weight: 600;
     color: #033050;
     font-family: 'Mada';
-    font-size: 16px !important;
+    font-size: 13px !important;
 }
 ul.list-group.list-group-flush li {
     list-style: none;
@@ -333,8 +334,8 @@ ul.list-group.list-group-flush li a:hover {
 .accordion-button {
   width: 100%;
   background-color: #f9f9f9;
-  padding: 10px;
-  font-size: 1.1rem;
+  padding: 5px 10px;
+  font-size: 14px;
   font-weight: bold;
   border: none;
   text-align: left;
@@ -375,7 +376,7 @@ ul.list-group.list-group-flush li a:hover {
 }
 i.fi {
     background: #033355;
-    border-radius: 50%;
+    border-radius: 30%;
     padding: 8px 17px;
     color: #fff;
     box-shadow: 1px 2px 3px #ccc;
@@ -433,7 +434,7 @@ ul#quick-links {
     padding: 1rem;
 	max-height: 240px;
     padding: 1rem;
-    height: 240px;
+    height: 155px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -451,6 +452,18 @@ ul.list-group.list-group-flush {
 .page-wrapper > .content {
     padding: 10px 2px 10px 20px !important;
 	
+}
+table.table.bg-white.table-striped.table-hover tr {
+    display: flex;
+    justify-content: space-between;
+	align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+table.table.bg-white.table-striped.table-hover tr td{
+	border: none !important;
+	padding: 2px 15px !important;
 }
 			</style>
     </head>
@@ -687,7 +700,7 @@ ul.list-group.list-group-flush {
 							
 
 					<li class="submenu">
-								<a href="#"><i class="fe fe-document"></i> <span> My Profile</span> <span class="menu-arrow"></span></a>
+								<a href="#"><i class="fe fe-document"></i> <span> Download</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li><a href="#">Download License </a></li>
 									<li><a href="#">Download L-1C Copy</a></li>
@@ -695,7 +708,7 @@ ul.list-group.list-group-flush {
 							</li>
 
 
-							<li><a href="index.html"><i class="fi fi-sr-payment-pos"></i> Index-1</a></li>
+							<li><a href="index.html"><i class="fe fe-lock"></i> <span>Forgot Password</span></a></li>
 
 
 							<!-- <li> 
@@ -807,7 +820,7 @@ ul.list-group.list-group-flush {
   <tbody>
     <tr>
       
-      <td style="width: 70%;">Application for Tender registration</td>
+      <td>Application for Tender registration</td>
       <td><a href="ApplicationforNewLicense.html"><button class="btn-click">Get Started</button></a></td>
       
     </tr>
@@ -879,7 +892,7 @@ ul.list-group.list-group-flush {
   <tbody>
     <tr>
       
-      <td style="width: 70%;">Application for LOI</td>
+      <td>Application for LOI</td>
       <td><a href="ApplicationforNewLicense.html"><button class="btn-click">Get Started</button></a></td>
       
     </tr>
@@ -917,7 +930,7 @@ ul.list-group.list-group-flush {
   <tbody>
     <tr>
       
-      <td style="width: 70%;">Application for Fixed License (Except L-2/L-14A)</td>
+      <td>Application for Fixed License (Except L-2/L-14A)</td>
       <td><a href="ApplicationforNewLicense.html"><button class="btn-click">Get Started</button></a></td>
       
     </tr>
