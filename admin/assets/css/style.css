@@ -90,8 +90,11 @@ input:-webkit-autofill:focus {
     border: 1px solid #ddd;
     box-shadow: none;
     color: #333;
-    font-size: 15px;
+    font-size: 14px;
     height: 40px;
+}
+label{
+	font-size: 14px !important;
 }
 .form-control:focus {
 	border-color: #00d0f1;
