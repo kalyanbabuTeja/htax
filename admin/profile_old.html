@@ -23,7 +23,7 @@
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
-		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+		
 		<style>
 			.page-wrapper {
  
@@ -193,7 +193,22 @@ div#datetime {
   max-height: 200px;
   padding: 1rem;
 }
-
+i.fi {
+    background: #033355;
+    border-radius: 50%;
+    padding: 8px 17px;
+    color: #fff;
+    box-shadow: 1px 2px 3px #ccc;
+    display: flex;
+    width: 8%;
+    height: 9%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
 span.accordion-title {
     color: #3468b5;
     display: flex;
@@ -203,7 +218,7 @@ span.accordion-title {
     align-items: center;
 }
 .card-body {
-    padding: 1px 1px !important;
+    padding: 1.5rem;
 }
 .accordion-content {
     background: #2c3e50;
@@ -253,7 +268,7 @@ ul.list-group.list-group-flush li a {
     font-weight: 600;
     color: #033050;
     font-family: 'Mada';
-    font-size: 16px !important;
+    font-size: 13px !important;
 }
 ul.list-group.list-group-flush li {
     list-style: none;
@@ -290,81 +305,69 @@ ul.list-group.list-group-flush li a:hover {
     color: #fff;
     font-weight: 900 !important;
 }
-.container.py-5.boxes{
+.col-md-9.card {
+    box-shadow: 1px 2px 3px 4px #ccc;
+	background: url(../img/dashbg.jpg) center;
+    background-size: cover;
+}
+ul.list-group.list-group-flush {
+    height: 362px;
+    overflow-y: scroll;
+}
+.card .card-header {
+    background-color: #ffffff00;
+    border-bottom: 1px solid #eaeaea;
+}
+.page-wrapper > .content {
+    padding: 10px 2px 10px 20px !important;
+	
+}
+.col-md-9.card .card {
+    margin-top: 20px;
+    padding: 20px;
+    background: #eceefb;
+    box-shadow: 1px 2px 3px #ccc;
+}
 .card {
-      border: 1px solid #ccc;
-      border-radius: 1rem;
-      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .icon-circle {
-      width: 3rem;
-      height: 3rem;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #f0f0f0;
-      margin-right: 1rem;
-    }
-	.text-muted {
-    color: #ffffff !important;
+    border: 1px solid #f0f0f0;
+    margin-bottom: 1.875rem;
+    margin: 0px 40px 10px 0px !important;
 }
-.card.p-3.d-flex.flex-row.align-items-center h5 {
-    color: #fff !important;
-        font-weight: 900;
-        font-size: 24px;
-        margin-top: 12px;
-        font-family: 'Mada';
+.form-control {
+    border: 1px solid #ddd;
+    box-shadow: none;
+    color: #333;
+    font-size: 15px;
+    height: 30px;
 }
-.dash1 {
-   
-	background: linear-gradient(180deg, #6a11cb 0%, #2575fc 100%);
+.form-group {
+    margin-bottom: 12px;
 }
-.dash2 {
-    background: linear-gradient(180deg, #11998e, #38ef7d 100%);
+label {
+    display: inline-block;
+    margin-bottom: 0px;
 }
-.dash3 {
-    background: linear-gradient(180deg, #f7971e, #ffd200 100%);
-
-}
-.dash4 {
-    background:linear-gradient(180deg, #ff416c, #ff4b2b 100%);
-}
-.bg-success, .badge-success {
-    background-color: #31df80 !important;
-}
-.bg-primary, .badge-primary {
-    background-color: #3362f3 !important;
+hr {
+    margin: 0px 0px 8px 0px !important;
 }
 
-	}
-	.container.py-5.boxes {
-    padding: 10px !important;
+
+.modal-body {
+    background: #ececf0;
 }
-	.card {
-    margin: 12px;
+
+div#myModal {
+    background-color: rgba(0, 0, 0, 0.5);
 }
-.text-muted.small {
-    font-size: 18px;
-    font-weight: 600;
-    font-family: 'Mada';
+.modal-dialog {
+    margin-top: 100px;
 }
-i.fi {
-    display: flex;
-    font-weight: 900;
-    font-size: 24px;
-    flex-direction: column;
-}
-.row.g-4 a {
-    width: 100%;
-    display: contents;
+.card {
+    border: 1px solid #fff;
+    margin-bottom: 12px;
+    box-shadow: 0px 0px 1px 1px #ccc;
 }
 			</style>
-			
     </head>
     <body>
 	
@@ -507,7 +510,7 @@ i.fi {
 							</div>
 							<a class="dropdown-item" href="profile.html">My Profile</a>
 							<a class="dropdown-item" href="changepassword.html">Change Password</a>
-							<a class="dropdown-item" href="../login.html">Logout</a>
+							<a class="dropdown-item" href="login.html">Logout</a>
 						</div>
 					</li>
 					<!-- /User Menu -->
@@ -607,7 +610,7 @@ i.fi {
 							</li>
 
 
-							<!-- <li><a href="index.html"><i class="fe fe-lock"></i> <span>Forgot Password</span></a></li> -->
+							<!--<li><a href="index.html"><i class="fe fe-lock"></i> <span>Forgot Password</span></a></li>-->
 
 
 							<!-- <li> 
@@ -695,69 +698,273 @@ i.fi {
 			<!-- /Sidebar -->
 			
 			<!-- Page Wrapper -->
-            <div class="page-wrapper">
-			
-            <div class="card">
-				<div class="card-header bg-info border-primary">
-					<h4 class="mb-0 text-white">Dashboard</h4>
-				</div>
-				<div class="container py-5 boxes">
-  <div class="row g-4">
-<a href="License.html" target="_blank">
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="card p-3 d-flex flex-row align-items-center dash1">
-        <div class="icon-circle bg-primary text-white">
-          <i class="fi fi-tr-memo-circle-check"></i>
-        </div>
-        <div>
-          <div class="text-muted small">Total Licensee</div>
-          <h5 class="mb-0">12</h5>
-        </div>
-      </div>
-    </div>
-</a>
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="card p-3 d-flex flex-row align-items-center dash2">
-        <div class="icon-circle bg-success text-white">
-          <i class="fi fi-tr-digital-payment"></i>
-        </div>
-        <div>
-          <div class="text-muted small">Payment</div>
-          <h5 class="mb-0">7</h5>
-        </div>
-      </div>
-    </div>
+             <div class="page-wrapper">
+                <div class="content container-fluid">
+					
+					<!-- Page Header -->
+					<div class="page-header p-0 m-0">
+						<div class="row">
+							<div class="col">
+								<h3 class="page-title">Profile</h3>
+								<ul class="breadcrumb">
+									<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+									<li class="breadcrumb-item active">Profile</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- /Page Header -->
+					
+					<div class="row">
+						<div class="col-md-12">
+							
+							
+							<div class="tab-content profile-tab-cont p-0">
+								
+								<!-- Personal Details Tab -->
+								
+								
+									<!-- Personal Details -->
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="card">
+												<div class="card-body">
+													<h5 class="card-title d-flex justify-content-between">
+														<span>Applicant Details:-</span> 
+														<a class="edit-link" data-toggle="modal" href="#edit_personal_details"><i class="fa fa-edit mr-1"></i>Edit</a>
+													</h5>
+													<div class="row d-flex">
+														<p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Applicant Name &nbsp; &nbsp;:</p>
+														<p class="col-sm-2">John Doe</p>
+														<p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Middle Name &nbsp; &nbsp;:</p>
+														<p class="col-sm-2">Babu</p>
+														<p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Last Name &nbsp; &nbsp;:</p>
+														<p class="col-sm-2">Kalyan</p>
+													</div>
 
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="card p-3 d-flex flex-row align-items-center dash3">
-        <div class="icon-circle bg-warning text-white">
-          <i class="fi fi-tr-audit"></i>
-        </div>
-        <div>
-          <div class="text-muted small">Penalties</div>
-          <h5 class="mb-0">3</h5>
-        </div>
-      </div>
-    </div>
+													<div class="row d-flex">
+														<p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Father's Name &nbsp; &nbsp;:</p>
+														<p class="col-sm-2">Pawan Kalyan</p>
+														<p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Date of Birth &nbsp; &nbsp;:</p>
+														<p class="col-sm-2">21 July 1989.</p>
+														
+													</div>
+													<hr/>
+													<h5 class="card-title d-flex justify-content-between">
+														<span>Residential Address of Applicant :-</span> 
+														
+													</h5>
+													<div class="row d-flex">
+														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">House/Building No. &nbsp; &nbsp;:</p>
+														<p class="col-sm-3">12-A/1</p>
+														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">Street/Area &nbsp; &nbsp;:</p>
+														<p class="col-sm-3">Balaji Colony</p>
+														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">City/Village &nbsp; &nbsp;:</p>
+														<p class="col-sm-3">Hyderabad</p>
+													
+														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">District &nbsp; &nbsp;:</p>
+														<p class="col-sm-3">Hyderabad</p>
+														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">State &nbsp; &nbsp;:</p>
+														<p class="col-sm-3">Haryana</p>
 
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="card p-3 d-flex flex-row align-items-center dash4">
-        <div class="icon-circle bg-danger text-white">
-          <i class="fi fi-tr-file-question"></i>
-        </div>
-        <div>
-          <div class="text-muted small">Pending </div>
-          <h5 class="mb-0">2</h5>
-        </div>
-      </div>
-    </div>
+														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">Pin code &nbsp; &nbsp;:</p>
+														<p class="col-sm-3">123456</p>
+														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">Communication Email ID &nbsp; &nbsp;:</p>
+														<p class="col-sm-3">htax@gmail.com.</p>
+														
+														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">Mobile No. &nbsp; &nbsp;:</p>
+														<p class="col-sm-3">+91 1234567898</p>
+														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">Telephone No. &nbsp; &nbsp;:</p>
+														<p class="col-sm-3">-</p>
+														
+														
+														
+														
+													</div>
+													<h6 class="text-danger font-weight-bold">Note: License Type, Business District and Constitution of Business cannot be changed after saving the Application form.</h6>
+												</div>
+											</div>
+											
+											<!-- Edit Details Modal -->
+											<div class="modal fade" id="edit_personal_details" aria-hidden="true" role="dialog">
+												<div class="modal-dialog  modal-lg modal-dialog-centered" role="document" >
+													<div class="modal-content">
+														<div class="modal-header p-3">
+															<h5 class="modal-title">Applicant Details</h5>
+															<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+															<form>
+																<div class="row form-row">
+																	<div class="col-12 col-sm-4">
+																		<div class="form-group">
+																			<label>Applicant Name</label>
+																			<input type="text" class="form-control" value="First Name">
+																		</div>
+																	</div>
+																	<div class="col-12 col-sm-4">
+																		<div class="form-group">
+																			<label>Middle Name</label>
+																			<input type="text"  class="form-control" value="Middle Name">
+																		</div>
+																	</div>
+																	<div class="col-12 col-sm-4">
+																		<div class="form-group">
+																			<label>Last Name</label>
+																			<input type="text"  class="form-control" value="Last Name">
+																		</div>
+																	</div>
+																	
+																	<div class="col-12 col-sm-4">
+																		<div class="form-group">
+																			<label>Father's Name</label>
+																			<input type="email" class="form-control" value="">
+																		</div>
+																	</div>
+																	<div class="col-12 col-sm-4">
+																		<div class="form-group">
+																			<label>Date of birth</label>
+																			<input type="date" value="" class="form-control">
+																		</div>
+																	</div>
+																	<div class="col-12 col-sm-4">
+																		<div class="form-group">
+																			<label>Mobile No.</label>
+																			<input type="text" class="form-control" value="">
+																		</div>
+																	</div>
+																	<div class="col-12">
+																		<h5 class="form-title"><span>Residential Address of Applicant </span></h5>
+																	</div>
+																	
+																	<div class="col-12 col-sm-3">
+																		<div class="form-group">
+																			<label>House/Building No.</label>
+																			<input type="text" class="form-control" value="">
+																		</div>
+																	</div>
+																	<div class="col-12 col-sm-3">
+																		<div class="form-group">
+																			<label>Street/Area</label>
+																			<input type="text" class="form-control" value="">
+																		</div>
+																	</div>
+																	<div class="col-12 col-sm-3">
+																		<div class="form-group">
+																			<label>City/Village</label>
+																			<input type="text" class="form-control" value="">
+																		</div>
+																	</div>
+																	<div class="col-12 col-sm-3">
+																		<div class="form-group">
+																			<label>District</label>
+																			<input type="text" class="form-control" value="">
+																		</div>
+																	</div>
+																	<div class="col-12 col-sm-3">
+																		<div class="form-group">
+																			<label>State</label>
+																			<input type="text" class="form-control" value="">
+																		</div>
+																	</div>
+																	<div class="col-12 col-sm-3">
+																		<div class="form-group">
+																			<label>Pin Code</label>
+																			<input type="text" class="form-control" value="">
+																		</div>
+																	</div>
+																	<div class="col-12 col-sm-3">
+																		<div class="form-group">
+																			<label>Email ID</label>
+																			<input type="text" class="form-control" value="">
+																		</div>
+																	</div>
+																	
+																	<div class="col-12 col-sm-3">
+																		<div class="form-group">
+																			<label>Telephone No.</label>
+																			<input type="text" class="form-control" value="">
+																		</div>
+																	</div>
+																</div>
+																<button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+															</form>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- /Edit Details Modal -->
+											
+										</div>
 
-  </div>
-</div>	
-				</div>
+									
+									</div>
+									<!-- /Personal Details -->
+
+								
+								<!-- /Personal Details Tab -->
+								
+								
+								
+							</div>
+						</div>
+					</div>
 				
+				</div>			
 			</div>
 			<!-- /Page Wrapper -->
+
+
+			<div id="myModal" class="modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Applicant Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		<img src="assets/img/profile.gif" alt="Success" style="width: auto; height: 200px; margin: 0 auto; display: block;">
+		<p style="text-align: center; font-size: 20px; font-weight: bold; color: #333;">Congratulations!</p>
+		<p style="text-align: center; font-size: 16px; color: #555;font-weight: 600;">Your Profile has been successfully Updated.</p>
+       
+<p><b>Disclaimer!</b> : <br/>Incomplete Deatils and irrelevant Profile will be returned to the applicant.</p>
+      </div>
+      <!--<div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>-->
+    </div>
+  </div>
+</div>
+
+			
+        </div>
+		<script>
+    // Show the modal when the page loads
+    window.onload = function() {
+        var modal = document.getElementById("myModal");
+        var closeBtn = document.querySelector(".close");
+
+        // Show the modal
+        modal.style.display = "block";
+
+        // Close the modal when the close button is clicked
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        // Close the modal if the user clicks outside the content
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    };
+</script>
 		
         </div>
 		<!-- /Main Wrapper -->
@@ -789,7 +996,7 @@ i.fi {
 			var s = today.getSeconds();
 			m = checkTime(m);
 			s = checkTime(s);
-			document.getElementById('txt').innerHTML = "Date: " + day + "/" + month + "/" + year + " " + ": " + h + ":" + m + ":" + s;
+			document.getElementById('txt').innerHTML = "Date: " + day + "/" + (month+1) + "/" + year + " " + ": " + h + ":" + m + ":" + s;
 			var t = setTimeout(function () { startTime() }, 500);
 		}
 
@@ -804,5 +1011,27 @@ i.fi {
 	  nav.classList.toggle('active');
 	 } // Added missing closing brace here
   </script>
+  <script>
+    // Show the modal when the page loads
+    window.onload = function() {
+        var modal = document.getElementById("myModal");
+        var closeBtn = document.querySelector(".close");
+
+        // Show the modal
+        modal.style.display = "block";
+
+        // Close the modal when the close button is clicked
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        // Close the modal if the user clicks outside the content
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    };
+</script>
 	</body>
 </html>
