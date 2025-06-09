@@ -30,49 +30,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-         .card {
-      background-color: #fff;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      padding: 30px;
-      width: 300px;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .icon {
-      background-color: #e6edfa;
-      width: 70px;
-      height: 70px;
-      margin: 0 auto 20px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .icon img {
-      width: 35px;
-      height: 35px;
-    }
-
-    h3 {
-      font-size: 20px;
-      color: #0c1c44;
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-size: 15px;
-      color: #444e64;
-      line-height: 1.6;
-    }
-
-
+      
     .bg-light {
     --bs-bg-opacity: 1;
     background-color: rgb(227 240 255) !important;
@@ -130,103 +88,9 @@
     background: #fff;
     border-radius: 20px 20px 0px 0px;
 }
-.marquee-container {
-     
-      height: 250px;
-      overflow: hidden;
-      
-      
-      position: relative;
-      
-    }
-
-    .marquee-content {
-      display: inline-block;
-      animation: scroll-up 10s linear infinite;
-    }
-
-    @keyframes scroll-up {
-      0% {
-        transform: translateY(100%);
-      }
-      100% {
-        transform: translateY(-100%);
-      }
-    }
 
     /* Pause animation on hover */
-    .marquee-container:hover .marquee-content {
-      animation-play-state: paused;
-    }
-
-    .marquee-content p {
-    margin: 11px 11px;
-    font-size: 16px;
-    line-height: 1.4;
-    color: #333;
-    border: 1px solid #6c9fb0;
-    border-radius: 8px;
-    box-shadow: 1px 2px 3px;
-    width: 104%;
-}
-ul.RLinks li {
-    padding: 6px 0px;
-    text-align: left;
-    text-indent: -22px;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 11px;
-  *width: 90%;
-  *max-width: 800px;
-}
-.grid-container{
-.card {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  padding: 30px 10px;
-  text-align: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border-bottom: 5px solid #2b6fff;
-  width: 200px;
-}
-ul.hover-list {
-    display: none;
-}
-.card ul.hover-list:hover {
-    display: block !important;
-    position: absolute;
-    background: #2b6fff;
-    width: 101%;
-    left: -1px;
-    top: -1px;
-    height: 163px;
-    border-radius: 9px;
-    list-style: none;
-}
-}
-.card i {
-  color: #2b6fff;
-  width: 36px;
-  height: 36px;
-  margin-bottom: 15px;
-}
-
-.card span {
-  font-weight: 600;
-  color: #333;
-  font-size: 16px;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
-}
-
+    
 
 .login-container h2 {
   margin-bottom: 20px;
@@ -279,110 +143,12 @@ ul.RLinks a {
     margin-left: -8px;
     font-family: inherit;
 }
-svg {
-    overflow: visible !important;
-    color: #1870a2;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 10px;
-    height: 41px;
-}
 
 
 
 
 
-.demo12{
-    .card {
-  width: 200px;
-  height: 165px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border-bottom: 5px solid #2b6fff;
-}
 
-.card-content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.default-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #000;
-  font-weight: 600;
-  font-size: 16px;
-  transition: all 0.4s ease;
-  z-index: 1;
-  margin-top: 10px;
-  width: 100%;
-}
-ul.hover-list h3 {
-    margin-top: 15px;
-    font-weight: 900;
-    font-family: inherit;
-    color: #fff;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 5px;
-    padding-bottom: 6px;
-}
-ul.hover-list li:hover {
-    background: #fff;
-    color: #2b6fff;
-}
-.hover-list {
-    position: absolute;
-        bottom: -195%;
-        left: -32px;
-        width: 146%;
-        height: 165px;
-        padding: 0px 0;
-        margin: 0;
-        background: #2b6fff;
-        list-style: none;
-        transition: bottom 0.4s ease;
-        color: white;
-        border-radius: 0 0 12px 12px;
-        z-index: 2;
-        margin-bottom: -31px;
-}
-
-.hover-list li {
-  padding: 5px 0;
-  font-size: 14px;
-}
-
-/* On hover */
-.card:hover .default-text {
-  opacity: 0;
-}
-
-.card:hover .hover-list {
-  bottom: 0;
-}
-
-
-}
-.demo12.d-flex .card {
-    margin: 5px 5px;
-}
-
-p#usefulllinks {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    font-weight: 600;
-    color: #0078d7;
-}
     </style>
 </head>
 

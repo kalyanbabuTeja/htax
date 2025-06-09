@@ -1,0 +1,35 @@
+section#breadcrumb {
+        background: #607d8b38;
+    margin-bottom: 2px;
+}
+.breadcrumb__text {
+    margin-bottom: 4px;
+    text-align: right;
+    padding: 5px;
+    border-radius: 6px;
+    color: #fff !important;
+}
+.breadcrumb__text .breadcrumb__option span {
+    font-size: 16px;
+    color: #00315e;
+    font-weight: 500;
+}
+
+ h3 {
+      font-size: 20px;
+      color: #0c1c44;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #444e64;
+      line-height: 1.6;
+    }
+
+
+    .bg-light {
+    --bs-bg-opacity: 1;
+    background-color: #fff !important;
+    padding: 20px;
+}

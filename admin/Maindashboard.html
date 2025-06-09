@@ -97,14 +97,19 @@ margin: 10px 0px;
     background-color: #0b3654 !important;
 }
 .page-wrapper {
-    background: linear-gradient(45deg, rgb(255 255 255 / 71%) 0%, rgb(255 255 255/ 65%) 100%), url(assets/img/dbbg.jpg) center center no-repeat;;
+    background: linear-gradient(45deg, rgb(255, 255, 255) 0%, rgba(116, 15, 214, 0.27) 100%) 0% 0% / cover, url(assets/img/hero-bg.jpg) center center no-repeat;
+	
+	/* linear-gradient(45deg, rgb(255 255 255 / 71%) 0%, rgb(255 255 255/ 65%) 100%), url(assets/img/dbbg.jpg) center center no-repeat;; */
     background-position: center;
     background-size: cover;
 	opacity: 1;
+	
 }
 .card {
     border-radius: 10px;
     margin-bottom: 1.875rem;
+	box-shadow: 1px 2px 3px #8f8d8d;
+	margin-bottom: 20px;;
 }
 .sidebar-menu > ul > li > a:hover {
     background: linear-gradient(135deg, #007BFF, #0056D2);
@@ -289,7 +294,9 @@ ul.list-group.list-group-flush li a:hover {
     background: linear-gradient(135deg, #007BFF, #0056D2) !important;
     color: #fff;
     font-weight: 900 !important;
+	    padding: 5px 20px !important;
 }
+
 .container.py-5.boxes{
 .card {
       border: 1px solid #ccc;
@@ -322,25 +329,27 @@ ul.list-group.list-group-flush li a:hover {
 }
 .dash1 {
    
-	background: linear-gradient(180deg, #6a11cb 0%, #2575fc 100%);
+	background: linear-gradient(to bottom, #3F51B5 10%, #132585 90%) !important;
 }
 .dash2 {
-    background: linear-gradient(180deg, #11998e, #38ef7d 100%);
+    background: linear-gradient(to bottom, #2e971d 10%, #147008 90%) !important;
 }
 .dash3 {
-    background: linear-gradient(180deg, #f7971e, #ffd200 100%);
+    background: linear-gradient(to bottom, #86930b 0%, #918308 100%) !important;
 
 }
 .dash4 {
-    background:linear-gradient(180deg, #ff416c, #ff4b2b 100%);
+    background: linear-gradient(to bottom, #D32F2F 0%, #ff4b2b 100%) !important;
 }
 .bg-success, .badge-success {
-    background-color: #31df80 !important;
+    background-color: rgba(0, 0, 0, 0.12) !important;
 }
 .bg-primary, .badge-primary {
-    background-color: #3362f3 !important;
+    background-color: rgba(0, 0, 0, 0.12) !important;
 }
-
+.bg-warning, .badge-warning {
+    background-color: rgba(0, 0, 0, 0.12) !important;
+}
 	}
 	.container.py-5.boxes {
     padding: 10px !important;
@@ -363,6 +372,7 @@ i.fi {
     width: 100%;
     display: contents;
 }
+
 			</style>
 			
     </head>
@@ -394,7 +404,7 @@ i.fi {
 						<p style="
     width: 200%;
     margin-top: 26px;
-">Helpdesk Landline Numbers: <b>011-23370705, 011-23379752</b>,</p>
+">Helpdesk: <b>011-23370705, 011-23379752</b>,</p>
 <div id="datetime">
 
 <body onload="startTime()">
@@ -501,7 +511,7 @@ i.fi {
 									<img src="assets/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
 								</div>
 								<div class="user-text">
-									<h6>Ryan Taylor</h6>
+									<h6>Pawan Kalyan</h6>
 									<p class="text-muted mb-0">Administrator</p>
 								</div>
 							</div>
@@ -527,7 +537,7 @@ i.fi {
 								<span>Main</span>
 							</li>
 							<li  class="active"> 
-								<a href="Dashboard.html"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+								<a href="Maindashboard.html"><i class="fe fe-home"></i> <span>Dashboard</span></a>
 							</li>
 
 							<li class="submenu">
@@ -697,9 +707,10 @@ i.fi {
 			<!-- Page Wrapper -->
             <div class="page-wrapper">
 			
-            <div class="card">
-				<div class="card-header bg-info border-primary">
-					<h4 class="mb-0 text-white">Dashboard</h4>
+            <div class="card" style="margin-bottom: 50px;">
+				<div class="card-header bg-info border-primary d-flex align-items-end justify-content-between">
+					<h4 class="mb-0 text-white">License</h4>
+					<a href="Applications.html"><h4 class="btn btn-sm btn-primary m-0">Apply</h4></a>
 				</div>
 				<div class="container py-5 boxes">
   <div class="row g-4">
@@ -722,7 +733,7 @@ i.fi {
           <i class="fi fi-tr-digital-payment"></i>
         </div>
         <div>
-          <div class="text-muted small">Payment</div>
+          <div class="text-muted small">Approved</div>
           <h5 class="mb-0">7</h5>
         </div>
       </div>
@@ -734,7 +745,7 @@ i.fi {
           <i class="fi fi-tr-audit"></i>
         </div>
         <div>
-          <div class="text-muted small">Penalties</div>
+          <div class="text-muted small">Pending</div>
           <h5 class="mb-0">3</h5>
         </div>
       </div>
@@ -746,7 +757,7 @@ i.fi {
           <i class="fi fi-tr-file-question"></i>
         </div>
         <div>
-          <div class="text-muted small">Pending </div>
+          <div class="text-muted small">Rejected </div>
           <h5 class="mb-0">2</h5>
         </div>
       </div>
@@ -755,7 +766,127 @@ i.fi {
   </div>
 </div>	
 				</div>
-				
+
+				<div class="card"  style="margin-bottom: 50px;">
+				<div class="card-header bg-info permit border-primary d-flex align-items-end justify-content-between">
+					<h4 class="mb-0 text-white">Permit</h4>
+					<a href="Applications.html"><h4 class="btn btn-sm btn-primary m-0">Apply</h4></a>
+				</div>
+				<div class="container py-5 boxes">
+  <div class="row g-4">
+<a href="License.html" target="_blank">
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card p-3 d-flex flex-row align-items-center dash1">
+        <div class="icon-circle bg-primary text-white">
+          <i class="fi fi-tr-memo-circle-check"></i>
+        </div>
+        <div>
+          <div class="text-muted small">Total Licensee</div>
+          <h5 class="mb-0">0</h5>
+        </div>
+      </div>
+    </div>
+</a>
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card p-3 d-flex flex-row align-items-center dash2">
+        <div class="icon-circle bg-success text-white">
+          <i class="fi fi-tr-digital-payment"></i>
+        </div>
+        <div>
+          <div class="text-muted small">Approved</div>
+          <h5 class="mb-0">0</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card p-3 d-flex flex-row align-items-center dash3">
+        <div class="icon-circle bg-warning text-white">
+          <i class="fi fi-tr-audit"></i>
+        </div>
+        <div>
+          <div class="text-muted small">Pending</div>
+          <h5 class="mb-0">0</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card p-3 d-flex flex-row align-items-center dash4">
+        <div class="icon-circle bg-danger text-white">
+          <i class="fi fi-tr-file-question"></i>
+        </div>
+        <div>
+          <div class="text-muted small">Rejected</div>
+          <h5 class="mb-0">0</h5>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>	
+				</div>
+
+				<div class="card"  style="margin-bottom: 50px;">
+				<div class="card-header bg-info pass border-primary d-flex align-items-end justify-content-between">
+					<h4 class="mb-0 text-white">Pass</h4>
+					<a href="Applications.html"><h4 class="btn btn-sm btn-primary m-0">Apply</h4></a>
+				</div>
+				<div class="container py-5 boxes">
+  <div class="row g-4">
+<a href="License.html" target="_blank">
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card p-3 d-flex flex-row align-items-center dash1">
+        <div class="icon-circle bg-primary text-white">
+          <i class="fi fi-tr-memo-circle-check"></i>
+        </div>
+        <div>
+          <div class="text-muted small">Total Licensee</div>
+          <h5 class="mb-0">0</h5>
+        </div>
+      </div>
+    </div>
+</a>
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card p-3 d-flex flex-row align-items-center dash2">
+        <div class="icon-circle bg-success text-white">
+          <i class="fi fi-tr-digital-payment"></i>
+        </div>
+        <div>
+          <div class="text-muted small">Approved</div>
+          <h5 class="mb-0">0</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card p-3 d-flex flex-row align-items-center dash3">
+        <div class="icon-circle bg-warning text-white">
+          <i class="fi fi-tr-audit"></i>
+        </div>
+        <div>
+          <div class="text-muted small">Pending</div>
+          <h5 class="mb-0">0</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card p-3 d-flex flex-row align-items-center dash4">
+        <div class="icon-circle bg-danger text-white">
+          <i class="fi fi-tr-file-question"></i>
+        </div>
+        <div>
+          <div class="text-muted small">Rejected</div>
+          <h5 class="mb-0">0</h5>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>	
+				</div>
+				<br/>
 			</div>
 			<!-- /Page Wrapper -->
 		
