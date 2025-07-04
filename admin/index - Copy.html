@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:20 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <title>Doccure - Dashboard</title>
+		
+		<!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+		
+		<!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<!-- Fontawesome CSS -->
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		
+		<!-- Feathericon CSS -->
+        <link rel="stylesheet" href="assets/css/feathericon.min.css">
+		
+		<link rel="stylesheet" href="assets/plugins/morris/morris.css">
+		
+		<!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/style.css">
+		
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+    </head>
+	<style>
+		.page-wrapper {
+    margin-left: 0px;
+    padding-top: 0px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #000;
+    font-weight: 500;
+}
+.page-header {
+    margin-bottom: 10px;
+    background: #e9edf1;
+    padding: 8px 17px 0px;
+    border-radius: 6px;
+    margin-top: -20px;
+}
+
+.demo12{
+    .card {
+  width: 200px;
+  height: 165px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-bottom: 5px solid #2b6fff;
+}
+
+.card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.default-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.4s ease;
+  z-index: 1;
+  margin-top: 10px;
+  width: 100%;
+}
+ul.hover-list h3 {
+    margin-top: 8px;
+    font-weight: 900;
+    font-family: inherit;
+    color: #fff;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 5px;
+    padding-bottom: 6px;
+}
+ul.hover-list li:hover {
+    background: #fff;
+    color: #2b6fff;
+}
+a{
+  color:#fff;
+}
+li {a:hover{
+  color:#2b6fff;
+}
+}
+.hover-list {
+    position: absolute;
+        bottom: -195%;
+        left: -32px;
+        width: 146%;
+        height: 165px;
+        padding: 0px 0;
+        margin: 0;
+        background: #2b6fff;
+        list-style: none;
+        transition: bottom 0.4s ease;
+        color: white;
+        border-radius: 0 0 12px 12px;
+        z-index: 2;
+        margin-bottom: -31px;
+}
+
+.hover-list li {
+  padding: 5px 0;
+  font-size: 14px;
+          border-radius: 8px;
+}
+
+/* On hover */
+.card:hover .default-text {
+  opacity: 0;
+}
+
+.card:hover .hover-list {
+  bottom: 0;
+}
+
+
+}
+.demo12.d-flex .card {
+    margin: 5px 5px;
+}
+
+p#usefulllinks {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-weight: 600;
+    color: #0078d7;
+}
+@keyframes zoomInThenOut {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); /* adjust zoom level */
+  }
+}
+	</style>
+    <body>
+	
+		<!-- Main Wrapper -->
+        <div class="main-wrapper">
+		
+			<!-- Header -->
+            <div class="header">
+			
+				<!-- Logo -->
+                <div class="header-left">
+                    <a href="index.html" class="logo">
+						<img src="assets/img/logo.png" alt="Logo">
+					</a>
+					<a href="index.html" class="logo logo-small">
+						<img src="assets/img/logo-small.png" alt="Logo" width="30" height="30">
+					</a>
+                </div>
+				<!-- /Logo -->
+				
+				
+				
+				<!-- <div class="top-nav-search">
+					<form>
+						<input type="text" class="form-control" placeholder="Search here">
+						<button class="btn" type="submit"><i class="fa fa-search"></i></button>
+					</form>
+				</div> -->
+				
+				<!-- Mobile Menu Toggle -->
+				<a class="mobile_btn" id="mobile_btn">
+					<i class="fa fa-bars"></i>
+				</a>
+				<!-- /Mobile Menu Toggle -->
+				
+				<!-- Header Right Menu -->
+				<ul class="nav user-menu">
+
+					<!-- Notifications -->
+					<li class="nav-item dropdown noti-dropdown">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+							<i class="fe fe-bell"></i> <span class="badge badge-pill">3</span>
+						</a>
+						<div class="dropdown-menu notifications">
+							<div class="topnav-dropdown-header">
+								<span class="notification-title">Notifications</span>
+								<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+							</div>
+							<div class="noti-content">
+								<ul class="notification-list">
+									<li class="notification-message">
+										<a href="#">
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/doctors/doctor-thumb-01.jpg">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"><span class="noti-title">Dr. Ruby Perrin</span> Schedule <span class="noti-title">her appointment</span></p>
+													<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient1.jpg">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"><span class="noti-title">Charlene Reed</span> has booked her appointment to <span class="noti-title">Dr. Ruby Perrin</span></p>
+													<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient2.jpg">
+												</span>
+												<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Travis Trimble</span> sent a amount of $210 for his <span class="noti-title">appointment</span></p>
+												<p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient3.jpg">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"><span class="noti-title">Carl Kelly</span> send a message <span class="noti-title"> to his doctor</span></p>
+													<p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href="#">View all Notifications</a>
+							</div>
+						</div>
+					</li>
+					<!-- /Notifications -->
+					
+					<!-- User Menu -->
+					<li class="nav-item dropdown has-arrow">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+							<span class="user-img"><img class="rounded-circle" src="assets/img/profiles/avatar-01.jpg" width="31" alt="Ryan Taylor"></span>
+						</a>
+						<div class="dropdown-menu">
+							<div class="user-header">
+								<div class="avatar avatar-sm">
+									<img src="assets/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
+								</div>
+								<div class="user-text">
+									<h6>Ryan Taylor</h6>
+									<p class="text-muted mb-0">Administrator</p>
+								</div>
+							</div>
+							<a class="dropdown-item" href="profile.html">My Profile</a>
+							<a class="dropdown-item" href="settings.html">Settings</a>
+							<a class="dropdown-item" href="login.html">Logout</a>
+						</div>
+					</li>
+					<!-- /User Menu -->
+					
+				</ul>
+				<!-- /Header Right Menu -->
+				
+            </div>
+			<!-- /Header -->
+			
+			<!-- Sidebar -->
+            <div class="mainmenu" style="margin-top: 60px;background: #c5e2ff !important;">
+			<div class="col-md-12">
+				<nav class="navbar navbar-expand-lg navbar-light">
+				
+					<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					  <ul class="navbar-nav">
+						<li class="nav-item active">
+						  <a class="nav-link" href="index.html">Dashboard <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#">Payment Updates</a>
+						</li>
+						
+						<li class="nav-item dropdown">
+						  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							e-Challan Payments
+						  </a>
+						  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="e-Challan View Payments.html">e-Challan View Payments</a>
+							<a class="dropdown-item" href="e-Challan Payments.html">e-Challan Payments</a>
+							<a class="dropdown-item" href="#">e-Challan Payments With Late Fee</a>
+						  </div>
+						</li>
+					
+						 
+						  <li class="nav-item">
+							<a class="nav-link" href="#">Invoice Raised Payments</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="index_indent.html">Indent Services</a>
+						  </li>
+						  
+					  </ul>
+					</div>
+				  </nav>
+			</div>
+		</div>
+			<!-- /Sidebar -->
+			
+			<!-- Page Wrapper -->
+            <div class="page-wrapper">
+			
+                <div class="content container-fluid">
+					
+					<!-- Page Header -->
+					<div class="page-header">
+						<div class="row">
+							<div class="col-sm-12">
+								<h4 class="page-title">Welcome Kalyan!</h4>
+							</div>
+						</div>
+					</div>
+					<!-- /Page Header -->
+
+					<div class="row">
+						<div class="col-xl-12 col-sm-12 col-12">
+							<div class="card">
+								<div class="card-body">
+									<div class="card">
+               <div class="demo12 d-flex ">
+            <div class="card">
+                <div class="card-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="building" class="lucide lucide-building"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg>
+                  <div class="default-text">OTS Scheme</div>
+                  <ul class="hover-list">
+                    <h3>OTS Scheme</h3>
+                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/excisePolicyETendering.jsp?excisePolicyData=2025_27" target="_blank">Excise Policy 2025-27</a></li>
+                    <li><a href="https://haryanatax.gov.in/OTS2025/login.html" target="_blank">Apply for OTS Scheme, 2025</a></li>
+                    <li><a href="https://haryanatax.gov.in/OTSAPP/login.html" target="_blank">OTS Scheme, 2023</a></li>
+                   <!-- <li>Users Payments</li> -->
+                  </ul>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="edit" class="lucide lucide-edit"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"></path></svg>
+                  <div class="default-text">EODB</div>
+                  <ul class="hover-list">
+                    <h3>Ease of Doing Business<br><br></h3>
+                    
+                    <li><a href="https://haryanatax.gov.in/HEX/EOB.html" target="_blank">Click Here</a></li>
+                    
+                   
+                  </ul>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="laptop" class="lucide lucide-laptop"><path d="M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z"></path><path d="M20.054 15.987H3.946"></path></svg>
+                  <div class="default-text">GST</div>
+                  <ul class="hover-list">
+                    <!-- <h3>GST Corner</h3> -->
+                    <li style="margin-top: 5px;"><a href="https://haryanatax.gov.in/HEX/GST_Corner.html" target="_blank">GST Corner</a></li>
+                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/GST_Queries_and_help.jsp" target="_blank">Queries and Help</a></li>
+                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/GST_acts_rules.jsp" target="_blank">Acts and Rules</a></li>
+                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/GST_FAQ_USER_MANUAL.jsp" target="_blank">FAQ/User Manual</a></li>
+                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/GST_helpdesk.jsp" target="_blank">Gov. Dept.</a></li>
+                    
+                    <!-- GST_Corner -->
+                   <!-- <li>Excise Unregistered 
+                    Users Payment</li> -->
+                  </ul>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                  <div class="default-text">E-Way Bill</div>
+                  <ul class="hover-list">
+                    <h3>E-Way Bill<br><br></h3>
+                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/eway.jsp" target="_blank">Click Here</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="monitor" class="lucide lucide-monitor"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg>
+                  <div class="default-text">Transit Slip</div>
+                  <ul class="hover-list">
+                    <h3>Transit Slip<br><br></h3>
+                    <li><a href="https://haryanatax.gov.in/HEXWAR/transitslip/transitslip.html" target="_blank">Click Here</a></li>
+                  </ul>
+                </div>
+              </div>
+              
+          </div>
+              </div>
+									
+								</div>
+							</div>
+						</div>
+						
+						
+						
+					</div>
+					
+					
+					
+					
+				</div>			
+			</div>
+			<!-- /Page Wrapper -->
+		
+        </div>
+		<!-- /Main Wrapper -->
+		
+		<!-- jQuery -->
+        <script src="assets/js/jquery-3.2.1.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- Slimscroll JS -->
+        <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+		
+		<script src="assets/plugins/raphael/raphael.min.js"></script>    
+		<script src="assets/plugins/morris/morris.min.js"></script>  
+		<script src="assets/js/chart.morris.js"></script>
+		
+		<!-- Custom JS -->
+		<script  src="assets/js/script.js"></script>
+		
+    </body>
+
+<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:34 GMT -->
+</html>
