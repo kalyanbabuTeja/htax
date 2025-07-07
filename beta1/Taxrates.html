@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HTAX">
+    <meta name="keywords" content="HTAX">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Excise and Taxation Department | HTAS</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Unna:400,700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+ <link rel="stylesheet" href="css/custome.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      html {
+  scroll-behavior: smooth;
+}
+         .card {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      padding: 30px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .icon {
+      background-color: #e6edfa;
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon img {
+      width: 35px;
+      height: 35px;
+    }
+
+    h3 {
+      font-size: 20px;
+      color: #0c1c44;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #444e64;
+      line-height: 1.6;
+    }
+
+
+    
+.iconbox_block {
+    *padding: 50px 50px 42px;
+    transition: var(--bs-transition);
+    background-color: #e3f0ff;
+    /* background-color: var(--bs-white); */
+    border-radius: 20px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1) inset, -7px -7px 8px rgba(255, 255, 255, 0.3) inset;
+    /* box-shadow: 0 1px 2px 0 rgba(174, 191, 210, 0.3); */
+    height: 330px;
+}
+.iconbox_block .iconbox_icon {
+    width: 80px;
+    height: 80px;
+    flex: 0 0 auto;
+    margin: 0 0 32px;
+    border-radius: 100%;
+    align-items: center;
+    display: inline-flex
+;
+    justify-content: center;
+    color: var(--bs-primary);
+    background-color: var(--bs-primary-bg-subtle);
+}
+.iconbox_block .iconbox_title {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 36px;
+    margin-bottom: 20px;
+    
+}
+.iconbox_block p {
+    font-size: 16px;
+}
+.iconbox_block:hover {
+    transform: translateY(-2px);
+    /* box-shadow: 0 20px 30px 0 rgba(174, 191, 210, 0.3); */
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.2), -7px -7px 8px rgba(255, 255, 255, 0.5);
+}
+.iconbox_content p {
+    padding: 5px 25px 10px;
+}
+.iconbox_block .iconbox_title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    margin-bottom: 20px;
+    padding-left: 19px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #fff;
+    border-radius: 20px 20px 0px 0px;
+}
+.marquee-container {
+     
+      height: 250px;
+      overflow: hidden;
+      
+      
+      position: relative;
+      
+    }
+
+    .marquee-content {
+      display: inline-block;
+      animation: scroll-up 10s linear infinite;
+    }
+
+    @keyframes scroll-up {
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+
+    /* Pause animation on hover */
+    .marquee-container:hover .marquee-content {
+      animation-play-state: paused;
+    }
+
+    .marquee-content p {
+    margin: 11px 11px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #333;
+    border: 1px solid #6c9fb0;
+    border-radius: 8px;
+    box-shadow: 1px 2px 3px;
+    width: 104%;
+}
+ul.RLinks li {
+    padding: 6px 0px;
+    text-align: left;
+    text-indent: -22px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 11px;
+  *width: 90%;
+  *max-width: 800px;
+}
+.grid-container{
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 30px 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-bottom: 5px solid #2b6fff;
+  width: 200px;
+}
+ul.hover-list {
+    display: none;
+}
+.card ul.hover-list:hover {
+    display: block !important;
+    position: absolute;
+    background: #2b6fff;
+    width: 101%;
+    left: -1px;
+    top: -1px;
+    height: 163px;
+    border-radius: 9px;
+    list-style: none;
+}
+}
+.card i {
+  color: #2b6fff;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 15px;
+}
+
+.card span {
+  font-weight: 600;
+  color: #333;
+  font-size: 16px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+
+.login-container h2 {
+  margin-bottom: 20px;
+}
+
+
+
+.captcha-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+canvas {
+  background: #f0f0f0;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: #005fa3;
+}
+
+button[type="button"] {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.error-msg {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+ul.RLinks a {
+  margin-left: -11px;
+    font-family: inherit;
+    line-height: 22px !important;
+}
+svg {
+    overflow: visible !important;
+    color: #1870a2;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 41px;
+}
+
+
+
+
+
+.demo12{
+    .card {
+  width: 200px;
+  height: 165px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-bottom: 5px solid #2b6fff;
+}
+
+.card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.default-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.4s ease;
+  z-index: 1;
+  margin-top: 10px;
+  width: 100%;
+}
+ul.hover-list h3 {
+    margin-top: 8px;
+    font-weight: 900;
+    font-family: inherit;
+    color: #fff;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 5px;
+    padding-bottom: 6px;
+}
+ul.hover-list li:hover {
+    background: #fff;
+    color: #2b6fff;
+}
+a{
+  color:#fff;
+}
+li {a:hover{
+  color:#2b6fff;
+}
+}
+.hover-list {
+    position: absolute;
+        bottom: -195%;
+        left: -32px;
+        width: 146%;
+        height: 165px;
+        padding: 0px 0;
+        margin: 0;
+        background: #2b6fff;
+        list-style: none;
+        transition: bottom 0.4s ease;
+        color: white;
+        border-radius: 0 0 12px 12px;
+        z-index: 2;
+        margin-bottom: -31px;
+}
+
+.hover-list li {
+  padding: 5px 0;
+  font-size: 14px;
+          border-radius: 8px;
+}
+
+/* On hover */
+.card:hover .default-text {
+  opacity: 0;
+}
+
+.card:hover .hover-list {
+  bottom: 0;
+}
+
+
+}
+.demo12.d-flex .card {
+    margin: 5px 5px;
+}
+
+p#usefulllinks {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-weight: 600;
+    color: #0078d7;
+}
+@keyframes zoomInThenOut {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); /* adjust zoom level */
+  }
+}
+
+.zoom-in-out-once {
+  animation: zoomInThenOut 3s infinite ease-in-out;
+}
+ul.hover-list li:hover {
+a{
+    color: #2b6fff;
+    font-weight: 600;
+}
+}
+    </style>
+
+    <style>
+      section.sitemap {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-left: 5px solid #004d99;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #004d99;
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="modal hide fade" id="myModal">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+               
+              <h5 class="modal-title">Welcome to HTAX Portal V2.0</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="dsc-banner-outer">
+                    <div class="dsc-banner-right">
+                        <img class="dsc-banner-img" src="img/guide.png" alt="dsc-banner">
+                    </div>
+                    <div class="dsc-banner-left">
+                        
+                        <p>As per the guidelines for making PAN as the single business user ID, <span>PAN verification</span> is now mandatory for applying for any approvals on the TG-IPASS platform. You can verify your PAN using any of the following methods:</p>
+                        <ul>
+                            <li><b style="display:contents;">Digital Signature Certificate (DSC):</b> All entity types can verify using DSC based verification mechanism.<br/><br/></li>
+                            
+                            <li><b style="display:contents;">Digilocker:</b> Verify using PAN details available in Digilocker Account. Currently available only for "Sole Proprietors".</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+          </div>
+        </div>
+    </div> -->
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+   
+
+    <!-- Header Section Begin -->
+    <div class="top_nav" style="background-color: #01315c;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8" style="color: #fff;margin-top: 5px;"><i class="fi fi-rr-phone-rotary"></i> Help Desk : 0172-2740229 &nbsp;| <span id='ct5' style="color: #fff !important;"></span> &nbsp;| <a href="#headpara" title="Skip to Main Contact">Skip to Content</a> | Moblie App Download <img class="zoom-in-out-once" src="img/Appicon.png" style="width: 3%;margin-bottom: 4px;" alt="Mobile App Icon"></div>
+                <div class="col-sm-4">
+    
+                    
+                       <div class="btn-group btn-group-sm pull-right">
+                        <a href="" class="text-white mt-2 mr-3"><i class="fi fi-rr-house-chimney" title="Home Page"></i> </a>
+                        <a href="" class="text-white mt-2"><i class="fi fi-rr-tally-1"></i></a>
+                        <a href="Sitemap.html" target="_blank" class="text-white mt-2 mr-2"><i class="fi fi-rr-sitemap" title="Sitemap"></i></a>
+                              <a class="increase btn btn-info accessibility" href="javascript:void(0);" onclick="set_font_size('increase')"> A+ </a>
+                           <a class="reset btn btn-info accessibility" href="javascript:void(0);" onclick="set_font_size('')"> A&nbsp; </a>
+                           <a class="decrease btn btn-info accessibility" href="javascript:void(0);" onclick="set_font_size('decrease')"> A- </a>
+                           <a class="dark btn btn-default" onclick="swapStyleSheet('resources/NewTemplate/css/dark.css')" style="background:#300b3e; border-color:none; color:#fff"> A&nbsp;</a>
+                           <a class="dark btn btn-default" onclick="swapStyleSheet('resources/NewTemplate/css/customstyle.css')" style="background:#d4d4d4; border-color:none; color:#000"> A&nbsp;</a>
+                       </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+       
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__logo mt-1">
+                        <a href="./index.html"><img src="img/logo1.png" alt="" style=" width: 75%;text-align: left;float: left;"></a>
+                    </div>
+                </div>
+             
+                <div class="col-lg-6 col-md-3">
+                   <img src="img/cmlogo.png" alt="" class="mt-2 fa-flip-horizontal" style="width: 16.6%;float: right;"/>
+                </div>
+                
+            </div>
+        </div>
+        <div class="header__top">
+            <div class="container-fluid">
+                <div class="row">
+                    
+                    <div class="col-lg-12 col-md-10 order-md-2 order-3">
+                        <nav class="header__menu">
+                            <ul>
+                                <li class="active"><a href="./index.html" class="speak-text"><i class="fi fi-rr-house-chimney" title="Home Page"></i> Home</a></li>
+                                <li class="dropdown speak-text"><a href="#"><i class="fi fi-rr-id-card-clip-alt"></i> Aboutus</a>
+                                    <ul class="dropdown__menu">
+                                      <li><a href="./categories-grid.html">Acts and Rules</a></li>
+                                        <li><a href="./categories-grid.html">Introduction</a></li>
+                                        <li><a href="Directory.html">Directory/Email Ids</a></li>
+                                        <li><a href="./single-post.html">Contact Us</a></li>
+                                        
+                                    </ul>
+                                </li>
+                                <!-- <li><a href="#">Acts</a>
+                                    <div class="header__megamenu__wrapper">
+                                        <div class="header__megamenu">
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg"
+                                                    data-setbg="img/megamenu/p-1.jpg">
+                                                    <div class="label">CM</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">CM ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg"
+                                                    data-setbg="img/megamenu/p-2.jpg">
+                                                    <div class="label">SB</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">SB ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg"
+                                                    data-setbg="img/megamenu/p-3.jpg">
+                                                    <div class="label">111</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">111 ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg"
+                                                    data-setbg="img/megamenu/p-4.jpg">
+                                                    <div class="label">222</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">222 ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg"
+                                                    data-setbg="img/megamenu/p-5.jpg">
+                                                    <div class="label">333</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">333 ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="#">Rules</a></li> -->
+                                <li class="speak-text"><a href="taxrates.html"><i class="fi fi-rr-tax"></i> Tax Rates</a></li>
+                                
+                                <li class="speak-text"><a href="#excise"><i class="fi fi-rr-rules-alt"></i> Excise Policy</a></li>
+                                <li class="speak-text"><a href="#govorder"><i class="fi fi-rr-note"></i> Government Orders</a></li>
+                                <li class="speak-text"><a href="#use"><i class="fi fi-rr-link-alt"></i> Useful Information</a></li>
+                                <li class="speak-text"><a href="./contact.html"><i class="fi fi-rr-person-circle-question"></i> Help</a></li>
+                                <li class="speak-text"><a href="./contact.html"><i class="fi fi-rr-link-horizontal-slash"></i> RTI</a></li>
+                                <li class="speak-text"><a href="./contact.html"><i class="fi fi-rr-bulb"></i> Defaulters</a></li>
+                                <li class="dropdown speak-text" style="
+    background: none;
+"><a class="login" href=""><i class="fi fi-rr-user-robot"></i> Login</a>
+                                  <ul class="dropdown__menu">
+                                        <li><a href="VATlogin.html">VAT</a></li>
+                                        <li><a href="login.html">Licensee</a></li>
+                                        <li><a href="Deptlogin.html">Department</a></li>
+                                        
+                                        
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+ <!-- Humberger Begin -->
+ <div class="humberger__menu__overlay"></div>
+ <div class="humberger__menu__wrapper">
+     <div class="humberger__menu__logo">
+         <a href="./index.html"><img src="img/humberger/humberger-logo.png" alt=""></a>
+     </div>
+     <nav class="humberger__menu__nav mobile-menu">
+         <ul>
+             <li><a href="./index.html">Home</a></li>
+             <li><a href="#">Recipes</a></li>
+             <li><a href="#">Dinner</a></li>
+             <li><a href="#">Desserts</a></li>
+             <li class="dropdown"><a href="#">Pages</a>
+                 <ul class="dropdown__menu">
+                     <li><a href="./categories-grid.html">Categories Grid</a></li>
+                     <li><a href="./categories-list.html">Categories List</a></li>
+                     <li><a href="./single-post.html">Single Post</a></li>
+                     <li><a href="./signin.html">Sign In</a></li>
+                     <li><a href="./404.html">404</a></li>
+                     <li><a href="./typography.html">Typography</a></li>
+                 </ul>
+             </li>
+             <li><a href="./about.html">About</a></li>
+             <li><a href="./contact.html">Contact</a></li>
+         </ul>
+     </nav>
+     <div id="mobile-menu-wrap"></div>
+     <div class="humberger__menu__about">
+         <div class="humberger__menu__title sidebar__item__title">
+             <h6>About me</h6>
+         </div>
+         <img src="img/humberger/humberger-about.jpg" alt="">
+         <h6>Hi every one! I,m Lena Mollein.</h6>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+             dolore magna aliqua.</p>
+         <div class="humberger__menu__about__social sidebar__item__follow__links">
+             <a href="#"><i class="fa fa-facebook"></i></a>
+             <a href="#"><i class="fa fa-twitter"></i></a>
+             <a href="#"><i class="fa fa-youtube-play"></i></a>
+             <a href="#"><i class="fa fa-instagram"></i></a>
+             <a href="#"><i class="fa fa-envelope-o"></i></a>
+         </div>
+     </div>
+     <div class="humberger__menu__subscribe">
+         <div class="humberger__menu__title sidebar__item__title">
+             <h6>Subscribe</h6>
+         </div>
+         <p>Subscribe to our newsletter and get our newest updates right on your inbox.</p>
+         <form action="#">
+             <input type="text" class="email-input" placeholder="Your email">
+             <label for="agree-check">
+                 I agree to the terms & conditions
+                 <input type="checkbox" id="agree-check">
+                 <span class="checkmark"></span>
+             </label>
+             <button type="submit" class="site-btn">Subscribe</button>
+         </form>
+     </div>
+ </div>
+ <!-- Humberger End -->
+ <div class="quick-quote mb-1">
+        <div class="container"> 
+          <!--Row Start-->
+          <div class="row">
+            <div class="col-md-12">
+              <h2><marquee scrolldelay="50" scrollamount="5" behavior="" direction="left" width="100%" onmouseover="this.stop();" onmouseout="this.start();" title="Scrolling the Latest News">
+                <i class="icofont-ui-next"></i> <a target="_blank" href="#" style="font-size:16px;text-transform: initial !important;">  Conduct of Online Pre-Bid Meeting in Connection with RFP dated 17.06.2025 for Selection of Technology Partner for Computer-Based Examinations <span style="font-weight:100 !important;"></span>
+                <!-- <i class="icofont-ui-next"></i> <a target="_blank" href="#"> <strong> Implementation of AH Revised Rates</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;<br> -->
+                </marquee></h2>
+            </div>
+            <!-- <div class="col-md-3">
+              <div class="quote-btn"><a href="#">Latest News</a></div>
+            </div> -->
+          </div>
+          <!--Row End--> 
+        </div>
+      </div>
+    <!-- Hero Section Begin -->
+   <section id="breadcrumb" class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg" style="background-image: url(&quot;img/breadcrumb.jpg&quot;);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <div class="breadcrumb__option">
+                            <a href="./index.html">Home</a>
+                            <span>Tax Rates</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="policy_section bg-light">
+        <div class="container">
+            <!-- <img src="img/floating-glass.svg" alt=".." class="floatingicon"> -->
+          <div class="row">
+            
+            
+            <div class="col-lg-12">
+              <table class="table table-bordered table-hover table-responsive-lg">
+  <thead>
+    <tr>
+      <th scope="col">Sl. No.</th>
+      <th scope="col">GST Rates</th>
+      <th scope="col">Action</th>
+      <col width="100px">
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Rates of GST on Items in CPI.</td>
+      <td><button class="btn-outline-info" style="border-radius: 9px;"><i class="fi fi-rr-file-download"></i> Download</button></td>
+      
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>GST Rates of Goods(As per CBEC Rates).</td>
+      <td><button class="btn-outline-info" style="border-radius: 9px;"><i class="fi fi-rr-file-download"></i> Download</button></td>
+      
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>GST Rates of Services(As per CBEC Rates).</td>
+      <td><button class="btn-outline-info" style="border-radius: 9px;"><i class="fi fi-rr-file-download"></i> Download</button></td>
+      
+    </tr>
+  </tbody>
+</table>
+            </div>
+           
+           
+          </div>
+        </div>
+      </section>
+
+
+    <!-- Categories Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="main-footer style-two style-four home-5">
+        <div class="container">
+            <div class="footer-top">
+                <div class="widget-section">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+                            <div class="logo-widget footer-widget">
+                                <h4 class="widget-title">Contact Details</h4>
+                                <ul>
+                                    <li><i class="fi fi-rr-postal-address"></i> Vanijya Bhawan, Plot 1-3,<br/> Sector 5, Panchkula,<br/> Haryana 134108<br>
+
+                                        
+
+
+                                    </li>
+
+                                    <li><i class="fi fi-rr-envelopes"></i> <span>Email: info@haryanatax.com</li>
+                                    <li><i class="fi fi-rr-phone-call"></i> <span>Call Us:</span> 1800 180 2017</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget company-widget footer-widget">
+                                <h4 class="widget-title">For Excise</h4>
+                                <div class="widget-content">
+                                    <ul>
+                                        <li><a href="#"><i class="fi fi-rr-lightbulb-exclamation"></i> Apply C Form Online</a></li>
+                                        <li><a href="#"><i class="fi fi-rr-lightbulb-exclamation"></i> Apply License</a></li>
+                                        <li><a href="#"><i class="fi fi-rr-lightbulb-exclamation"></i> Information Wizard</a></li>
+                                        <li><a href="#"><i class="fi fi-rr-lightbulb-exclamation"></i> Auto Renewal</a></li>
+                                        <li><a href="#" target="_blank"><i class="fi fi-rr-lightbulb-exclamation"></i> Dealer Search</a></li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget footer-widget">
+                                <h4 class="widget-title">For GST</h4>
+                                <div class="widget-content">
+                                    <ul>
+                                        <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> GST Queries and Help</a></li>
+                                        <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> GST Acts and Rules</a></li>
+                                        <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> GST FAQs/User Manual</a></li>
+                                        <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> GST Corner</a></li>
+                                        <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> GST HelpDesk</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                    <div class="links-widget footer-widget">
+                        <h4 class="widget-title">THINK INVEST MEGHALAYA</h4>
+                        <div class="widget-content">
+                            <ul>
+                                <li><a href="#">Explore The Land</a></li>
+                                <li><a href="#">Food & Beverage</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms and Conditions</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div> -->
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </footer>
+    <footer id="footer">
+        <div class="container footer-bottom clearfix">
+          <div class="copyright">
+            © 2025 Copyright Excise & Taxation Department, Haryana. All Rights Reserved
+          </div>
+          <div class="credits">
+            
+            Design and Developed by : <a href="#" style="color:#fff;"><img src="img/fotterlogo1.png" alt="Fotter CMS logo" style="width: 20%;"></a>
+          </div>
+        </div>
+      </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <div class="excape">Escape</div> 
+<div class="excape1"> 
+  <span>into amazing experiences</span>
+</div>
+
+  </button>
+  
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Button trigger modal -->
+
+  <!-- Chatbot Toggle Button -->
+<!-- <div id="chatbot-icon" onclick="toggleChatbot()">💬<img src="img/chatbot.gif" alt="chatbot"/></div> -->
+<div id="chatbot-icon">
+  <img src="img/chatbot.gif" alt="Chatbot Icon" />
+</div>
+
+<div id="chatbot-popup">
+  <div class="chat-header">Haryana Tax Help</div>
+  <div class="chat-content" id="chat-content">
+    <p>Choose a question:</p>
+    <ul>
+      <li onclick="showAnswer(0)">1. How to pay e-Challan?</li>
+      <li onclick="showAnswer(1)">2. What is VAT refund process?</li>
+      <li onclick="showAnswer(2)">3. Check application status?</li>
+      <li onclick="showAnswer(3)">4. Where to find dealer login?</li>
+      <li onclick="showAnswer(4)">5. How to register on the portal?</li>
+    </ul>
+    <div id="answer" class="answer-box"></div>
+  </div>
+</div>
+
+
+  <!-- Modal -->
+
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function display_ct5() {
+var x = new Date()
+var ampm = x.getHours( ) >= 12 ? ' PM' : ' AM';
+hours = x.getHours( ) % 12;
+hours = hours ? hours : 12;
+var x1=  x.getDate() + "/" + (x.getMonth()+1) + "/" + x.getFullYear(); 
+x1 = x1 + " - " +  hours + ":" +  x.getMinutes() + ":" +  x.getSeconds() + "" + ampm;
+document.getElementById('ct5').innerHTML = x1;
+display_c5();
+ }
+ function display_c5(){
+var refresh=1000; // Refresh rate in milli seconds
+mytime=setTimeout('display_ct5()',refresh)
+}
+display_c5()
+    </script>
+   <script type="text/javascript">
+    $(window).on('load', function() {
+        $('#myModal').modal('show');
+    });
+
+
+    let captchaText = "";
+
+function generateCaptcha() {
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  captchaText = "";
+  for (let i = 0; i < 6; i++) {
+    captchaText += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+
+  const canvas = document.getElementById("captchaCanvas");
+  const ctx = canvas.getContext("2d");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.font = "24px Arial";
+  ctx.fillStyle = "#000";
+  ctx.fillText(captchaText, 10, 30);
+}
+
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const userInput = document.getElementById("captchaInput").value.trim();
+  const errorMsg = document.getElementById("captchaError");
+
+  if (userInput === captchaText) {
+    errorMsg.textContent = "";
+    alert("CAPTCHA validated! Logging in...");
+    // Proceed with actual login
+  } else {
+    errorMsg.textContent = "Incorrect CAPTCHA. Please try again.";
+    generateCaptcha();
+  }
+});
+
+window.onload = generateCaptcha;
+
+</script>
+<script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>
