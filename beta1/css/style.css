@@ -3435,7 +3435,7 @@ footer.main-footer.style-two.style-four.home-5 {
 	height: auto;
   }
   section.categories.spad {
-	background: url(../img/bgfotter.gif);
+	background: linear-gradient(358deg, #d8eaf9, transparent);
     background-size: contain;
     
 }
@@ -3600,7 +3600,7 @@ marquee a {
     color: #fff;
 	transition:1.5s;
 }
-a.discuss-icon i.fi {
+/* a.discuss-icon i.fi {
     background: #0090e4;
 }
 a.poll-icon i.fi{
@@ -3622,7 +3622,7 @@ a.prime-icon i.fi{
 }
 a.campaign-icon i.fi{
 	background: #00ffff;
-}
+} */
 .get-involved-links a {
     font-family: inherit;
     font-weight: 900;
@@ -3653,7 +3653,7 @@ a.campaign-icon i.fi{
 	
 }
 section.service {
-    background: url(../img/bg6.jpg) center center no-repeat;
+    background: #fff;
     background-size: cover;
 }
 
