@@ -140,7 +140,7 @@ document.getElementById("chatbot-icon").addEventListener("click", function (e) {
   }
 
   // Add event listener to all elements with class 'speak-text'
-  document.querySelectorAll('.speak-text').forEach(element => {
+  document.querySelectorAll('.').forEach(element => {
     element.addEventListener('mouseenter', () => {
       speakText(element.innerText);
     });
