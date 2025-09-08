@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Department Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #f8f9fa;
+      font-family: "Segoe UI", sans-serif;
+    }
+    .dashboard-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #0d6efd;
+    }
+    .table thead {
+      background: #0d6efd;
+      color: #fff;
+    }
+    .table tbody tr:hover {
+      background: #f1f7ff;
+      transition: 0.2s;
+    }
+    .badge-total {
+      background: rgba(13, 110, 253, 0.15);
+      color: #0d6efd;
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+    .badge-open {
+      background: rgba(255, 193, 7, 0.15);
+      color: #ffc107;
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+    .badge-assigned {
+      background: rgba(25, 135, 84, 0.15);
+      color: #198754;
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-4">
+    <h3 class="dashboard-title">📊 Department To-Do Dashboard</h3>
+
+    <div class="table-responsive shadow-sm rounded">
+      <table class="table table-striped align-middle">
+        <thead>
+          <tr>
+            <th style="width:55%">To Do Type</th>
+            <th class="text-center">Total</th>
+            <th class="text-center">Open</th>
+            <th class="text-center">Assigned</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Application for VAT Amendment</td>
+            <td class="text-center"><span class="badge badge-total">29</span></td>
+            <td class="text-center"><span class="badge badge-open">21</span></td>
+            <td class="text-center"><span class="badge badge-assigned">8</span></td>
+          </tr>
+          <tr>
+            <td>Central Statutory Form</td>
+            <td class="text-center"><span class="badge badge-total">395</span></td>
+            <td class="text-center"><span class="badge badge-open">386</span></td>
+            <td class="text-center"><span class="badge badge-assigned">9</span></td>
+          </tr>
+          <tr>
+            <td>VAT Best Judgment Assessment</td>
+            <td class="text-center"><span class="badge badge-total">30</span></td>
+            <td class="text-center"><span class="badge badge-open">30</span></td>
+            <td class="text-center"><span class="badge badge-assigned">0</span></td>
+          </tr>
+          <tr>
+            <td>VAT Provisional Assessment</td>
+            <td class="text-center"><span class="badge badge-total">15</span></td>
+            <td class="text-center"><span class="badge badge-open">15</span></td>
+            <td class="text-center"><span class="badge badge-assigned">0</span></td>
+          </tr>
+          <tr>
+            <td>VAT Penalty and Interest – To Do For AA</td>
+            <td class="text-center"><span class="badge badge-total">65</span></td>
+            <td class="text-center"><span class="badge badge-open">64</span></td>
+            <td class="text-center"><span class="badge badge-assigned">1</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

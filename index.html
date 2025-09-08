@@ -411,6 +411,37 @@ a{
 }
 }
     </style>
+
+
+
+<style>
+  .dropdown__submenu {
+  display: none;
+    position: absolute;
+    top: -10px;
+    left: 90%;
+    background: #222222;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    padding: 2px 20px;
+}
+
+.dropdown__menu > .dropdown:hover > .dropdown__submenu {
+  display: block;
+}
+
+.dropdown__submenu a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.dropdown__submenu a:hover {
+  *background-color: #f0f0f0;
+  color: #000;
+}
+</style>
 </head>
 
 <body>
@@ -500,14 +531,26 @@ a{
                         <nav class="header__menu">
                             <ul>
                                 <li class="active"><a href="./index.html">Home</a></li>
+
+
                                 <li class="dropdown"><a href="#">About</a>
                                     <ul class="dropdown__menu">
-                                        <li><a href="./categories-grid.html">Introduction</a></li>
+                                        <li class="dropdown"><a href="#">Introduction</a>
+                                        <ul class="dropdown__submenu">
+
+                                          <li><a href="Directory.html">Sub sub Menu 1</a></li>
+                                        <li><a href="./single-post.html">Sub sub Menu 2</a></li>
+                                        </ul>
+                                        
+                                        </li>
                                         <li><a href="Directory.html">Directory/Email Ids</a></li>
                                         <li><a href="./single-post.html">Contact Us</a></li>
                                         
                                     </ul>
                                 </li>
+
+
+                                
                                 <li><a href="#">Acts</a>
                                     <!-- <div class="header__megamenu__wrapper">
                                         <div class="header__megamenu">
@@ -575,7 +618,7 @@ a{
                                 <li><a href="./contact.html">Defaulters</a></li>
                                 <li  class="dropdown"><a class="login" href=""><i class="icofont-login"></i> Login</a>
                                   <ul class="dropdown__menu">
-                                        <li><a href="VATlogin.html">VAT</a></li>
+                                        <li><a href="VATlogin.html" target="_blank">VAT</a></li>
                                         <li><a href="login.html">Licensee</a></li>
                                         <li><a href="Deptlogin.html">Department</a></li>
                                         

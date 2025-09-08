@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tab Navigation with Scroll</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    html {
+      scroll-behavior: smooth; /* Enables smooth scrolling */
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f6fb;
+      padding: 20px;
+    }
+
+    .topbar {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .topbar button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .tab-links {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tab-link {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .tab-link:hover {
+      background-color: #0056b3;
+    }
+
+    .tab-link.active {
+      background-color: #003f88;
+    }
+
+    .tab-block-content {
+      display: none;
+    }
+
+    .tab-block-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar with external button -->
+  <div class="topbar">
+    <button onclick="activateTab('tab-1', true)">Go to GST</button>
+  </div>
+  <div class="topbar">
+    <button onclick="activateTab('tab-2', true)">Go to VAT</button>
+  </div>
+  <div class="topbar">
+    <button onclick="activateTab('tab-3', true)">Go to Excise</button>
+  </div>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+  <!-- Scroll Target for Tabs -->
+  <div id="tab-section">
+    <!-- Tab Buttons -->
+    <div class="tab-links">
+      <button class="tab-link active" data-tab="tab-1">GST</button>
+      <button class="tab-link" data-tab="tab-2">VAT</button>
+      <button class="tab-link" data-tab="tab-3">Excise</button>
+    </div>
+
+    <!-- Tab Content Areas -->
+    <div class="tab-block-content tab-1 active">
+      <p>GST Excise services listed here...</p>
+    </div>
+    <div class="tab-block-content tab-2">
+      <p>VAT related services listed here...</p>
+    </div>
+    <div class="tab-block-content tab-3">
+      <p>Excise related services listed here...</p>
+    </div>
+  </div>
+
+  <script>
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-block-content');
+
+    function activateTab(tabClass, scrollToTabs = false) {
+      // Update active button
+      tabLinks.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.tab === tabClass) {
+          btn.classList.add('active');
+        }
+      });
+
+      // Update active content
+      tabContents.forEach(tab => {
+        tab.classList.remove('active');
+        if (tab.classList.contains(tabClass)) {
+          tab.classList.add('active');
+        }
+      });
+
+      // Scroll to tab section if needed
+      if (scrollToTabs) {
+        const section = document.getElementById("tab-section");
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Attach event listeners to tab buttons
+    tabLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const tabClass = link.getAttribute('data-tab');
+        activateTab(tabClass);
+      });
+    });
+  </script>
+
+</body>
+</html>

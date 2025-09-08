@@ -1,0 +1,3157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HTAX">
+    <meta name="keywords" content="HTAX">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Excise and Taxation Department | HTAS</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Unna:400,700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/style1.css" type="text/css">
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+
+       html {
+      scroll-behavior: smooth; /* Enables smooth scrolling */
+    }
+      .button a.login {
+    color: #fff;
+    padding: 11px 19px !important;
+    border-radius: 9px !important;
+    margin: 0px 5px;
+    border: 1px solid #8d8d8d;
+    background: #3F51B5;
+    box-shadow: 1px 2px 3px #ccc !important;
+}
+    
+         .card {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      padding: 30px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .icon {
+      background-color: #e6edfa;
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon img {
+      width: 35px;
+      height: 35px;
+    }
+
+    h3 {
+      font-size: 20px;
+      color: #0c1c44;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #444e64;
+      line-height: 1.6;
+    }
+
+
+    .bg-light {
+    --bs-bg-opacity: 1;
+    background-color: rgb(227 240 255) !important;
+    padding: 20px;
+}
+.iconbox_block {
+    *padding: 50px 50px 42px;
+    transition: var(--bs-transition);
+    background-color: #e3f0ff;
+    /* background-color: var(--bs-white); */
+    border-radius: 20px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1) inset, -7px -7px 8px rgba(255, 255, 255, 0.3) inset;
+    /* box-shadow: 0 1px 2px 0 rgba(174, 191, 210, 0.3); */
+    height: 330px;
+}
+.iconbox_block .iconbox_icon {
+    width: 80px;
+    height: 80px;
+    flex: 0 0 auto;
+    margin: 0 0 32px;
+    border-radius: 100%;
+    align-items: center;
+    display: inline-flex
+;
+    justify-content: center;
+    color: var(--bs-primary);
+    background-color: var(--bs-primary-bg-subtle);
+}
+.iconbox_block .iconbox_title {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 36px;
+    margin-bottom: 20px;
+    
+}
+.iconbox_block p {
+    font-size: 16px;
+}
+.iconbox_block:hover {
+    transform: translateY(-2px);
+    /* box-shadow: 0 20px 30px 0 rgba(174, 191, 210, 0.3); */
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.2), -7px -7px 8px rgba(255, 255, 255, 0.5);
+}
+.iconbox_content p {
+    padding: 5px 25px 10px;
+}
+.iconbox_block .iconbox_title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    margin-bottom: 20px;
+    padding-left: 19px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #fff;
+    border-radius: 20px 20px 0px 0px;
+}
+.marquee-container {
+     
+      height: 250px;
+      overflow: hidden;
+      
+      
+      position: relative;
+      
+    }
+
+    .marquee-content {
+      display: inline-block;
+      animation: scroll-up 10s linear infinite;
+    }
+
+    @keyframes scroll-up {
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+
+    /* Pause animation on hover */
+    .marquee-container:hover .marquee-content {
+      animation-play-state: paused;
+    }
+
+    .marquee-content p {
+    margin: 11px 11px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #333;
+    border: 1px solid #6c9fb0;
+    border-radius: 8px;
+    box-shadow: 1px 2px 3px;
+    width: 104%;
+}
+ul.RLinks li {
+    padding: 6px 0px;
+    text-align: left;
+    text-indent: -22px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 11px;
+  *width: 90%;
+  *max-width: 800px;
+}
+.grid-container{
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 30px 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-bottom: 5px solid #2b6fff;
+  width: 200px;
+}
+ul.hover-list {
+    display: none;
+}
+.card ul.hover-list:hover {
+    display: block !important;
+    position: absolute;
+    background: #2b6fff;
+    width: 101%;
+    left: -1px;
+    top: -1px;
+    height: 163px;
+    border-radius: 9px;
+    list-style: none;
+}
+}
+.card i {
+  color: #2b6fff;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 15px;
+}
+
+.card span {
+  font-weight: 600;
+  color: #333;
+  font-size: 16px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+
+.login-container h2 {
+  margin-bottom: 20px;
+}
+
+
+
+.captcha-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+canvas {
+  background: #f0f0f0;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: #005fa3;
+}
+
+button[type="button"] {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.error-msg {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+ul.RLinks a {
+  margin-left: -11px;
+    font-family: inherit;
+    line-height: 22px !important;
+}
+svg {
+    overflow: visible !important;
+    color: #1870a2;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 41px;
+}
+
+
+
+
+
+.demo12{
+    .card {
+  width: 200px;
+  height: 165px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-bottom: 5px solid #2b6fff;
+}
+
+.card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.default-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.4s ease;
+  z-index: 1;
+  margin-top: 10px;
+  width: 100%;
+}
+ul.hover-list h3 {
+    margin-top: 8px;
+    font-weight: 900;
+    font-family: inherit;
+    color: #fff;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 5px;
+    padding-bottom: 6px;
+}
+ul.hover-list li:hover {
+    background: #fff;
+    color: #2b6fff;
+}
+a{
+  color:#fff;
+}
+li {a:hover{
+  color:#2b6fff;
+}
+}
+.hover-list {
+    position: absolute;
+        bottom: -195%;
+        left: -32px;
+        width: 146%;
+        height: 165px;
+        padding: 0px 0;
+        margin: 0;
+        background: #2b6fff;
+        list-style: none;
+        transition: bottom 0.4s ease;
+        color: white;
+        border-radius: 0 0 12px 12px;
+        z-index: 2;
+        margin-bottom: -31px;
+}
+
+.hover-list li {
+  padding: 5px 0;
+  font-size: 14px;
+          border-radius: 8px;
+}
+
+/* On hover */
+.card:hover .default-text {
+  opacity: 0;
+}
+
+.card:hover .hover-list {
+  bottom: 0;
+}
+
+
+}
+.demo12.d-flex .card {
+    margin: 5px 5px;
+}
+
+p#usefulllinks {
+   
+    bottom: 0;
+    right: 0;
+    font-weight: 600;
+    color: #0078d7;
+}
+@keyframes zoomInThenOut {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); /* adjust zoom level */
+  }
+}
+
+.zoom-in-out-once {
+  animation: zoomInThenOut 3s infinite ease-in-out;
+}
+ul.hover-list li:hover {
+a{
+    color: #2b6fff;
+    font-weight: 600;
+}
+}
+    </style>
+
+
+
+<style>
+  section#cardown{
+    .card-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  padding: 0px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 8px solid #2c6ed5;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  color: #1d3c6a;
+        font-size: 20px;
+        margin-bottom: 15px;
+        background: #d1d8ff;
+        padding: 15px 0px;
+        font-weight: 600;
+        font-family: system-ui;
+}
+
+.card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.card li {
+  color: #2b2b2b;
+  margin-bottom: 8px;
+  transition: color 0.2s ease;
+}
+
+.card li:hover {
+  color: #2c6ed5;
+  cursor: pointer;
+}
+ li {
+    text-align: left !important;
+    color: #11768c !important;
+    list-style: none !important;
+}
+li:hover {
+    font-weight: 600;
+    color: #2f70d6 !important;
+}
+.card {
+    background: url(img/12.jpg) !important;
+    background-size: cover !important;
+}
+  }
+ section#cardown {
+    background: url(img/cardbg.png);
+    background-size: contain;
+    padding: 0px 10px 40px;
+    background-position: left;
+    width: 100% !important;
+    
+}
+</style>
+
+
+<style>
+  section.grouping h2 {
+    color: red !important;
+    font-family: "montserratbold", sans-serif;
+    font-size: 1.714em;
+    display: inline-block;
+    background: linear-gradient(92.61deg, #003f88 0%, #007bff 0%, #003f88 116.86%, #007bff 182.36%, #003f88 246.57%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+  section.grouping{
+
+    .tab-links {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .tab-link {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .tab-link:hover {
+      background-color: #0056b3;
+    }
+
+    .tab-link.active {
+      background-color: #003f88;
+    }
+
+    .tab-block-content {
+      display: none;
+    }
+
+    .tab-block-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+      border: 1px solid #ccc;
+        padding: 10px;
+        margin: 20px 0px;
+        border-radius: 5px;
+        box-shadow: 1px 2px 3px #ccc;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card-container {
+      display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+        
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .content {
+    
+    animation: fadeIn 0.4s ease;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+  }
+</style>
+</head>
+
+<body>
+    <!-- <div class="modal hide fade" id="myModal">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+               
+              <h5 class="modal-title">Welcome to HTAX Portal V2.0</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="dsc-banner-outer">
+                    <div class="dsc-banner-right">
+                        <img class="dsc-banner-img" src="img/guide.png" alt="dsc-banner">
+                    </div>
+                    <div class="dsc-banner-left">
+                        
+                        <p>As per the guidelines for making PAN as the single business user ID, <span>PAN verification</span> is now mandatory for applying for any approvals on the TG-IPASS platform. You can verify your PAN using any of the following methods:</p>
+                        <ul>
+                            <li><b style="display:contents;">Digital Signature Certificate (DSC):</b> All entity types can verify using DSC based verification mechanism.<br/><br/></li>
+                            
+                            <li><b style="display:contents;">Digilocker:</b> Verify using PAN details available in Digilocker Account. Currently available only for "Sole Proprietors".</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+          </div>
+        </div>
+    </div> -->
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+   
+
+    <!-- Header Section Begin -->
+    <div class="top_nav" style="background-color: #01315c;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-8" style="color: #fff;margin-top: 5px;"><i class="fi fi-rr-phone-rotary"></i> Help : 0172-2740229 &nbsp;| <span id='ct5' style="color: #fff !important;"></span> &nbsp;| Moblie App Download <img class="zoom-in-out-once" src="img/Appicon.png" style="width: 3%;margin-bottom: 4px;" alt="Mobile App Icon"> | <a href="#headpara" title="Skip to Main Contact" style="color: #eef7ff;font-weight: 600;">Skip to Main Content</a> |  <a class="speak-toggle" id="toggleSpeak" title="Toggle Voice">🔊</a> </div>
+                <div class="col-sm-4">
+    
+                    
+                       <div class="btn-group btn-group-sm pull-right">
+                        <select class="form-select" aria-label="Default select example" style="border-radius: 8px;margin-right: 20px;">
+  <!-- <option selected="">Select Language</option> -->
+  <option value="1">English</option>
+  <option value="2">Hindi</option>
+  
+</select>
+<a href="" class="text-white mt-2 mr-3"><i class="fi fi-rr-search"></i> </a>
+                        <a href="" class="text-white mt-2 mr-3"><i class="fi fi-rr-house-chimney" title="Home Page"></i> </a>
+                        <a href="" class="text-white mt-2"><i class="fi fi-rr-tally-1"></i></a>
+
+                        
+
+                        <a href="Sitemap.html" target="_blank" class="text-white mt-2 mr-2"><i class="fi fi-rr-sitemap" title="Sitemap"></i></a>
+                              <a class="increase btn btn-info accessibility" href="javascript:void(0);" onclick="set_font_size('increase')"> A+ </a>
+                           <a class="reset btn btn-info accessibility" href="javascript:void(0);" onclick="set_font_size('')"> A&nbsp; </a>
+                           <a class="decrease btn btn-info accessibility" href="javascript:void(0);" onclick="set_font_size('decrease')"> A- </a>
+                           <a class="dark btn btn-default" onclick="swapStyleSheet('resources/NewTemplate/css/dark.css')" style="background:#300b3e; border-color:none; color:#fff"> A&nbsp;</a>
+                           <a class="dark btn btn-default" onclick="swapStyleSheet('resources/NewTemplate/css/customstyle.css')" style="background:#d4d4d4; border-color:none; color:#000"> A&nbsp;</a>
+
+
+                           
+                       </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+       
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__logo mt-1">
+                        <a href="Index.html"><img src="img/logo1.png" alt="" style=" width: 75%;text-align: left;float: left;"></a>
+                    </div>
+                </div>
+             
+                <div class="col-lg-6 col-md-3">
+                   <img src="img/right.png" alt="" class="mt-2" style="width: 21.6%;float: right;"/>
+                <!-- <div class="button" style="float: right;margin-top: 38px;">
+                  <a class="login speak-on-hover" href="#Gst"><i class="fi fi-rr-tax"></i> GST</a>
+                  <a class="login speak-on-hover" href="#Vat"><i class="fi fi-rr-note"></i> VAT</a>
+                  <a class="login speak-on-hover" href="#tab-3"><i class="fi fi-rr-rules-alt"></i> Excise</a>
+                  
+                </div> -->
+
+                  </div>
+                
+            </div>
+        </div>
+        <div class="header__top">
+            <div class="container-fluid">
+                <div class="row">
+                    
+                    <div class="col-lg-12 col-md-10 order-md-2 order-3">
+                        <nav class="header__menu">
+                            <ul>
+                                <li class="active"><a href="Index.html" class="speak-on-hover"><i class="fi fi-rr-house-chimney" title="Home Page"></i> Home</a></li>
+                                <li class="dropdown"><a href="#" class="speak-on-hover"><i class="fi fi-rr-id-card-clip-alt"></i> About us</a>
+                                    <ul class="dropdown__menu">
+                                      
+                                        <li class="speak-on-hover"><a href="#">Introduction</a></li>
+                                        <li class="speak-on-hover"><a href="Directory.html">Directory/Email Ids</a></li>
+                                        <li class="speak-on-hover"><a href="#">Contact Us</a></li>
+                                        
+                                    </ul>
+                                </li>
+                                <li class="speak-on-hover"><a onclick="activateTab('tab-1', true)"><i class="fi fi-rr-tax"></i> GST</a></li>
+                                <!-- <li><a href="#">Acts</a>
+                                    <div class="header__megamenu__wrapper">
+                                        <div class="header__megamenu">
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg"
+                                                    data-setbg="img/megamenu/p-1.jpg">
+                                                    <div class="label">CM</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">CM ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg"
+                                                    data-setbg="img/megamenu/p-2.jpg">
+                                                    <div class="label">SB</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">SB ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg"
+                                                    data-setbg="img/megamenu/p-3.jpg">
+                                                    <div class="label">111</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">111 ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg"
+                                                    data-setbg="img/megamenu/p-4.jpg">
+                                                    <div class="label">222</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">222 ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="header__megamenu__item">
+                                                <div class="header__megamenu__item--pic set-bg"
+                                                    data-setbg="img/megamenu/p-5.jpg">
+                                                    <div class="label">333</div>
+                                                </div>
+                                                <div class="header__megamenu__item--text">
+                                                    <h5><a href="#">333 ...</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="#">Rules</a></li> -->
+                                <li class="speak-on-hover"><a onclick="activateTab('tab-2', true)"><i class="fi fi-rr-tax"></i> VAT</a></li>
+                                
+                                <li class="speak-on-hover"><a onclick="activateTab('tab-3', true)"><i class="fi fi-rr-rules-alt"></i> Excise</a></li>
+                                <li class="speak-on-hover"><a href="#govorder"><i class="fi fi-rr-note"></i> Government Orders</a></li>
+                                <!-- <li class="speak-on-hover"><a href="#use"><i class="fi fi-rr-link-alt"></i> Useful Information</a></li> -->
+                                <li class="speak-on-hover"><a href="./contact.html"><i class="fi fi-rr-person-circle-question"></i> Help</a></li>
+                                <li class="speak-on-hover"><a href="./contact.html"><i class="fi fi-rr-link-horizontal-slash"></i> RTI</a></li>
+                                <li class="speak-on-hover" style="margin-right: 200px;"><a href="./contact.html"><i class="fi fi-rr-bulb"></i> Defaulters</a></li>
+ 
+                                <li class="dropdown" style="
+    background: none;
+"><a class="login speak-on-hover" href=""><i class="fi fi-rr-user-robot"></i> Login</a>
+                                  <ul class="dropdown__menu">
+                                        <li class="speak-on-hover"><a href="VATlogin.html">VAT</a></li>
+                                        <li class="speak-on-hover"><a href="login.html">Licensee</a></li>
+                                        <li class="speak-on-hover"><a href="Deptlogin.html">Department</a></li>
+                                        
+                                        
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+ <!-- Humberger Begin -->
+ <div class="humberger__menu__overlay"></div>
+ <div class="humberger__menu__wrapper">
+     <div class="humberger__menu__logo">
+         <a href="./index.html"><img src="img/humberger/humberger-logo.png" alt=""></a>
+     </div>
+     <nav class="humberger__menu__nav mobile-menu">
+         <ul>
+             <li><a href="./index.html">Home</a></li>
+             <li><a href="#">Recipes</a></li>
+             <li><a href="#">Dinner</a></li>
+             <li><a href="#">Desserts</a></li>
+             <li class="dropdown"><a href="#">Pages</a>
+                 <ul class="dropdown__menu">
+                     <li><a href="./categories-grid.html">Categories Grid</a></li>
+                     <li><a href="./categories-list.html">Categories List</a></li>
+                     <li><a href="./single-post.html">Single Post</a></li>
+                     <li><a href="./signin.html">Sign In</a></li>
+                     <li><a href="./404.html">404</a></li>
+                     <li><a href="./typography.html">Typography</a></li>
+                 </ul>
+             </li>
+             <li><a href="./about.html">About</a></li>
+             <li><a href="./contact.html">Contact</a></li>
+         </ul>
+     </nav>
+     <div id="mobile-menu-wrap"></div>
+     <div class="humberger__menu__about">
+         <div class="humberger__menu__title sidebar__item__title">
+             <h6>About me</h6>
+         </div>
+         <img src="img/humberger/humberger-about.jpg" alt="">
+         <h6>Hi every one! I,m Lena Mollein.</h6>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+             dolore magna aliqua.</p>
+         <div class="humberger__menu__about__social sidebar__item__follow__links">
+             <a href="#"><i class="fa fa-facebook"></i></a>
+             <a href="#"><i class="fa fa-twitter"></i></a>
+             <a href="#"><i class="fa fa-youtube-play"></i></a>
+             <a href="#"><i class="fa fa-instagram"></i></a>
+             <a href="#"><i class="fa fa-envelope-o"></i></a>
+         </div>
+     </div>
+     <div class="humberger__menu__subscribe">
+         <div class="humberger__menu__title sidebar__item__title">
+             <h6>Subscribe</h6>
+         </div>
+         <p>Subscribe to our newsletter and get our newest updates right on your inbox.</p>
+         <form action="#">
+             <input type="text" class="email-input" placeholder="Your email">
+             <label for="agree-check">
+                 I agree to the terms & conditions
+                 <input type="checkbox" id="agree-check">
+                 <span class="checkmark"></span>
+             </label>
+             <button type="submit" class="site-btn">Subscribe</button>
+         </form>
+     </div>
+ </div>
+ <!-- Humberger End -->
+ <div class="quick-quote mb-1">
+        <div class="container"> 
+          <!--Row Start-->
+          <div class="row">
+            <div class="col-md-12">
+              <h2><marquee scrolldelay="50" scrollamount="5" behavior="" direction="left" width="100%" onmouseover="this.stop();" onmouseout="this.start();" title="Scrolling the Latest News">
+                <i class="icofont-ui-next"></i> <a target="_blank" href="#" style="font-size:16px;text-transform: initial !important;"><i class="fi fi-rr-megaphone"></i>  "<b>Haryana Excise Policy 2025-27 as Amended on 20.05.2025</b>".&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fi fi-rr-angle-double-small-right"></i> <b>Kind Attention</b> : Helpdesk Email Id And Helpline Numbers (Including Escalation Numbers) Are Operational From 08:00 AM To 08:00 PM Only. No Calls And Emails Will Be Attended Post 08:00 PM. 
+                <!-- <i class="icofont-ui-next"></i> <a target="_blank" href="#"> <strong> Implementation of AH Revised Rates</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;<br> -->
+                </marquee></h2>
+            </div>
+            <!-- <div class="col-md-3">
+              <div class="quote-btn"><a href="#">Latest News</a></div>
+            </div> -->
+          </div>
+          <!--Row End--> 
+        </div>
+      </div>
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="hero__slider owl-carousel">
+            <div class="hero__item">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 p-0">
+                            <div class="hero__inside__item hero__inside__item--wide set-bg"
+                                data-setbg="img/hero/hero-12.png">
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+             <div class="hero__item">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 p-0">
+                            <div class="hero__inside__item hero__inside__item--wide set-bg"
+                                data-setbg="img/hero/hero-13.png">
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <!-- Hero Section End -->
+    
+
+
+
+<!-- <section id="cardown" class="faq section-bg">
+  <div class="section-title" id="excise" style="
+    margin-bottom: 10px !important;padding-top: 10px;">
+            <h2>Excise</h2>
+           
+          </div>
+  <section class="card-container">
+    <div class="card" style="border-top: 8px solid #3a8ab7 !important;">
+      <h3 style="background: #ebf3f7;">Tax Legislation</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Acts</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Rules</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Forms</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Notification</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Circulars</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Instructions / Guidelines</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Orders</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="background: #ece6fb;">Online Services</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> GST Common Portal</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> GST eWay Bill</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> e-Invoice System</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> ACES-GST</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> GSTN</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Verify CBIC DIN GST</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-top: 8px solid #3a8ab7 !important;">
+      <h3 style="background: #ececf9;">Excise Policy's</h3>
+      <ul>
+      
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2024-25)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2023-24)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2022-23)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2021-22)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="background: #ece6fb;">Help & Support</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Helpdesk Email</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Helpline Numbers</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Working Hours</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Escalation Matrix</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Feedback Form</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> FAQs</li>
+      </ul>
+    </div>
+  </section>
+</section> -->
+
+      
+
+
+
+      <!--  -->
+
+    
+
+
+      <section class="grouping" style="margin-top: 10px;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            
+  <div id="tab-section">
+  <div class="tab-links"  id="cardown1">
+    <button class="tab-link active" data-tab="tab-1"><i class="fi fi-rr-tax"></i> GST</button>
+    <button class="tab-link" data-tab="tab-2"><i class="fi fi-rr-tax"></i> VAT</button>
+    <button class="tab-link" data-tab="tab-3"><i class="fi fi-rr-rules-alt"></i> Excise</button>
+  </div>
+
+  <div class="tab-block-content tab-1 active">
+    <div class="">
+      <section id="cardown" class="faq section-bg">
+  <div class="section-title" id="excise" style="
+    margin-bottom: 10px !important;padding-top: 10px;">
+            <h2><i class="fi fi-rr-tax"></i> GST</h2>
+           
+          </div>
+  <section class="card-container">
+    <div class="card" style="border-top: 8px solid #3a8ab7 !important;">
+      <h3 style="background: #ebf3f7;">Tax Legislation</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Acts</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Rules</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Forms</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Notification</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Circulars</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Instructions / Guidelines</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Orders</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="background: #ece6fb;">Key Services</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> GST Common Portal</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> GST eWay Bill</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> e-Invoice System</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> ACES-GST</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> GSTN</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Verify CBIC DIN GST</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-top: 8px solid #3a8ab7 !important;">
+      <h3 style="background: #ececf9;">Excise Policy's</h3>
+      <ul>
+      
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2024-25)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2023-24)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2022-23)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2021-22)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="background: #ece6fb;">Help & Support</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Helpdesk Email</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Helpline Numbers</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Working Hours</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Escalation Matrix</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Feedback Form</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> FAQs</li>
+      </ul>
+    </div>
+  </section>
+</section>
+      <!-- Add more excise cards here -->
+    </div>
+  </div>
+
+  <div class="tab-block-content tab-2">
+    <section id="cardown" class="faq section-bg">
+  <div class="section-title" id="excise" style="
+    margin-bottom: 10px !important;padding-top: 10px;">
+            <h2><i class="fi fi-rr-tax"></i> VAT</h2>
+           
+          </div>
+  <section class="card-container">
+    <div class="card" style="border-top: 8px solid #3a8ab7 !important;">
+      <h3 style="background: #ebf3f7;">Tax Legislation</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Acts</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Rules</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Forms</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Notification</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Circulars</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Instructions / Guidelines</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Orders</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="background: #ece6fb;">Key Services</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> VAT Common Portal</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> VAT eWay Bill</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> e-Invoice System</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> ACES-GST</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> GSTN</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Verify CBIC DIN GST</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-top: 8px solid #3a8ab7 !important;">
+      <h3 style="background: #ececf9;">Excise Policy's</h3>
+      <ul>
+      
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2024-25)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2023-24)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2022-23)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2021-22)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="background: #ece6fb;">Help & Support</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Helpdesk Email</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Helpline Numbers</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Working Hours</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Escalation Matrix</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Feedback Form</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> FAQs</li>
+      </ul>
+    </div>
+  </section>
+</section>
+  </div>
+
+  <div class="tab-block-content tab-3">
+    <section id="cardown" class="faq section-bg">
+  <div class="section-title" id="excise" style="
+    margin-bottom: 10px !important;padding-top: 10px;">
+            <h2><i class="fi fi-rr-rules-alt"></i> Excise</h2>
+           
+          </div>
+  <section class="card-container">
+    <div class="card" style="border-top: 8px solid #3a8ab7 !important;">
+      <h3 style="background: #ebf3f7;">Tax Legislation</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Acts</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Rules</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Forms</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Notification</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Circulars</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Instructions / Guidelines</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Orders</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="background: #ece6fb;">Key Services</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Registration</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Transit Slip</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Unregistered Users Payment</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Temporary License (For Marriage & Parties)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy & Updates</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> License Search</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-top: 8px solid #3a8ab7 !important;">
+      <h3 style="background: #ececf9;">Excise Policy's</h3>
+      <ul>
+      
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2024-25)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2023-24)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2022-23)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2021-22)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="background: #ece6fb;">Help & Support</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Helpdesk Email</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Helpline Numbers</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Working Hours</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Escalation Matrix</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Feedback Form</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> FAQs</li>
+      </ul>
+    </div>
+  </section>
+</section>
+  </div>
+</div>
+          </div>
+        </div>  
+      </section>
+
+      <section id="faq" class="faq section-bg">
+        <div class="container aos-init aos-animate" data-aos=""   id="headpara">
+  
+
+            
+            <div class="section-title" id="excise" style="
+    margin-bottom: 10px !important;padding-top: 10px;">
+            <h2>E-Services</h2>
+           
+          </div>
+  <div class="col-lg-12" style="display: flex;" class="skipc">
+    <div class="col-lg-12">
+      
+      
+      <div class="col-lg-12 mb-4">
+        
+        
+        
+          <div class="demo12 d-flex ">
+            <div class="card">
+                <div class="card-content">
+                    <i data-lucide="edit"></i>
+                  <div class="default-text">EODB</div>
+                  <ul class="hover-list">
+                    <h3>Ease of Doing Business<br/><br/></h3>
+                    
+                    <li><a href="https://haryanatax.gov.in/HEX/EOB.html" target="_blank">Click Here</a></li>
+                    
+                   
+                  </ul>
+                </div>
+              </div>
+            <div class="card">
+                <div class="card-content">
+                    <i data-lucide="log-in"></i>
+                  <div class="default-text">Departments Login</div>
+                  <ul class="hover-list">
+                    <h3>Departments<br/>Login<br/><br/></h3>
+                    <li><a href="https://vanijya.haryanatax.gov.in:4443/oam/server/obrareq.cgi?encquery%3DMbaJjTv%2BTo5mcXwi6CxQ3RPjpcNP1wembWJjz2cwI4cOYIWThB7sDybK2yFsabksM5HZzOk6k9GDoKPBNff%2FiPs1PfUuNuvWRj51XglrVw%2B9Q1e4xAcQSeaaEqu2jO8d%2BWHIP0n%2BglfEOgMM5XHmlsqshEnY9NbnR8KV%2FS7pqqlSFXjYLrvpl1tLnJdJd37w8S5slkXBVvJTY8oOb3fbwtZLReToC3XFjEKZAW%2FABHs%2F%2BcE0lSFtHFmZqWuwAD9g%2Bh5np3pq0wAJdVPuR05WRq3VLISIOsnFGUEj%2Bf23%2FSDfb5w7Ine4DaOQwunnmRq1%20agentid%3DHEX_11g%20ver%3D1%20crmethod%3D2" target="_blank">Click Here</a></li>
+                  </ul>
+                </div>
+              </div>
+               <div class="card">
+                <div class="card-content">
+                    
+                    <i data-lucide="shield-check"></i>
+                  <div class="default-text"><br/>Digital Signature Verfication</div>
+                  <ul class="hover-list">
+                    <h3>Digital Signature Verfication<br/><br/></h3>
+                    <li><a href="http://secmsgdemo.emudhra.com/emvv_admin/Wipro/Haryana_Excise/emSigner-SetupFiles_151216.zip" target="_blank">Click Here</a></li>
+                    
+                   
+                  </ul>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-content">
+                    <i data-lucide="monitor"></i>
+                  <div class="default-text">Transit Slip</div>
+                  <ul class="hover-list">
+                    <h3>Transit Slip<br/><br/></h3>
+                    <li><a href="https://haryanatax.gov.in/HEXWAR/transitslip/transitslip.html" target="_blank">Click Here</a></li>
+                  </ul>
+                </div>
+              </div>
+            <div class="card">
+                <div class="card-content">
+                    <i data-lucide="building"></i>
+                  <div class="default-text">OTS Scheme</div>
+                  <ul class="hover-list">
+                    <h3>OTS Scheme</h3>
+                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/excisePolicyETendering.jsp?excisePolicyData=2025_27" target="_blank">Excise Policy 2025-27</a></li>
+                    <li><a href="https://haryanatax.gov.in/OTS2025/login.html" target="_blank">Apply for OTS Scheme, 2025</a></li>
+                    <li><a href="https://haryanatax.gov.in/OTSAPP/login.html" target="_blank">OTS Scheme, 2023</a></li>
+                   
+                  </ul>
+                </div>
+              </div>
+              
+              
+              <!-- <div class="card">
+                <div class="card-content">
+                    <i data-lucide="user"></i>
+                  <div class="default-text">E-Way Bill</div>
+                  <ul class="hover-list">
+                    <h3>E-Way Bill<br/><br/></h3>
+                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/eway.jsp" target="_blank">Click Here</a></li>
+                  </ul>
+                </div>
+              </div> -->
+              
+              
+          </div>
+          <div class="demo12 d-flex ">
+            <!-- <div class="card">
+                <div class="card-content">
+                    <i data-lucide="banknote-arrow-down"></i>
+                  <div class="default-text">Licensee Search</div>
+                  <ul class="hover-list">
+                    <h3>Licensee Search<br/><br/></h3>
+                    <li><a href="https://haryanatax.gov.in/HEXWAR/searchLicensesDetails.html" target="_blank">Click Here</a></li>
+                  </ul>
+                </div>
+              </div> -->
+              
+              <!-- <div class="card">
+                <div class="card-content">
+                    <i data-lucide="search"></i>
+                  <div class="default-text">Dealer Search</div>
+                  <ul class="hover-list">
+                    <h3>Dealer Search<br/><br/></h3>
+                    <li><a href="https://haryanatax.gov.in/HEXWAR/searchdealerDetails.html" target="_blank">Unregistered Dealer Appeal</a></li>
+                    <li><a href="https://haryanatax.gov.in/HEXWAR/searchdealerDetails.html" target="_blank">Unregistered Dealer Payment</a></li>
+                  </ul>
+                </div>
+              </div> -->
+              
+             
+
+              <!-- <div class="card">
+                <div class="card-content">
+                    <i data-lucide="building-2"></i>
+                  <div class="default-text"><br/><br/>Other's</div>
+                  <ul class="hover-list">
+                    <h3>Other's<br/><br/></h3>
+                    <li><a href="#" target="_blank">Excise Unregistered User Payments</a></li>
+                  <li><a href="#" target="_blank">Marriage & Parties – Temporary License</a></li>
+                  </ul>
+                </div>
+              </div> -->
+              
+          </div>
+          
+      </div>
+      
+    </div>
+    
+    
+  
+  
+  </div>
+          
+  
+        </div>
+      </section>
+
+      <section class="service" id="use">
+        <div class="container">
+          <div class="section-title" id="excise" style="
+    margin-bottom: 10px !important;padding-top: 10px;">
+            <h2>Other Links</h2>
+           
+          </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="involved-block" id="involved-block">
+                        <div class="container">
+                             <!-- <div class="section-title">
+                                 <h2>Services</h2>
+                                 
+                             </div> -->
+                             <div class="get-involved-links">
+                                
+                                 <div class="tab-link active">
+                                  <a href="https://haryanatax.gov.in/OTS2025/login.html" target="_blank"  rel="tab-1" class="do-icon" title="Do/Task"><i class="fi fi-rr-assessment"></i>Mera Bill, Mera Adhikar</a>
+                                </div>
+               <div class="tab-link"><a href="https://investharyana.in" target="_blank" rel="tab-2" class="discuss-icon" title="Discuss"><i class="fi fi-rr-document"></i>GST Kosh</a></div>
+
+                                 <div class="tab-link"><a href="https://cridverify.edisha.gov.in/" target="_blank" rel="tab-3" class="poll-icon" title="Poll/Survey"><i class="fi fi-rr-folder"></i>Update Your Parivar Pehchan Patra</a></div>
+                                 
+                                 <div class="tab-link"><a href="https://www.mygov.in/group-issue/simplified-gst-return-principles-and-draft-return-formats/" target="_blank" rel="tab-4" class="blog-icon" title="Blog"><i class="fi fi-rr-thumbs-up-trust"></i>Mukhyamantri Vyapari Beema Yojna</a></div>
+
+                                 <div class="tab-link"><a href="https://selfservice.gstsystem.in/" target="_blank" rel="tab-5" class="talk-icon" title="Talk"><i class="fi fi-rr-users-alt"></i>GST Helpdesk</a></div>
+
+                                 <div class="tab-link"><a href="https://cform.haryanatax.gov.in:8080/HETD/" target="_blank" rel="tab-6" class="quiz-icon" title="Quiz"><i class="fi fi-rr-system-cloud"></i>Apply C Form</a></div>
+
+                                 <div class="tab-link"><a href="https://cform.haryanatax.gov.in:8080/HETD/verifyCForm" target="_blank" rel="tab-7" class="prime-icon" title="MG Prime"><i class="fi fi-rr-newspaper"></i>Verify C Form</a></div>
+
+                                 <div class="tab-link"><a href="https://cmharyanacell.nic.in/" target="_blank" rel="tab-8" class="campaign-icon" title="Campaign"><i class="fi fi-rr-corporate"></i>Grievance Redressal</a></div>
+
+                                 <!-- <div class="tab-link"><a href="#" rel="tab-9" class="pledge-icon" title="Pledge"><i></i>Pledge</a></div>
+                                 <div class="tab-link"><a href="#" rel="tab-10" class="podcast-icon" title="Podcast"><i></i>Podcast</a></div> -->
+                             </div>
+                             </div>
+                             </div>
+                             </div>
+                </div>
+            </div>
+        
+      </section>
+
+
+      
+      <section class="policy_section bg-light" id="govorder">
+        <div class="container">
+            <!-- <img src="img/floating-glass.svg" alt=".." class="floatingicon"> -->
+             <div class="section-title" id="excise" style="
+    margin-bottom: 10px !important;padding-top: 10px;">
+            <h2>Quick Links</h2>
+           
+          </div>
+          <div class="row">
+            
+            <div class="col-lg-6">
+              <div class="iconbox_block">
+                <!-- <div class="iconbox_icon">
+                  Lates News
+                </div> -->
+                <div class="iconbox_content">
+                  <h3 class="iconbox_title">Latest News</h3>
+                  <div class="marquee-container">
+                    <div class="marquee-content">
+                      <p>1: We're expanding to new regions!</p>
+                      <p>2: New features launching soon!</p>
+                      <p>3: Meet our new team members.</p>
+                      <p>4: We’ve won an industry award!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="iconbox_block">
+                <!-- <div class="iconbox_icon bg-warning-subtle">
+                  <img src="static/images/icons/icon_dart_board_2.svg" alt="Dart Board SVG Icon">
+                </div> -->
+                <div class="iconbox_content">
+                  <h3 class="iconbox_title">Useful Links</h3>
+                  <div class="usefull" style="border: 0px solid red;
+                  overflow: auto;
+                  height: 230px;
+                  
+                  margin-top: 15px;
+                  padding: 10px 42px;">
+                  <ul class="RLinks">
+	  
+		  
+			
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2025/Corrigendum.pdf" target="_blank" class="RLinks">Corrigendum</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2025/Online_Transfer_Order.pdf" target="_blank" class="RLinks">Online Transfer Orders for Taxation Inspectors 05.06.2025</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2025/AMENDED_EXCISE_2025-27.pdf" target="_blank" class="RLinks">HARYANA EXCISE POLICY 2025-27 AS AMENDED ON 20.05.2025</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2025/FAQs_for_the_OTS_2025_Scheme.pdf" target="_blank" class="RLinks">FAQs for the OTS 2025 Scheme</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2025/The_Interviews_for_the_Empanelment.pdf" target="_blank" class="RLinks">The Interviews for the Empanelment of CA firms has been Postponed for 15.04.2025</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2025/Notification_for_the_appointed_day_OTS_2025.pdf" target="_blank" class="RLinks">Notification for the appointed day OTS 2025</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2025/Recovery_of_Outstanding_Dues.pdf" target="_blank" class="RLinks">The Haryana One Time Settlement Scheme for Recovery of Outstanding Dues 2025</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2025/Expression_of_Interest.pdf" target="_blank" class="RLinks">Expression of Interest (EOIs) for Empanelment of Chartered Accountants/Chartered Accountant firms/Cost Accountants/Cost Accountant firms for Special Audit of GST registered persons</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2025/General_Election_of_Municipal_Bodies.pdf" target="_blank" class="RLinks">General Election of Municipal Bodies in the State of Haryana, 2025.</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2025/Regarding_Consent_filling_by_Clerks.pdf" target="_blank" class="RLinks">Regarding Consent filling by Clerks (Field Cadre), Assistants (Field Cadre) and Taxation Inspectors on Intra Haryana Portal for implementation of Online Transfer Policy 2025.</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2025/Score_of_Taxation_Inspectors.pdf" target="_blank" class="RLinks">List of Scores of Taxation Inspectors for Online Transfer Policy (District-wise Scores list of Taxation Inspectors.</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2025/Score_of_Assistant.pdf" target="_blank" class="RLinks">List of Scores of Assistant (Field) for Online Transfer Policy (District-wise Scores list of Assistants(Field)</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2025/Score_of_Clerks.pdf" target="_blank" class="RLinks">List of Scores of Clerks (Field) for Online Transfer Policy (District-wise Scores list of Clerks(Field)</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2025/Principal_Secretary_Excise_and_Taxation.pdf" target="_blank" class="RLinks">Open House with Principal Secretary, Excise &amp; Taxation</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2024/Regardsing_Updating_Data_of_Clerks.pdf" target="_blank" class="RLinks">Regarding updating Data of Clerks (Field Cadre), Assistants (Field Cadre) and Taxation Inspectors in HRMS for implementation of Online Transfer Policy 2025</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2024/Haryanata_Right_To_Services.pdf" target="_blank" class="RLinks">Amendment/De-notification w.r.t. earlier notified services under Haryana Right To Service Act, 2014</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2024/Minimum_Retail_Sale.pdf" target="_blank" class="RLinks">Minimum Retail Sale Price of IFL (BIO)</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+			
+		
+		    
+					<a href="https://haryanatax.gov.in/HEX/EOB.html" target="_blank" class="RLinks">EASE OF DOING BUSINESS STATE BUSINESS REFORMS ACTION PLAN-2024</a>
+		  
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2024/Instructions_for_conducting_Inquiry.pdf" target="_blank" class="RLinks">Instructions for conducting Inquiry</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+			
+		
+		    
+					<a href="https://haryanatax.gov.in/HEX/DownloadZipFile?formName=/News/2024/RFP_JULY_2024.zip" target="_blank" class="RLinks">Request for Proposal for Selection of SI for Development, Implementation and Maintenance of the new Haryana Tax Administration System � HTAS 2.0--July 2024</a>
+		  
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/ExcisePolicy2024_25/Excise_Policy_2024_25.pdf" target="_blank" class="RLinks">HARYANA EXCISE POLICY 2024-25</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2024/Corrigendum_dated_14.05.2024_for_the_RFP_of_e-Governance_solution.pdf" target="_blank" class="RLinks">Corrigendum dated 14.05.2024 for the RFP of  e-Governance solution for Haryana Tax Administration System  -HTAS 2.0</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2024/Responses_to_the_Queries_for_the_RFP_of _e-Governance_solution.pdf" target="_blank" class="RLinks">Responses to the Queries for the RFP of  e-Governance solution for Haryana Tax Administration System  -HTAS 2.0</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2024/Corrigendum_for_the_RFP_of _e-Governance_solution.pdf" target="_blank" class="RLinks">Corrigendum for the RFP of  e-Governance solution for Haryana Tax Administration System  -HTAS 2.0"</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2024/District_wise_entry_exit_points.pdf" target="_blank" class="RLinks">District-wise entry/exit points in Transit Slip System for passing through the State of Haryana</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+			
+		
+		    
+					<a href="https://elections24.eci.gov.in/" target="_blank" class="RLinks">General Elections-2024 to Lok Sabha</a>
+		  
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+			
+		
+		    
+					<a href="/HEX/menuJSP/GeoTaggingMapping.jsp" target="_blank" class="RLinks">District wise and Vend wise Geo tagging/mapping</a>
+		  
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2024/Transferss_Order_AETO.pdf" target="_blank" class="RLinks">The Transfer orders of AETO</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2024/Transferss_Order_ETO.pdf" target="_blank" class="RLinks">The Transfer orders of ETO</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2024/New_Haryana_Tax_Administration_System.pdf" target="_blank" class="RLinks">Public Notice for Request for Proposal for Selection of SI for Development, Implementation and Maintenance of the new Haryana Tax Administration System � HTAS 2.0</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+			
+		
+		    
+					<a href="https://haryanatax.gov.in/HEX/DownloadZipFile?formName=/News/2024/RFP_for_SI_14032024.zip" target="_blank" class="RLinks">Request for Proposal for Selection of SI for Development, Implementation and Maintenance of the new Haryana Tax Administration System � HTAS 2.0</a>
+		  
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2024/Transfer_Order_Excise Inspectors.pdf" target="_blank" class="RLinks">Transfer Order of Excise Inspectors</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2024/Transfer_Order_ETO.pdf" target="_blank" class="RLinks">The Transfer orders of ETO</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2024/Transfer_Order_AETO.pdf" target="_blank" class="RLinks">The Transfer orders of AETO</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2023/Excise_2023_24_057.pdf" target="_blank" class="RLinks">User Manual for Transit Slip</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2023/Excise_2023_24_056.pdf" target="_blank" class="RLinks">Transfer Order of Taxation Inspectors under Online Transfer Policy 2024</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2023/Excise_2023_24_055.pdf" target="_blank" class="RLinks">Transfer Order of Clerks under Online Transfer Policy 2024</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2023/Excise_2023_24_054.pdf" target="_blank" class="RLinks">Transfer Order of Assistants under Online Transfer Policy 2024</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2023/Excise_2023_24_053.pdf" target="_blank" class="RLinks">The Transfer List of DETC</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2023/Excise_2023_24_052.pdf" target="_blank" class="RLinks">Guidelines for the implementation of Online Transfer Policy in respect of Assistants and Clerks of Field Cadre for the year 2024. </a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2023/Excise_2023_24_051.pdf" target="_blank" class="RLinks">Applicant User Manual OTS Scheme,2023</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+				 
+					<img src="img/new_blnk.gif"> 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2023/Excise_2023_24_050.pdf" target="_blank" class="RLinks">Regarding Consent filling by Taxation Inspectors on Intra Haryana Portal for implementation of Online Transfer Policy 2024.</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2023/Excise_2023_24_049.pdf" target="_blank" class="RLinks">Public Notice for Industry consultation workshop  for e-Governance solution for Haryana Tax Administration System</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2023/Proforma_for _the_post_2023_10_06_03.pdf" target="_blank" class="RLinks">Press Note- Proforma for the post of Chairman and Members in the Haryana Tax Tribunal</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2023/Terms_of_Reference_2023_05_17_02.pdf" target="_blank" class="RLinks">Terms of Reference (2) for Engaging Empaneled Company/Agency for providing Advisory Services as a part of the Tax Policy and Research Unit in the Department</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/PublicNotice/Public_Notice_2023_05_02.pdf" target="_blank" class="RLinks">Notice to empanelled companies regarding extension of submission deadline for technical proposal under TPRU project</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2023/notice.pdf" target="_blank" class="RLinks">Notice to empanelled companies regarding extension of submission deadline for technical proposal under TPRU project</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2023/Terms of Reference vf.pdf" target="_blank" class="RLinks">Terms of Reference for Engaging Empaneled Company/Agency for providing Advisory Services as a part of the Tax Policy &amp; Research Unit in the Department</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2023/Excise_Policy_2023_02_07_01.pdf" target="_blank" class="RLinks">Implementation of High Security Holograms with QR Code Based Track and Trace System (RFP No. 02/Excise/QR/2020 dated 26.06.2020 (Corrigendum)</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Excise_Policy_2022_09_21_10.pdf" target="_blank" class="RLinks">Notice calling for suggestions, views,comments etc. from stakeholders on comprehensive changes in FORM GSTR-3B</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Excise_Policy_2022_05_13_09.pdf" target="_blank" class="RLinks">Public Notice of Amended schedule of dates for allotment of liquor vends in State of Haryana for Policy Year 2022-23</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2021/Procedure_for_Login_to_Haryanatax_Portal_via_HPEC_Portal_Investharyanadotin_2021_01_28.pdf" target="_blank" class="RLinks">Procedure for login to Haryana tax portal for Excise e-services via HEPC Porta l(Investharyana.in). For Excise Licensees only</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Excise_Policy_2022_05_11_08.pdf" target="_blank" class="RLinks">Public Notice for Inviting e-Tenders applicants from the General Public for allotment of Zones of L-14A &amp; L-2 Retail Vends for the Year 2022-23 in Haryana State_12-05-2022</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/GST_Returns_Security_Manual_2022_05_11.pdf" target="_blank" class="RLinks">Haryana GST Returns Scrutiny Manual</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Sonepat_R24.pdf" target="_blank" class="RLinks">Excise arrangement for Reallotment of Zone no- 51 for District Sonepat for policy year 2021-22.</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Excise_Policy_2022_05_09_08.pdf" target="_blank" class="RLinks">Notice for Registration for participation in E-Tendering process for Retail Liquor Licenses in the State of Haryana for Policy Year 2022-23</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Excise_Policy_2022_05_09_07.pdf" target="_blank" class="RLinks">Public Notice for inviting e-tenders for Re-allotment of one zone in Sonepat, Haryana for 2021-22(10-05-22)</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Excise_Policy_2022_05_04_06.pdf" target="_blank" class="RLinks">HARYANA EXCISE POLICY FOR THE YEAR 2022-23</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Public_Notice_2022_05_05_02.pdf" target="_blank" class="RLinks">NOTICE FOR INVITING E-TENDERS FROM GENERAL PUBLIC FOR R.E-ALLOTMENT OF ZONE OF RETAIL LIQUOR VENDS OF DISTRICT FATEHABAD, HARYANA FOR THE REMAINING DURATION OF EXCISE POLICY YEAR 2O21-22</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Public_Notice_2022_05_05_03.pdf" target="_blank" class="RLinks">NOTICE FOR INVITING E-TENDERS FROM GENERAL PUBLIC FOR RE-ALLOTMENT OF ZONE OF RETAIL LIQUOR VENDS OF  HARYANA FOR THE REMAINING DURATION OF EXCISE POLICY YEAR 2O21-22</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Public_Notice_2022_05_04_05.pdf" target="_blank" class="RLinks">Order Cancellation for  L-2/L-14A Licensee, Zone No. ZGRE55</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Public_Notice_2022_05_04_04.pdf" target="_blank" class="RLinks">Order Cancellation for  L-2/L-14A Licensee, Zone No. ZSNP51</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Fatehabad_R21.pdf" target="_blank" class="RLinks">Excise arrangement for Reallotment of Zone no- 22 for District Fatehabad for policy year 2021-22.</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Public_Notice_2022_05_03_01.pdf" target="_blank" class="RLinks">Order Cancellation for M/s ZRM Enterprises, L-2/L-14A Licensee, Zone No. ZFTB022 (Hizrawan Kalan), Fatehabad</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Public_Notice_2022_04_28_01.pdf" target="_blank" class="RLinks">Notice for inviting e-tenders for re-allotment of zones of retail liquor vends of district Kaithal from the general public for the year 2021-22 in the state of Haryana</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Cancellation_of_ZoneNo_ZKTL27.pdf" target="_blank" class="RLinks">Order NO.793_Reg. Cancellation of ZoneNo.ZKTL27</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Cancellation_of_ZoneNo_ZKTL28.pdf" target="_blank" class="RLinks">Order NO.794_Reg. Cancellation of ZoneNo.ZKTL28</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Cancellation_of_ZoneNo_ZKTL31.pdf" target="_blank" class="RLinks">Order NO.795_Reg. Cancellation of ZoneNo.ZKTL31</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Notification_of_Haryana_Distillery_Rules_1932.pdf" target="_blank" class="RLinks">Notification of Haryana Distillery Rules, 1932</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Interactions_with_Owners_2022_03_11.pdf" target="_blank" class="RLinks">Interaction with the owners of Distilleries, Breweries, Bottling Plants, Wholesaler and Retail Liquor Licensees on 22.03.2022 at Haryana Niwas, Sector 3, Chandigarh</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Public_Notice_2022_02_25.pdf" target="_blank" class="RLinks">Public Notice</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Expression_of_interest_2022_02_25.pdf" target="_blank" class="RLinks">Publication of notice for inviting Expression of Interest for providing integrated Inventory,Invoicing and Payment Collection Services</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2022/Press Note HTT.pdf" target="_blank" class="RLinks">Press Note regarding consideration for the post of Chairman and Members in the Haryana Tax Tribunal       </a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/News/2021/Proforma Chairman and Members in the HTT.pdf" target="_blank" class="RLinks">Proforma for consideration for the post of Chairman and Members in the Haryana Tax Tribunal           </a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/Useful_Informations/2021/Expression_of_Interest_2021_01_14.pdf" target="_blank" class="RLinks">Expression of Interest for Creation of Haryana GST Kosh- Online Knowledge Repository of GST Acts and Rules</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/Useful_Informations/2020/2020_11_16_001.pdf" target="_blank" class="RLinks">Corrigendum regarding extension of date of submission of bid proposal for implementation of High security holograms with QR based track and trace system</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/Useful_Informations/2020/Corrigendum02112020.pdf" target="_blank" class="RLinks">Corrigendum regarding withdraw the tender of amendment RFP published on 23.10.2020 from departmental website as well as e-Tender website.</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/Useful_Informations/OnlineTransferPolicy/65.pdf" target="_blank" class="RLinks">No.65/2020-SE-II Online Transfer Policy for Taxation Inspectors and Clerks</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/Useful_Informations/RFP_for_QR_based_track_26_06_2020_final_001.pdf" target="_blank" class="RLinks">RFP FOR IMPLEMENTATION OF HIGH SECURITY HOLOGRAMS WITH QR CODE BASED TRACK &amp; TRACE SYSTEM (26.06.2020)</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+					    
+					<a href="/HEX/DownloadPDF?formName=/Useful_Informations/Public_notice_2020_05_14_002.pdf" target="_blank" class="RLinks">PUBLIC NOTICE Regarding Inviting Queries/Suggestions on the draft RFP</a>
+			
+		
+		    
+	</li>
+	
+	
+		
+	<li style="line-height: 15px;">		 
+			 
+			
+			
+		
+		    
+	</li>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+<!--
+  Bellow part is commented due to Automation of file
+  <ul class="RLinks">
+-->
+
+
+		  
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/Useful_Informations/ETO.pdf'" target="_blank" class="RLinks">Medical Examination of the Candidates selected for appointment to the post of Excise and Taxation Officer selected through HCS ( Executive Branch ) and other Allied Services Examination-2017</a></li>
+
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/Useful_Informations/AETO.pdf'" target="_blank" class="RLinks">Medical Examination of the Candidates selected for appointment to the post of Assistant Excise and Taxation Officer selected through HCS ( Executive Branch ) and other Allied Services Examination-2017</a></li>
+
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/Useful_Informations/eTenderFinal.pdf'" target="_blank" class="RLinks">NIT NO: 2/ETC/2019 TENDER DOCUMENT FOR OUTSOURCING OF SKILLED, SEMI-SKILLED &amp; UNSKILLED MANPOWER UNDER EXCISE &amp; TAXATION DEPARTMENT, HARYANA, PANCHKULA FOR FY 2019-20</a></li>
+		  
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/Useful_Informations/TenderdocumentNIT.pdf'" target="_blank" class="RLinks">NIT NO: 3/ETC/2019 TENDER DOCUMENT FOR OUTSOURCING OF SKILLED MANPOWER UNDER EXCISE &amp; TAXATION DEPARTMENT, HARYANA, PANCHKULA FOR FY 2019-20</a></li>
+		  
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/Useful_Informations/corrigendum24jul2019.pdf'" target="_blank" class="RLinks">Corrigendum to RFP for engaging Public Sector Undertaking Insurance Companies.</a></li>
+		  		  
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/Useful_Informations/CORRIGENDUM18jul2019.pdf'" target="_blank" class="RLinks">notice regarding extension of date of bid submission of QR code based Track &amp; Trace system.</a></li>
+		  		  
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/Useful_Informations/CORRIGENDUM16jul2019.pdf'" target="_blank" class="RLinks">Corrigendum to RFP for engaging Public Sector Undertaking Insurance Companies.</a></li>
+
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/Useful_Informations/Correigendum5jul2019.pdf'" target="_blank" class="RLinks">Corrigendum to RFP for empanelment of Chartered Accountant/CA Firms.</a></li>
+
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/Useful_Informations/FINAL_RFP_EXCISE_QR_TRACKING_HARYANA_V6_04_06_2019.pdf'" target="_blank" class="RLinks">RFP for implementation of QR code Based Track &amp; Trace System for Excise and Taxation Department.</a></li>
+
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/Useful_Informations/CAFIRMS2.pdf'" target="_blank" class="RLinks">Tender Notice - For empanelment of Chartered Accountants/CA Firms for internal audit.</a></li>
+		  	  
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/Useful_Informations/CAFIRMS1.pdf'" target="_blank" class="RLinks">RFP for  empanelment  of reputed Chartered Accountants/CA Firms for Setting up Internal Audit System in the Department.</a></li>
+		  
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/Useful_Informations/MVSNDBY.pdf'" target="_blank" class="RLinks">RFP for Implementation of Mukhyamantri Vyapari Samuhik Niji Durghatna Beema Yojana (MVSNDBY) and Mukhyamantri Vyapari Kshatipurti Beema Yojana (MVKBY) in State of Haryana.</a></li>
+
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/Useful_Informations/PSU.pdf'" target="_blank" class="RLinks">Tender Notice - From Public Sector Undertaking (PSU) Insurance Companies</a></li>
+		  		  
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/Useful_Informations/HSSC_Compiled_FINAL_including_jind.pdf'" target="_blank" class="RLinks">Posting list of remaining 41 Selected Candidates on the posts of Group-D against Advt. No. 4/2018 Category No.1.</a></li>
+
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/Useful_Informations/POSTING_LIST_GROUP_D.pdf'" target="_blank" class="RLinks">Posting list of Selected Candidates on the posts of Group-D against Advt. No. 4/2018 Category No.1</a></li>
+
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/GST_Helpdesk/RESULT_OF_EXAMINATION_OF_GST_PRACTITIONERS17dec2018.pdf'" target="_blank" class="RLinks">RESULT OF EXAMINATION OF GST PRACTITIONERS HELD ON 17.12.2018.</a></li>
+
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/GST/AAR_Procedure.pdf'" target="_blank" class="RLinks">Details of application procedure and check-list for Advance Ruling Authority.</a></li>
+
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/GST/AAR_ProcedureAppellate.pdf'" target="_blank" class="RLinks">Details of application procedure and check-list for Advance Ruling Appellate Authority.</a></li>
+
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/Useful_Informations/10_10_2018NEW_RFP_DraftA4Document11_6_18.pdf'" target="_blank" class="RLinks">TENDER NOTICE (RFP FOR ENGAGEMENT OF CA FIRMS FOR INTERNAL AUDIT SYSTEM).</a></li>
+
+
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --><a href="https://www.mygov.in/group-issue/simplified-gst-return-principles-and-draft-return-formats/" target="_blank" class="RLinks">Draft new GST return design, principles and formats is published for feedback and suggestions till 31.08.2018.</a></li>
+
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --><a href="/HEX/DownloadPDF?formName='/Useful_Informations/StandardOperatingProcedure_for_Inspecting_a_Distillery.pdf'" target="_blank" class="RLinks">Standard Operating procedure for Inspecting a Distillery.</a></li>
+
+			
+	
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --><a href="/HEX/menuJSP/GSTTaxpayer.jsp" target="_blank" class="RLinks">Distribution of GST Taxpayers between Central &amp; State Government</a></li>
+	
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/EWAY/NodalOfficerEWayBill.pdf'" target="_blank" class="RLinks">Nodal Officer E Way Bill.</a></li>
+
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/EWAY/FAQsEWayBill.pdf'" target="_blank" class="RLinks">FAQs E Way Bill.</a></li>
+
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/EWAY/NotificationEWayBill.pdf'" target="_blank" class="RLinks">Notification E Way Bill.</a></li>
+
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="https://play.google.com/store/apps/details?id=in.gov.cbec.gsttaxratemanual" target="_blank" class="RLinks">GST Rate Finder.</a></li>
+
+<!--
+	href="https://www.mygov.in/group-issue/stakeholder-consulation-proposed-changes-gst-laws"
+	 <li style="line-height: 15px;"><img src="img/new_blnk.gif"> <a href="/HEX/DownloadPDF?formName='/Schedules/GST/GST_Rates_of_goodsAs_perCBEC_Rates.pdf'" target="_blank" class="RLinks">GST Rates of Goods(As per CBEC Rates).</a></li>
+		  <li style="line-height: 15px;"><img src="img/new_blnk.gif"> <a href="/HEX/DownloadPDF?formName='/Schedules/GST/GST_Rates_of_ServicesAs_perCBEC_Rates.pdf'" target="_blank" class="RLinks">GST Rates of Services(As per CBEC Rates).</a></li>
+-->
+		  
+		   <li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="https://services.gst.gov.in/services/track-provisional-id-status" target="_blank" class="RLinks">Track GST Provisional ID Status.</a></li>
+         <!-- <li style="line-height: 15px;"><a href="/HEXWAR/unregisterdealerform.html" class="RLinks">TC1-FORM Unregistered Dealer</a></li> -->
+       <li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/GST/THE_HARYANA_GOODS_AND_SERVICES_TAX_ACT.pdf'" target="_blank" class="RLinks">THE HARYANA GOODS AND SERVICES TAX ACT, 2017.</a></li>
+      <li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEX/DownloadPDF?formName='/Circulars/ApnaBillApnaVikas.pdf'" target="_blank" class="RLinks">Apna Bill Apna Vikas</a></li>
+ <li style="line-height: 15px;"><a href="http://www.tinxsys.com/TinxsysInternetWeb/index.jsp" target="_blank" class="RLinks">TINXSYS</a></li>
+  <li><a href="http://egrashry.nic.in/" target="_blank" class="RLinks">E-Challan(E-GRAS)</a></li>
+  
+    <li style="line-height:15px;"><a href="/HEX/pdf/CWP5249.pdf" target="_blank" class="fancybox-media italic">ORDERS Regarding<br> Excise Policy</a></li>
+ <li style="line-height: 15px;"><a href="/HEX/menuJSP/circulars.jsp" class="RLinks">ORDERS Regarding e-Governance)</a></li>
+<li style="line-height: 15px;"><a href="/HEX/DownloadPDF?formName='/RFD_2015_16.pdf'" target="_blank" class="RLinks">RFD 2015-16</a></li>
+<li style="line-height: 15px;"><a href="/HEX/DownloadPDF?formName='/News/OrderCWP5249for1617.pdf'" target="_blank" class="RLinks"><img src="img/new_blnk.gif"> ORDERS Regarding para 1.2.2 of Excise Policy for the year 2016-17</a></li>
+<li style="line-height: 15px;"><a href="/HEXWAR/returnsR4A.html" class="RLinks">Returns R4A</a></li>
+ <li style="line-height: 15px;"><a href="/HEXWAR/refundVat4BGet.html" class="RLinks">Refund on account of Court/Appellate/Revision Order- unregistered dealers</a></li>
+
+<li style="line-height: 15px;"><!-- <img src="img/new_blnk.gif">  --> <a href="/HEXWAR/unregpayment.html" class="RLinks">Unregistered Dealer Payment</a></li>
+<li style="line-height: 15px;"><a href="/HEXWAR/permitPassView.html" class="RLinks">Verify genuineness of permit &amp; pass</a></li>
+           <li style="line-height: 15px;"><a href="/HEX/menuJSP/impjudgements.jsp" class="RLinks">Important Judgements</a></li>
+                      <li style="line-height: 15px;"><a href="http://www.haryana.gov.in/" target="_blank" class="RLinks">Haryana Portal</a></li>
+</ul>
+                <p id="usefulllinks">View More...</p>
+            </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-lg-4">
+              <div class="iconbox_block">
+                
+                <div class="iconbox_content">
+                  <h3 class="iconbox_title">Excise Policy's</h3>
+                <div class="usefull" style="border: 0px solid red;overflow: auto;height: 230px;width: 352px;margin-top: 15px;padding: 10px 0px 10px 41px;">
+                  <ul class="RLinks">
+	  
+		  
+			
+	
+		
+                    <li style="line-height: 15px;">		 
+                                 
+                                     
+                        <img src="img/idea.gif" alt="icon" width="10%" style="padding-right: 5px;">
+                            
+                                        
+                                    <a href="/HEX/DownloadPDF?formName=/News/2025/The_Interviews_for_the_Empanelment.pdf" target="_blank" class="RLinks"> Haryana Excise Policy (2025-27) as amended on 20.05.2025</a>
+                            
+                        
+                            
+                    </li>
+                    
+                    
+                        
+                    <li style="line-height: 15px;">		 
+                                 
+                        <img src="img/idea.gif" alt="icon" width="10%" style="padding-right: 5px;">
+                             
+                            
+                                        
+                                    <a href="/HEX/DownloadPDF?formName=/News/2025/Notification_for_the_appointed_day_OTS_2025.pdf" target="_blank" class="RLinks">Excise Policy (2024-25)</a>
+                            
+                        
+                            
+                    </li>
+                     <li style="line-height: 15px;">		 
+                                 
+                        <img src="img/idea.gif" alt="icon" width="10%" style="padding-right: 5px;">
+                             
+                            
+                                        
+                                    <a href="/HEX/DownloadPDF?formName=/News/2025/Notification_for_the_appointed_day_OTS_2025.pdf" target="_blank" class="RLinks">Excise Policy (2023-24)</a>
+                            
+                        
+                            
+                    </li>
+                    <li style="line-height: 15px;">		 
+                                 
+                        <img src="img/idea.gif" alt="icon" width="10%" style="padding-right: 5px;">
+                             
+                            
+                                        
+                                    <a href="/HEX/DownloadPDF?formName=/News/2025/Notification_for_the_appointed_day_OTS_2025.pdf" target="_blank" class="RLinks">Excise Policy (2022-23)</a>
+                            
+                        
+                            
+                    </li>
+                    
+                    <li style="line-height: 15px;">		 
+                                 
+                        <img src="img/idea.gif" alt="icon" width="10%" style="padding-right: 5px;">
+                             
+                            
+                                        
+                                    <a href="/HEX/DownloadPDF?formName=/News/2025/Notification_for_the_appointed_day_OTS_2025.pdf" target="_blank" class="RLinks">Second - Amendments in the Haryana Excise Policy, 2021-22</a>
+                            
+                        
+                            
+                    </li>
+                    
+                  
+                </ul>
+                <p id="usefulllinks">View More...</p>
+            </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="categories spad1">
+        <div class="container-fluid">
+            <div class="row">
+                
+                <div class="col-md-12">
+                    <div class="section-title">
+                        
+                       
+                      </div>
+                    <img src="img/city.jpg" class="w-100" alt="flowchart"/>
+                </div>
+                </div>
+                </div>
+                </section> -->
+    <!-- Categories Section Begin -->
+    <section class="categories spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-6">
+                    <div class="categories__item set-bg" data-setbg="img/categories/gas.jpg">
+                        <div class="textcat">
+                            <h5>Treasuries and Account</h5>
+                        </div>
+                        <!-- <div class="categories__hover__text">
+                            <h5>Commissioner of Industries</h5>
+                            <p>Click Here !</p>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6">
+                    <a href="https://investharyana.in/" target="_blank" title="Invest Haryana">
+                    <div class="categories__item set-bg" data-setbg="img/categories/cat-2.jpg">
+                        <div class="textcat">
+                            <h5>Invest Haryana</h5>
+                        </div>
+                        <!-- <div class="categories__hover__text">
+                            <h5>Udyam Registration Process</h5>
+                            <p>Click Here !</p>
+                        </div> -->
+                    </div></a>
+
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6">
+                    <a href="https://haryana.gov.in/"  target="_blank" title="Haryana State Portal">
+                    <div class="categories__item set-bg" data-setbg="img/categories/cat-3.jpg">
+                        <div class="textcat">
+                            <h5>Haryana State Portal</h5>
+                        </div>
+                        <!-- <div class="categories__hover__text">
+                            <h5>Telangana State Portla</h5>
+                            <p>Click Here !</p>
+                        </div> -->
+                    </div>
+                </a>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6">
+                    <a href="https://www.nsws.gov.in/" target="_blank" title="NSWS">
+                    <div class="categories__item set-bg" data-setbg="img/categories/cat-7.jpg" alt="NSWS">
+                        <div class="textcat">
+                            <h5>NSDL</h5>
+                        </div>
+                        <!-- <div class="categories__hover__text">
+                            <h5></h5>
+                            <p>Click Here !</p>
+                        </div> -->
+                    </div>
+                </a>
+                </div>
+
+                <div class="col-lg-2 col-md-2 col-sm-6">
+                    <a href="https://www.nsws.gov.in/" target="_blank" title="NSWS">
+                    <div class="categories__item set-bg" data-setbg="img/categories/cat-6.jpg" alt="NSWS">
+                        <div class="textcat">
+                            <h5>Startup India</h5>
+                        </div>
+                        <!-- <div class="categories__hover__text">
+                            <h5></h5>
+                            <p>Click Here !</p>
+                        </div> -->
+                    </div>
+                </a>
+                </div>
+
+                <div class="col-lg-2 col-md-2 col-sm-6">
+                    <a href="https://www.nsws.gov.in/" target="_blank" title="NSWS">
+                    <div class="categories__item set-bg" data-setbg="img/categories/cat-5.jpg" alt="NSWS">
+                        <div class="textcat">
+                            <h5>Service Delivery</h5>
+                        </div>
+                        <!-- <div class="categories__hover__text">
+                            <h5></h5>
+                            <p>Click Here !</p>
+                        </div> -->
+                    </div>
+                </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="categories__post" style="background: url(img/bg1.jpg);background-size: contain;background-position: left;padding-bottom: 45px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8">
+                        <div class="categories__post__item categories__post__item--large">
+                            <div class="categories__post__item__pic set-bg"
+                                data-setbg="img/tg.jpeg">
+                                
+                            </div>
+                            
+                        </div>
+                       
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="sidebar__item">
+                            <div class="sidebar__about__item">
+                                <div class="sidebar__item__title">
+
+                                    <div class="section-title" style="
+                margin-bottom: 10px !important;padding-top: 10px;">
+                        <h2>The only interface with Investors</h2>
+                       
+                      </div>
+                                    
+                                </div>
+                                
+                                <div class="middle-content">
+                                    <div class="text"><i class="fi fi-rr-angle-double-small-right"></i> &nbsp; End to end online and transparent systems for granting clearance.</div>
+                                    <div class="text mt-2"><i class="fi fi-rr-angle-double-small-right"></i> &nbsp; Participating 20+ departments provide 100+ regulatory clearance.</div>
+                                    <div class="text mt-2"><i class="fi fi-rr-angle-double-small-right"></i> &nbsp; Information repository for your business realted queires.</div>
+                                    <div class="text mt-2"><i class="fi fi-rr-angle-double-small-right"></i> &nbsp; Address your grievances.</div>
+                                    <div class="text mt-2"><i class="fi fi-rr-angle-double-small-right"></i> &nbsp; Easy tracking of applications status.</div>
+                                </div>
+                            </div>
+                            
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </section>
+
+
+
+    <!-- Categories Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="main-footer style-two style-four home-5">
+        <div class="container">
+            <div class="footer-top">
+                <div class="widget-section">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="logo-widget footer-widget">
+                                <h4 class="widget-title">Contact Details</h4>
+                                <ul>
+                                    <li><i class="fi fi-rr-postal-address"></i> Vanijya Bhawan, Plot 1-3,<br/> Sector 5, Panchkula,<br/> Haryana 134108<br>
+
+                                        
+
+
+                                    </li>
+
+                                    <li><i class="fi fi-rr-envelopes"></i> <span>Email: info@haryanatax.com</li>
+                                    <li><i class="fi fi-rr-phone-call"></i> <span>Call Us:</span> 1800 180 2017</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget footer-widget">
+                                <h4 class="widget-title">For GST</h4>
+                                <div class="widget-content">
+                                    <ul>
+                                        <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> GST Queries and Help</a></li>
+                                        <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> GST Acts and Rules</a></li>
+                                        <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> GST FAQs/User Manual</a></li>
+                                        <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> GST Corner</a></li>
+                                        <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> GST HelpDesk</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                    <div class="links-widget footer-widget">
+                        <h4 class="widget-title">For VAT</h4>
+                        <div class="widget-content">
+                            <ul>
+                              <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> Apply C Form Online</a></li>
+                              
+                                <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> VAT Queries and Help</a></li>
+                                        <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> VAT Acts and Rules</a></li>
+                                        <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> VAT FAQs/User Manual</a></li>
+                                        <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> VAT Corner</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget company-widget footer-widget">
+                                <h4 class="widget-title">For Excise</h4>
+                                <div class="widget-content">
+                                    <ul>
+                                        <!-- <li><a href="#"><i class="fi fi-rr-lightbulb-exclamation"></i> </a></li> -->
+                                        <li><a href="#"><i class="fi fi-rr-lightbulb-exclamation"></i> Apply License</a></li>
+                                        <li><a href="#"><i class="fi fi-rr-lightbulb-exclamation"></i> Information Wizard</a></li>
+                                        <li><a href="#"><i class="fi fi-rr-lightbulb-exclamation"></i> Auto Renewal</a></li>
+                                        <li><a href="#" target="_blank"><i class="fi fi-rr-lightbulb-exclamation"></i> Dealer Search</a></li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </footer>
+    <footer id="footer">
+        <div class="container footer-bottom clearfix">
+          <div class="copyright">
+            © 2025 Copyright Excise & Taxation Department, Haryana. All Rights Reserved
+          </div>
+          <div class="credits">
+            
+            Design and Developed by : <a href="#" style="color:#fff;"><img src="img/fotterlogo1.png" alt="Fotter CMS logo" style="width: 20%;"></a>
+          </div>
+        </div>
+      </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <div class="excape">Escape</div> 
+<div class="excape1"> 
+  <span>into amazing experiences</span>
+</div>
+
+  </button>
+  
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Button trigger modal -->
+
+  <!-- Chatbot Toggle Button -->
+<!-- <div id="chatbot-icon" onclick="toggleChatbot()">💬<img src="img/chatbot.gif" alt="chatbot"/></div> -->
+<div id="chatbot-icon">
+  <img src="img/chatbot.gif" alt="Chatbot Icon" />
+</div>
+
+<div id="chatbot-popup">
+  <div class="chat-header">Haryana Tax Help</div>
+  <div class="chat-content" id="chat-content">
+    <p>Choose a question:</p>
+    <ul>
+      <li onclick="showAnswer(0)">1. How to pay e-Challan?</li>
+      <li onclick="showAnswer(1)">2. What is VAT refund process?</li>
+      <li onclick="showAnswer(2)">3. Check application status?</li>
+      <li onclick="showAnswer(3)">4. Where to find dealer login?</li>
+      <li onclick="showAnswer(4)">5. How to register on the portal?</li>
+    </ul>
+    <div id="answer" class="answer-box"></div>
+  </div>
+</div>
+
+
+  <!-- Modal -->
+
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function display_ct5() {
+var x = new Date()
+var ampm = x.getHours( ) >= 12 ? ' PM' : ' AM';
+hours = x.getHours( ) % 12;
+hours = hours ? hours : 12;
+var x1=  x.getDate() + "/" + (x.getMonth()+1) + "/" + x.getFullYear(); 
+x1 = x1 + " - " +  hours + ":" +  x.getMinutes() + ":" +  x.getSeconds() + "" + ampm;
+document.getElementById('ct5').innerHTML = x1;
+display_c5();
+ }
+ function display_c5(){
+var refresh=1000; // Refresh rate in milli seconds
+mytime=setTimeout('display_ct5()',refresh)
+}
+display_c5()
+    </script>
+   <script type="text/javascript">
+    $(window).on('load', function() {
+        $('#myModal').modal('show');
+    });
+
+
+    let captchaText = "";
+
+function generateCaptcha() {
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  captchaText = "";
+  for (let i = 0; i < 6; i++) {
+    captchaText += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+
+  const canvas = document.getElementById("captchaCanvas");
+  const ctx = canvas.getContext("2d");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.font = "24px Arial";
+  ctx.fillStyle = "#000";
+  ctx.fillText(captchaText, 10, 30);
+}
+
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const userInput = document.getElementById("captchaInput").value.trim();
+  const errorMsg = document.getElementById("captchaError");
+
+  if (userInput === captchaText) {
+    errorMsg.textContent = "";
+    alert("CAPTCHA validated! Logging in...");
+    // Proceed with actual login
+  } else {
+    errorMsg.textContent = "Incorrect CAPTCHA. Please try again.";
+    generateCaptcha();
+  }
+});
+
+window.onload = generateCaptcha;
+
+
+
+</script>
+<script>
+    lucide.createIcons();
+  </script>
+
+
+  <script>
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-block-content');
+
+    function activateTab(tabClass, scrollToTabs = false) {
+      // Update active button
+      tabLinks.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.tab === tabClass) {
+          btn.classList.add('active');
+        }
+      });
+
+      // Update active content
+      tabContents.forEach(tab => {
+        tab.classList.remove('active');
+        if (tab.classList.contains(tabClass)) {
+          tab.classList.add('active');
+        }
+      });
+
+      // Scroll to tab section if needed
+      if (scrollToTabs) {
+        const section = document.getElementById("tab-section");
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Attach event listeners to tab buttons
+    tabLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const tabClass = link.getAttribute('data-tab');
+        activateTab(tabClass);
+      });
+    });
+  </script>
+
+  
+
+
+</body>
+
+</html>

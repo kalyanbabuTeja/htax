@@ -30,6 +30,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
+
+       html {
+      scroll-behavior: smooth; /* Enables smooth scrolling */
+    }
       .button a.login {
     color: #fff;
     padding: 11px 19px !important;
@@ -39,9 +43,7 @@
     background: #3F51B5;
     box-shadow: 1px 2px 3px #ccc !important;
 }
-      html {
-  scroll-behavior: smooth;
-}
+    
          .card {
       background-color: #fff;
       border-radius: 20px;
@@ -432,7 +434,7 @@ a{
   display: flex;
   justify-content: center;
   gap: 30px;
-  flex-wrap: wrap;
+  
 }
 
 .card {
@@ -494,7 +496,111 @@ li:hover {
     background-size: contain;
     padding: 0px 10px 40px;
     background-position: left;
+    width: 100% !important;
+    display: grid
+;
 }
+</style>
+
+
+<style>
+  section.grouping h2 {
+    color: red !important;
+    font-family: "montserratbold", sans-serif;
+    font-size: 1.714em;
+    display: inline-block;
+    background: linear-gradient(92.61deg, #003f88 0%, #007bff 0%, #003f88 116.86%, #007bff 182.36%, #003f88 246.57%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+  section.grouping{
+
+    .tab-links {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .tab-link {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .tab-link:hover {
+      background-color: #0056b3;
+    }
+
+    .tab-link.active {
+      background-color: #003f88;
+    }
+
+    .tab-block-content {
+      display: none;
+    }
+
+    .tab-block-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+      border: 1px solid #ccc;
+        padding: 10px;
+        margin: 20px 0px;
+        border-radius: 5px;
+        box-shadow: 1px 2px 3px #ccc;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card-container {
+      display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+        
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .content {
+    
+    animation: fadeIn 0.4s ease;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+  }
 </style>
 </head>
 
@@ -541,7 +647,7 @@ li:hover {
     <div class="top_nav" style="background-color: #01315c;">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-8" style="color: #fff;margin-top: 5px;"><i class="fi fi-rr-phone-rotary"></i> Help : 0172-2740229 &nbsp;| <span id='ct5' style="color: #fff !important;"></span> &nbsp;| Moblie App Download <img class="zoom-in-out-once" src="img/Appicon.png" style="width: 3%;margin-bottom: 4px;" alt="Mobile App Icon"> | <a href="#headpara" title="Skip to Main Contact" style="color: #eef7ff;font-weight: 600;">Skip to Main Content</a></div>
+                <div class="col-sm-8" style="color: #fff;margin-top: 5px;"><i class="fi fi-rr-phone-rotary"></i> Help : 0172-2740229 &nbsp;| <span id='ct5' style="color: #fff !important;"></span> &nbsp;| Moblie App Download <img class="zoom-in-out-once" src="img/Appicon.png" style="width: 3%;margin-bottom: 4px;" alt="Mobile App Icon"> | <a href="#headpara" title="Skip to Main Contact" style="color: #eef7ff;font-weight: 600;">Skip to Main Content</a> |  <a class="speak-toggle" id="toggleSpeak" title="Toggle Voice">🔊</a> </div>
                 <div class="col-sm-4">
     
                     
@@ -555,12 +661,18 @@ li:hover {
 <a href="" class="text-white mt-2 mr-3"><i class="fi fi-rr-search"></i> </a>
                         <a href="" class="text-white mt-2 mr-3"><i class="fi fi-rr-house-chimney" title="Home Page"></i> </a>
                         <a href="" class="text-white mt-2"><i class="fi fi-rr-tally-1"></i></a>
+
+                        
+
                         <a href="Sitemap.html" target="_blank" class="text-white mt-2 mr-2"><i class="fi fi-rr-sitemap" title="Sitemap"></i></a>
                               <a class="increase btn btn-info accessibility" href="javascript:void(0);" onclick="set_font_size('increase')"> A+ </a>
                            <a class="reset btn btn-info accessibility" href="javascript:void(0);" onclick="set_font_size('')"> A&nbsp; </a>
                            <a class="decrease btn btn-info accessibility" href="javascript:void(0);" onclick="set_font_size('decrease')"> A- </a>
                            <a class="dark btn btn-default" onclick="swapStyleSheet('resources/NewTemplate/css/dark.css')" style="background:#300b3e; border-color:none; color:#fff"> A&nbsp;</a>
                            <a class="dark btn btn-default" onclick="swapStyleSheet('resources/NewTemplate/css/customstyle.css')" style="background:#d4d4d4; border-color:none; color:#000"> A&nbsp;</a>
+
+
+                           
                        </div>
     
                 </div>
@@ -579,12 +691,14 @@ li:hover {
                 </div>
              
                 <div class="col-lg-6 col-md-3">
-                   <!-- <img src="img/cmlogo.png" alt="" class="mt-2 fa-flip-horizontal" style="width: 16.6%;float: right;"/> -->
-                <div class="button" style="float: right;margin-top: 38px;">
-                  <a class="login speak-text" href="#cardown"><i class="fi fi-rr-rules-alt"></i> Excise</a>
-                  <a class="login speak-text" href="Gst.html"><i class="fi fi-rr-tax"></i> GST</a>
-                  <a class="login speak-text" href="Vat.html"><i class="fi fi-rr-note"></i> VAT</a>
-                </div>
+                   <img src="img/right.png" alt="" class="mt-2" style="width: 21.6%;float: right;"/>
+                <!-- <div class="button" style="float: right;margin-top: 38px;">
+                  <a class="login speak-on-hover" href="#Gst"><i class="fi fi-rr-tax"></i> GST</a>
+                  <a class="login speak-on-hover" href="#Vat"><i class="fi fi-rr-note"></i> VAT</a>
+                  <a class="login speak-on-hover" href="#tab-3"><i class="fi fi-rr-rules-alt"></i> Excise</a>
+                  
+                </div> -->
+
                   </div>
                 
             </div>
@@ -596,17 +710,17 @@ li:hover {
                     <div class="col-lg-12 col-md-10 order-md-2 order-3">
                         <nav class="header__menu">
                             <ul>
-                                <li class="active"><a href="Index.html" class="speak-text"><i class="fi fi-rr-house-chimney" title="Home Page"></i></a></li>
-                                <li class="dropdown"><a href="#" class="speak-text"><i class="fi fi-rr-id-card-clip-alt"></i> Aboutus</a>
+                                <li class="active"><a href="Index.html" class="speak-on-hover"><i class="fi fi-rr-house-chimney" title="Home Page"></i> Home</a></li>
+                                <li class="dropdown"><a href="#" class="speak-on-hover"><i class="fi fi-rr-id-card-clip-alt"></i> About us</a>
                                     <ul class="dropdown__menu">
-                                      <!-- <li class="speak-text"><a href="#">Acts and Rules</a></li> -->
-                                        <li class="speak-text"><a href="#">Introduction</a></li>
-                                        <li class="speak-text"><a href="Directory.html">Directory/Email Ids</a></li>
-                                        <li class="speak-text"><a href="#">Contact Us</a></li>
+                                      
+                                        <li class="speak-on-hover"><a href="#">Introduction</a></li>
+                                        <li class="speak-on-hover"><a href="Directory.html">Directory/Email Ids</a></li>
+                                        <li class="speak-on-hover"><a href="#">Contact Us</a></li>
                                         
                                     </ul>
                                 </li>
-                                <li class="speak-text"><a href="#"><i class="fi fi-rr-tax"></i> Acts & Rules</a></li>
+                                <li class="speak-on-hover"><a onclick="activateTab('tab-1', true)"><i class="fi fi-rr-tax"></i> GST</a></li>
                                 <!-- <li><a href="#">Acts</a>
                                     <div class="header__megamenu__wrapper">
                                         <div class="header__megamenu">
@@ -664,21 +778,22 @@ li:hover {
                                     </div>
                                 </li>
                                 <li><a href="#">Rules</a></li> -->
-                                <li class="speak-text"><a href="Taxrates.html"><i class="fi fi-rr-tax"></i> Tax Rates</a></li>
+                                <li class="speak-on-hover"><a onclick="activateTab('tab-2', true)"><i class="fi fi-rr-tax"></i> VAT</a></li>
                                 
-                                <li class="speak-text"><a href="#excise"><i class="fi fi-rr-rules-alt"></i> Excise Policy</a></li>
-                                <li class="speak-text"><a href="#govorder"><i class="fi fi-rr-note"></i> Government Orders</a></li>
-                                <li class="speak-text"><a href="#use"><i class="fi fi-rr-link-alt"></i> Useful Information</a></li>
-                                <li class="speak-text"><a href="./contact.html"><i class="fi fi-rr-person-circle-question"></i> Help</a></li>
-                                <li class="speak-text"><a href="./contact.html"><i class="fi fi-rr-link-horizontal-slash"></i> RTI</a></li>
-                                <li class="speak-text"><a href="./contact.html"><i class="fi fi-rr-bulb"></i> Defaulters</a></li>
+                                <li class="speak-on-hover"><a onclick="activateTab('tab-3', true)"><i class="fi fi-rr-rules-alt"></i> Excise</a></li>
+                                <li class="speak-on-hover"><a href="#govorder"><i class="fi fi-rr-note"></i> Government Orders</a></li>
+                                <!-- <li class="speak-on-hover"><a href="#use"><i class="fi fi-rr-link-alt"></i> Useful Information</a></li> -->
+                                <li class="speak-on-hover"><a href="./contact.html"><i class="fi fi-rr-person-circle-question"></i> Help</a></li>
+                                <li class="speak-on-hover"><a href="./contact.html"><i class="fi fi-rr-link-horizontal-slash"></i> RTI</a></li>
+                                <li class="speak-on-hover" style="margin-right: 200px;"><a href="./contact.html"><i class="fi fi-rr-bulb"></i> Defaulters</a></li>
+ 
                                 <li class="dropdown" style="
     background: none;
-"><a class="login speak-text" href=""><i class="fi fi-rr-user-robot"></i> Login</a>
+"><a class="login speak-on-hover" href=""><i class="fi fi-rr-user-robot"></i> Login</a>
                                   <ul class="dropdown__menu">
-                                        <li class="speak-text"><a href="VATlogin.html">VAT</a></li>
-                                        <li class="speak-text"><a href="login.html">Licensee</a></li>
-                                        <li class="speak-text"><a href="Deptlogin.html">Department</a></li>
+                                        <li class="speak-on-hover"><a href="VATlogin.html">VAT</a></li>
+                                        <li class="speak-on-hover"><a href="login.html">Licensee</a></li>
+                                        <li class="speak-on-hover"><a href="Deptlogin.html">Department</a></li>
                                         
                                         
                                     </ul>
@@ -806,7 +921,7 @@ li:hover {
 
 
 
-<section id="cardown" class="faq section-bg">
+<!-- <section id="cardown" class="faq section-bg">
   <div class="section-title" id="excise" style="
     margin-bottom: 10px !important;padding-top: 10px;">
             <h2>Excise</h2>
@@ -861,13 +976,214 @@ li:hover {
       </ul>
     </div>
   </section>
-</section>
+</section> -->
 
       
 
+
+
       <!--  -->
 
-    <section id="faq" class="faq section-bg">
+    
+
+
+      <section class="grouping" style="margin-top: 10px;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            
+  <div id="tab-section">
+  <div class="tab-links"  id="cardown1">
+    <button class="tab-link active" data-tab="tab-1"><i class="fi fi-rr-tax"></i> GST</button>
+    <button class="tab-link" data-tab="tab-2"><i class="fi fi-rr-tax"></i> VAT</button>
+    <button class="tab-link" data-tab="tab-3"><i class="fi fi-rr-rules-alt"></i> Excise</button>
+  </div>
+
+  <div class="tab-block-content tab-1 active">
+    <div class="">
+      <section id="cardown" class="faq section-bg">
+  <div class="section-title" id="excise" style="
+    margin-bottom: 10px !important;padding-top: 10px;">
+            <h2><i class="fi fi-rr-tax"></i> GST</h2>
+           
+          </div>
+  <section class="card-container">
+    <div class="card" style="border-top: 8px solid #3a8ab7 !important;">
+      <h3 style="background: #ebf3f7;">Tax Legislation</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Acts</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Rules</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Forms</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Notification</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Circulars</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Instructions / Guidelines</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Orders</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="background: #ece6fb;">Key Services</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> GST Common Portal</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> GST eWay Bill</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> e-Invoice System</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> ACES-GST</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> GSTN</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Verify CBIC DIN GST</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-top: 8px solid #3a8ab7 !important;">
+      <h3 style="background: #ececf9;">Excise Policy's</h3>
+      <ul>
+      
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2024-25)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2023-24)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2022-23)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2021-22)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="background: #ece6fb;">Help & Support</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Helpdesk Email</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Helpline Numbers</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Working Hours</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Escalation Matrix</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Feedback Form</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> FAQs</li>
+      </ul>
+    </div>
+  </section>
+</section>
+      <!-- Add more excise cards here -->
+    </div>
+  </div>
+
+  <div class="tab-block-content tab-2">
+    <section id="cardown" class="faq section-bg">
+  <div class="section-title" id="excise" style="
+    margin-bottom: 10px !important;padding-top: 10px;">
+            <h2><i class="fi fi-rr-tax"></i> VAT</h2>
+           
+          </div>
+  <section class="card-container">
+    <div class="card" style="border-top: 8px solid #3a8ab7 !important;">
+      <h3 style="background: #ebf3f7;">Tax Legislation</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Acts</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Rules</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Forms</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Notification</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Circulars</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Instructions / Guidelines</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Orders</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="background: #ece6fb;">Key Services</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> VAT Common Portal</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> VAT eWay Bill</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> e-Invoice System</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> ACES-GST</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> GSTN</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Verify CBIC DIN GST</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-top: 8px solid #3a8ab7 !important;">
+      <h3 style="background: #ececf9;">Excise Policy's</h3>
+      <ul>
+      
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2024-25)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2023-24)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2022-23)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2021-22)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="background: #ece6fb;">Help & Support</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Helpdesk Email</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Helpline Numbers</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Working Hours</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Escalation Matrix</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Feedback Form</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> FAQs</li>
+      </ul>
+    </div>
+  </section>
+</section>
+  </div>
+
+  <div class="tab-block-content tab-3">
+    <section id="cardown" class="faq section-bg">
+  <div class="section-title" id="excise" style="
+    margin-bottom: 10px !important;padding-top: 10px;">
+            <h2><i class="fi fi-rr-rules-alt"></i> Excise</h2>
+           
+          </div>
+  <section class="card-container">
+    <div class="card" style="border-top: 8px solid #3a8ab7 !important;">
+      <h3 style="background: #ebf3f7;">Tax Legislation</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Acts</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Rules</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Forms</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Notification</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Circulars</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Instructions / Guidelines</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Orders</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="background: #ece6fb;">Key Services</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Registration</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Transit Slip</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Unregistered Users Payment</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Temporary License (For Marriage & Parties)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy & Updates</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> License Search</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-top: 8px solid #3a8ab7 !important;">
+      <h3 style="background: #ececf9;">Excise Policy's</h3>
+      <ul>
+      
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2024-25)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2023-24)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2022-23)</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Excise Policy (2021-22)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="background: #ece6fb;">Help & Support</h3>
+      <ul>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Helpdesk Email</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Helpline Numbers</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Working Hours</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Escalation Matrix</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> Feedback Form</li>
+        <li><i class="fi fi-rr-angle-double-small-right"></i> FAQs</li>
+      </ul>
+    </div>
+  </section>
+</section>
+  </div>
+</div>
+          </div>
+        </div>  
+      </section>
+
+      <section id="faq" class="faq section-bg">
         <div class="container aos-init aos-animate" data-aos=""   id="headpara">
   
 
@@ -880,82 +1196,13 @@ li:hover {
   <div class="col-lg-12" style="display: flex;" class="skipc">
     <div class="col-lg-12">
       
-      <!-- <p style="
-      text-align: justify;
-  ">
-     
-        </p><ul>
-          <li>TG-iPASS is a certification service to establish Industries, manufacturing, and services, in the state of Telangana, India. The process allows a single mechanism for doing business with the state, including obtaining required permissions within stipulated timelines. Twenty-three departments are providing forty types of approvals through the process. Its online facility provides features to applicants to apply for approvals, pay fees, respond to queries, and download the approvals given by the department, eliminating the necessity of direct approach. Common enclosures evolved through process re-engineering has done away with the process of attaching the same documents multiple times.<br><br></li>
-          <li>According to data provided by the Telangana government, between January 2015 and November 2018, over 8,500 projects with a total investment of Rs 1.4 lakh crore have been approved. Of those, over 6,000 projects with an investment of around Rs 60,660 crore have commenced operations. The government claims these projects have generated 2.7 lakh jobs.</li>
-        </ul>
-      <p></p> -->
+      
       <div class="col-lg-12 mb-4">
         
-        <!-- <div class="grid-container">
-            <div class="card">
-              <i data-lucide="landmark"></i>
-              <span>Apply for OTS Schems, 2025</span>
-              <ul class="hover-list">
-                <h3>Unregistered</h3>
-                <li>Dealer Payments</li>
-                <li>Dealer Appeal</li>
-               <li>Users Payments</li>
-              </ul>
-            </div>
-            <div class="card">
-              <i data-lucide="video"></i>
-              <span>Excise Registration</span>
-            </div>
-            <div class="card">
-              <i data-lucide="monitor"></i>
-              <span>Transit Slip</span>
-            </div>
-            <div class="card">
-              <i data-lucide="map"></i>
-              <span>Mera Bill, Mera Adhikaar</span>
-            </div>
-            <div class="card">
-              <i data-lucide="leaf"></i>
-              <span>GST Kosh</span>
-            </div>
-            <div class="card">
-              <i data-lucide="building"></i>
-              <span>Update Your Parivar Pehchan Patra</span>
-            </div>
-            <div class="card">
-                <i data-lucide="building"></i>
-                <span>Mukhyamantri Vyapari Beema Yojana</span>
-              </div>
-              <div class="card">
-                <i data-lucide="building"></i>
-                <span>Unregistered Users Payments</span>
-              </div>
-              <div class="card">
-                <i data-lucide="building"></i>
-                <span>Unregistered Dealer Payments</span>
-              </div>
-              <div class="card">
-                <i data-lucide="building"></i>
-                <span>Unregistered Dealer Appeal</span>
-              </div>
-              
-          </div> -->
+        
         
           <div class="demo12 d-flex ">
             <div class="card">
-                <div class="card-content">
-                    <i data-lucide="building"></i>
-                  <div class="default-text">OTS Scheme</div>
-                  <ul class="hover-list">
-                    <h3>OTS Scheme</h3>
-                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/excisePolicyETendering.jsp?excisePolicyData=2025_27" target="_blank">Excise Policy 2025-27</a></li>
-                    <li><a href="https://haryanatax.gov.in/OTS2025/login.html" target="_blank">Apply for OTS Scheme, 2025</a></li>
-                    <li><a href="https://haryanatax.gov.in/OTSAPP/login.html" target="_blank">OTS Scheme, 2023</a></li>
-                   <!-- <li>Users Payments</li> -->
-                  </ul>
-                </div>
-              </div>
-              <div class="card">
                 <div class="card-content">
                     <i data-lucide="edit"></i>
                   <div class="default-text">EODB</div>
@@ -968,31 +1215,26 @@ li:hover {
                   </ul>
                 </div>
               </div>
-              <div class="card">
+            <div class="card">
                 <div class="card-content">
-                    <i data-lucide="laptop"></i>
-                  <div class="default-text">GST</div>
+                    <i data-lucide="log-in"></i>
+                  <div class="default-text">Departments Login</div>
                   <ul class="hover-list">
-                    <!-- <h3>GST Corner</h3> -->
-                    <li style="margin-top: 5px;"><a href="https://haryanatax.gov.in/HEX/GST_Corner.html" target="_blank">GST Corner</a></li>
-                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/GST_Queries_and_help.jsp" target="_blank">Queries and Help</a></li>
-                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/GST_acts_rules.jsp" target="_blank">Acts and Rules</a></li>
-                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/GST_FAQ_USER_MANUAL.jsp" target="_blank">FAQ/User Manual</a></li>
-                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/GST_helpdesk.jsp" target="_blank">Govt. Departments</a></li>
-                    
-                    <!-- GST_Corner -->
-                   <!-- <li>Excise Unregistered 
-                    Users Payment</li> -->
+                    <h3>Departments<br/>Login<br/><br/></h3>
+                    <li><a href="https://vanijya.haryanatax.gov.in:4443/oam/server/obrareq.cgi?encquery%3DMbaJjTv%2BTo5mcXwi6CxQ3RPjpcNP1wembWJjz2cwI4cOYIWThB7sDybK2yFsabksM5HZzOk6k9GDoKPBNff%2FiPs1PfUuNuvWRj51XglrVw%2B9Q1e4xAcQSeaaEqu2jO8d%2BWHIP0n%2BglfEOgMM5XHmlsqshEnY9NbnR8KV%2FS7pqqlSFXjYLrvpl1tLnJdJd37w8S5slkXBVvJTY8oOb3fbwtZLReToC3XFjEKZAW%2FABHs%2F%2BcE0lSFtHFmZqWuwAD9g%2Bh5np3pq0wAJdVPuR05WRq3VLISIOsnFGUEj%2Bf23%2FSDfb5w7Ine4DaOQwunnmRq1%20agentid%3DHEX_11g%20ver%3D1%20crmethod%3D2" target="_blank">Click Here</a></li>
                   </ul>
                 </div>
               </div>
-              <div class="card">
+               <div class="card">
                 <div class="card-content">
-                    <i data-lucide="user"></i>
-                  <div class="default-text">E-Way Bill</div>
+                    
+                    <i data-lucide="shield-check"></i>
+                  <div class="default-text"><br/>Digital Signature Verfication</div>
                   <ul class="hover-list">
-                    <h3>E-Way Bill<br/><br/></h3>
-                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/eway.jsp" target="_blank">Click Here</a></li>
+                    <h3>Digital Signature Verfication<br/><br/></h3>
+                    <li><a href="http://secmsgdemo.emudhra.com/emvv_admin/Wipro/Haryana_Excise/emSigner-SetupFiles_151216.zip" target="_blank">Click Here</a></li>
+                    
+                   
                   </ul>
                 </div>
               </div>
@@ -1006,10 +1248,36 @@ li:hover {
                   </ul>
                 </div>
               </div>
+            <div class="card">
+                <div class="card-content">
+                    <i data-lucide="building"></i>
+                  <div class="default-text">OTS Scheme</div>
+                  <ul class="hover-list">
+                    <h3>OTS Scheme</h3>
+                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/excisePolicyETendering.jsp?excisePolicyData=2025_27" target="_blank">Excise Policy 2025-27</a></li>
+                    <li><a href="https://haryanatax.gov.in/OTS2025/login.html" target="_blank">Apply for OTS Scheme, 2025</a></li>
+                    <li><a href="https://haryanatax.gov.in/OTSAPP/login.html" target="_blank">OTS Scheme, 2023</a></li>
+                   
+                  </ul>
+                </div>
+              </div>
+              
+              
+              <!-- <div class="card">
+                <div class="card-content">
+                    <i data-lucide="user"></i>
+                  <div class="default-text">E-Way Bill</div>
+                  <ul class="hover-list">
+                    <h3>E-Way Bill<br/><br/></h3>
+                    <li><a href="https://haryanatax.gov.in/HEX/menuJSP/eway.jsp" target="_blank">Click Here</a></li>
+                  </ul>
+                </div>
+              </div> -->
+              
               
           </div>
           <div class="demo12 d-flex ">
-            <div class="card">
+            <!-- <div class="card">
                 <div class="card-content">
                     <i data-lucide="banknote-arrow-down"></i>
                   <div class="default-text">Licensee Search</div>
@@ -1018,18 +1286,9 @@ li:hover {
                     <li><a href="https://haryanatax.gov.in/HEXWAR/searchLicensesDetails.html" target="_blank">Click Here</a></li>
                   </ul>
                 </div>
-              </div>
-              <div class="card">
-                <div class="card-content">
-                    <i data-lucide="log-in"></i>
-                  <div class="default-text">Departments Login</div>
-                  <ul class="hover-list">
-                    <h3>Departments<br/>Login<br/><br/></h3>
-                    <li><a href="https://vanijya.haryanatax.gov.in:4443/oam/server/obrareq.cgi?encquery%3DMbaJjTv%2BTo5mcXwi6CxQ3RPjpcNP1wembWJjz2cwI4cOYIWThB7sDybK2yFsabksM5HZzOk6k9GDoKPBNff%2FiPs1PfUuNuvWRj51XglrVw%2B9Q1e4xAcQSeaaEqu2jO8d%2BWHIP0n%2BglfEOgMM5XHmlsqshEnY9NbnR8KV%2FS7pqqlSFXjYLrvpl1tLnJdJd37w8S5slkXBVvJTY8oOb3fbwtZLReToC3XFjEKZAW%2FABHs%2F%2BcE0lSFtHFmZqWuwAD9g%2Bh5np3pq0wAJdVPuR05WRq3VLISIOsnFGUEj%2Bf23%2FSDfb5w7Ine4DaOQwunnmRq1%20agentid%3DHEX_11g%20ver%3D1%20crmethod%3D2" target="_blank">Click Here</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="card">
+              </div> -->
+              
+              <!-- <div class="card">
                 <div class="card-content">
                     <i data-lucide="search"></i>
                   <div class="default-text">Dealer Search</div>
@@ -1039,23 +1298,11 @@ li:hover {
                     <li><a href="https://haryanatax.gov.in/HEXWAR/searchdealerDetails.html" target="_blank">Unregistered Dealer Payment</a></li>
                   </ul>
                 </div>
-              </div>
+              </div> -->
               
-              <div class="card">
-                <div class="card-content">
-                    
-                    <i data-lucide="shield-check"></i>
-                  <div class="default-text"><br/>Digital Signature Verfication</div>
-                  <ul class="hover-list">
-                    <h3>Digital Signature Verfication<br/><br/></h3>
-                    <li><a href="http://secmsgdemo.emudhra.com/emvv_admin/Wipro/Haryana_Excise/emSigner-SetupFiles_151216.zip" target="_blank">Click Here</a></li>
-                    
-                   
-                  </ul>
-                </div>
-              </div>
+             
 
-              <div class="card">
+              <!-- <div class="card">
                 <div class="card-content">
                     <i data-lucide="building-2"></i>
                   <div class="default-text"><br/><br/>Other's</div>
@@ -1065,7 +1312,7 @@ li:hover {
                   <li><a href="#" target="_blank">Marriage & Parties – Temporary License</a></li>
                   </ul>
                 </div>
-              </div>
+              </div> -->
               
           </div>
           
@@ -1082,12 +1329,11 @@ li:hover {
         </div>
       </section>
 
-
       <section class="service" id="use">
         <div class="container">
           <div class="section-title" id="excise" style="
     margin-bottom: 10px !important;padding-top: 10px;">
-            <h2>Usefull Links</h2>
+            <h2>Other Links</h2>
            
           </div>
             <div class="row">
@@ -1140,7 +1386,7 @@ li:hover {
           </div>
           <div class="row">
             
-            <div class="col-lg-4">
+            <div class="col-lg-6">
               <div class="iconbox_block">
                 <!-- <div class="iconbox_icon">
                   Lates News
@@ -1158,7 +1404,7 @@ li:hover {
                 </div>
               </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-6">
               <div class="iconbox_block">
                 <!-- <div class="iconbox_icon bg-warning-subtle">
                   <img src="static/images/icons/icon_dart_board_2.svg" alt="Dart Board SVG Icon">
@@ -1168,7 +1414,7 @@ li:hover {
                   <div class="usefull" style="border: 0px solid red;
                   overflow: auto;
                   height: 230px;
-                  width: 352px;
+                  
                   margin-top: 15px;
                   padding: 10px 42px;">
                   <ul class="RLinks">
@@ -2405,11 +2651,9 @@ li:hover {
                 </div>
               </div>
             </div>
-            <div class="col-lg-4">
+            <!-- <div class="col-lg-4">
               <div class="iconbox_block">
-                <!-- <div class="iconbox_icon bg-warning-subtle">
-                  <img src="static/images/icons/icon_dart_board_2.svg" alt="Dart Board SVG Icon">
-                </div> -->
+                
                 <div class="iconbox_content">
                   <h3 class="iconbox_title">Excise Policy's</h3>
                 <div class="usefull" style="border: 0px solid red;overflow: auto;height: 230px;width: 352px;margin-top: 15px;padding: 10px 0px 10px 41px;">
@@ -2485,7 +2729,7 @@ li:hover {
             </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
@@ -2661,22 +2905,6 @@ li:hover {
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                            <div class="links-widget company-widget footer-widget">
-                                <h4 class="widget-title">For Excise</h4>
-                                <div class="widget-content">
-                                    <ul>
-                                        <li><a href="#"><i class="fi fi-rr-lightbulb-exclamation"></i> Apply C Form Online</a></li>
-                                        <li><a href="#"><i class="fi fi-rr-lightbulb-exclamation"></i> Apply License</a></li>
-                                        <li><a href="#"><i class="fi fi-rr-lightbulb-exclamation"></i> Information Wizard</a></li>
-                                        <li><a href="#"><i class="fi fi-rr-lightbulb-exclamation"></i> Auto Renewal</a></li>
-                                        <li><a href="#" target="_blank"><i class="fi fi-rr-lightbulb-exclamation"></i> Dealer Search</a></li>
-
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                             <div class="links-widget footer-widget">
                                 <h4 class="widget-title">For GST</h4>
                                 <div class="widget-content">
@@ -2695,6 +2923,8 @@ li:hover {
                         <h4 class="widget-title">For VAT</h4>
                         <div class="widget-content">
                             <ul>
+                              <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> Apply C Form Online</a></li>
+                              
                                 <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> VAT Queries and Help</a></li>
                                         <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> VAT Acts and Rules</a></li>
                                         <li><a href="login.aspx"><i class="fi fi-rr-star-exclamation"></i> VAT FAQs/User Manual</a></li>
@@ -2704,6 +2934,23 @@ li:hover {
                         </div>
                     </div>
                 </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget company-widget footer-widget">
+                                <h4 class="widget-title">For Excise</h4>
+                                <div class="widget-content">
+                                    <ul>
+                                        <!-- <li><a href="#"><i class="fi fi-rr-lightbulb-exclamation"></i> </a></li> -->
+                                        <li><a href="#"><i class="fi fi-rr-lightbulb-exclamation"></i> Apply License</a></li>
+                                        <li><a href="#"><i class="fi fi-rr-lightbulb-exclamation"></i> Information Wizard</a></li>
+                                        <li><a href="#"><i class="fi fi-rr-lightbulb-exclamation"></i> Auto Renewal</a></li>
+                                        <li><a href="#" target="_blank"><i class="fi fi-rr-lightbulb-exclamation"></i> Dealer Search</a></li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -2855,10 +3102,54 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 
 window.onload = generateCaptcha;
 
+
+
 </script>
 <script>
     lucide.createIcons();
   </script>
+
+
+  <script>
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-block-content');
+
+    function activateTab(tabClass, scrollToTabs = false) {
+      // Update active button
+      tabLinks.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.tab === tabClass) {
+          btn.classList.add('active');
+        }
+      });
+
+      // Update active content
+      tabContents.forEach(tab => {
+        tab.classList.remove('active');
+        if (tab.classList.contains(tabClass)) {
+          tab.classList.add('active');
+        }
+      });
+
+      // Scroll to tab section if needed
+      if (scrollToTabs) {
+        const section = document.getElementById("tab-section");
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Attach event listeners to tab buttons
+    tabLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const tabClass = link.getAttribute('data-tab');
+        activateTab(tabClass);
+      });
+    });
+  </script>
+
+  
+
+
 </body>
 
 </html>

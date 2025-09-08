@@ -129,23 +129,56 @@ document.getElementById("chatbot-icon").addEventListener("click", function (e) {
 });
 
 
+
+
+
 // Function to speak the given text
-  function speakText(text) {
-    // Stop any current speaking
-    window.speechSynthesis.cancel();
 
-    const speech = new SpeechSynthesisUtterance(text);
-    speech.lang = 'en-IN'; // Set language
-    window.speechSynthesis.speak(speech);
-  }
+// ---------- core helper ----------
+    function speak(text) {
+      // cancel anything already playing
+      window.speechSynthesis.cancel();
 
-  // Add event listener to all elements with class 'speak-text'
-  document.querySelectorAll('.').forEach(element => {
-    element.addEventListener('mouseenter', () => {
-      speakText(element.innerText);
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang   = 'en-US';    // change to 'hi-IN' for Hindi, etc.
+      utter.pitch  = 1.0;        // 0 – 2
+      utter.rate   = 1.0;        // 0.1 – 10
+      utter.volume = 1.0;        // 0 – 1
+      window.speechSynthesis.speak(utter);
+    }
+
+    // ---------- attach events ----------
+    document.querySelectorAll('.speak-on-hover').forEach(el => {
+      el.addEventListener('mouseenter', () => speak(el.innerText));
+      el.addEventListener('mouseleave',  () => window.speechSynthesis.cancel());
     });
 
-    element.addEventListener('mouseleave', () => {
-      window.speechSynthesis.cancel(); // Stop speaking on mouse out
+ let voiceEnabled = true;
+
+    const toggleBtn = document.getElementById('toggleSpeak');
+    const menuLinks = document.querySelectorAll('#menu a');
+
+    // Toggle voice on/off
+    toggleBtn.addEventListener('click', () => {
+      voiceEnabled = !voiceEnabled;
+      toggleBtn.textContent = voiceEnabled ? '🔊' : '🔇';
     });
-  });
+
+    // Speak helper
+    function speak(text) {
+      if (!voiceEnabled) return;
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'en-US';
+      utter.rate = 1;
+      utter.pitch = 1;
+      window.speechSynthesis.speak(utter);
+    }
+
+    // Add hover voice
+    menuLinks.forEach(link => {
+      link.addEventListener('mouseenter', () => speak(link.textContent.trim()));
+      link.addEventListener('mouseleave', () => window.speechSynthesis.cancel());
+    });
+
+    

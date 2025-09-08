@@ -3906,6 +3906,10 @@ ul.RLinks img {
     padding-right: 10px;
 }
 
-img.mt-2.fa-flip-horizontal {
-    visibility: hidden;
+/* speaker icon css */
+a#toggleSpeak {
+    background: #f0f8ff;
+    padding: 4px;
+    border-radius: 4px;
+    padding-top: 5px;
 }

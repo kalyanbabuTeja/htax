@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:20 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <title>Htax - Dashboard</title>
+		
+		<!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png">
+		
+		<!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+		
+		<!-- Fontawesome CSS -->
+        <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+		
+		<!-- Feathericon CSS -->
+        <link rel="stylesheet" href="../assets/css/feathericon.min.css">
+		
+		<link rel="stylesheet" href="../assets/plugins/morris/morris.css">
+
+    <link rel="stylesheet" href="../assets/css/dept.css">
+		
+		<!-- Main CSS -->
+        <link rel="stylesheet" href="../assets/css/style.css">
+		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+		<style>
+			.page-wrapper {
+ 
+    padding-top: 80px;
+ 
+}
+.user-menu {
+margin: 10px 0px;
+    }
+.sidebar {
+    top: 80px;
+}
+.header {
+	height: 80px;
+}
+@media only screen and (min-width: 992px) {
+    #toggle_btn{
+		height: 80px;
+	}
+	.dashboard-box {
+    width: 320px;
+    padding: 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.dashboard-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.dashboard-box h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.dashboard-box p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.btn-click {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(135deg, #007BFF, #0056D2);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-click:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.2);
+}
+.header .header-left .logo img {
+	max-height: 70px;
+        width: auto;
+        margin-top: 5px;
+}
+.sidebar {
+    background-color: #0b3654 !important;
+}
+.page-wrapper {
+    background: linear-gradient(45deg, rgb(255, 255, 255) 0%, rgba(116, 15, 214, 0.27) 100%) 0% 0% / cover, url(assets/img/hero-bg.jpg) center center no-repeat;
+	
+	/* linear-gradient(45deg, rgb(255 255 255 / 71%) 0%, rgb(255 255 255/ 65%) 100%), url(assets/img/dbbg.jpg) center center no-repeat;; */
+    background-position: center;
+    background-size: cover;
+	opacity: 1;
+	
+}
+.card {
+    border-radius: 10px;
+    margin-bottom: 1.875rem;
+	box-shadow: 1px 2px 3px #8f8d8d;
+	margin-bottom: 20px;;
+}
+.sidebar-menu > ul > li > a:hover {
+    background: linear-gradient(135deg, #007BFF, #0056D2);
+    color: #fff;
+}
+.sidebar-menu li.active a {
+	background: linear-gradient(135deg, #007BFF, #0056D2);
+    color: #fff;
+}
+.top-nav-search {
+    position: absolute;
+    right: 38%;
+}
+div#datetime {
+    position: fixed;
+    top: 9px;
+    right: 147px;
+    z-index: 99999;
+}
+.sidebar-menu ul ul a {
+    padding: 7px 10px 7px 9px !important;
+}
+		</style>
+
+		<style>
+			.accordion-content p {
+    color: #fff;
+}
+			.accordion-button.active {
+  background: linear-gradient(135deg, #f9f9f9, #8fd3f4); /* Bright green-blue gradient */
+  color: #000;
+}
+			.accordion-button:hover {
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+}
+			.accordion {
+  width: 100%;
+  
+  margin: 1rem auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.accordion-button {
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+
+
+.accordion-button .accordion-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 0 1rem;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.accordion-content p {
+  margin: 1rem 0;
+}
+
+
+.accordion-button.active .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-button.active + .accordion-content {
+  max-height: 200px;
+  padding: 1rem;
+}
+
+span.accordion-title {
+    color: #3468b5;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+}
+.card-body {
+    padding: 1px 1px !important;
+}
+.accordion-content {
+    background: #2c3e50;
+    background: -webkit-linear-gradient(to top, #3498db, #2c3e50);
+    background: linear-gradient(to top, #3498db, #2c3e50);
+}
+i.fi.fi-tr-multiple, i.fi.fi-sr-multiple {
+    background: none;
+    color: #033355 !important;
+    padding: 0px !important;
+    box-shadow: none !important;
+    display: contents !important;
+} 
+span.disabled {
+    color: #ccc;
+}
+i.fi.fi-sr-house-chimney, i.fi.fi-sr-admin-alt, i.fi.fi-sr-payment-pos, i.fi.fi-sr-link, i.fi.fi-tr-address-book {
+    background: none !important;
+    box-shadow: none !important;
+    display: contents;
+}
+ul.sub-submenu, ul.submenu a {
+    width: 120%;
+    background-color: #fff;
+}
+ul#quick-links {
+    min-width: 350px !important;
+}
+.table td, .table th {
+    padding: 10px;
+    vertical-align: middle;
+}
+.accordion-button.active + .accordion-content {
+    max-height: 450px;
+    padding: 1rem;
+}
+.accordion-content td:hover {
+    font-weight: 600;
+}
+ul.list-group.list-group-flush li a {
+    position: relative;
+    display: block;
+    padding: .35rem .75rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .125);
+    font-weight: 600;
+    color: #033050;
+    font-family: 'Mada';
+    font-size: 16px !important;
+}
+ul.list-group.list-group-flush li {
+    list-style: none;
+}
+.news-marquee {
+  position: absolute;
+  top: 10px; /* Adjust if you change heading size */
+  left: 0;
+  right: 0;
+  height: 450px;
+  overflow: hidden;
+}
+
+.news-marquee ul {
+  display: inline-block;
+  animation: scrollUp 10s linear infinite;
+}
+
+@keyframes scrollUp {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-100%); }
+}
+
+.news-marquee ul:hover {
+  animation-play-state: paused; /* Pause on hover */
+}
+ul.list-group.list-group-flush li a:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #007BFF, #0056D2);
+}
+.card-header.bg-info.border-primary {
+    border-radius: 10px 10px 0px 0px;
+    background: linear-gradient(135deg, #007BFF, #0056D2) !important;
+    color: #fff;
+    font-weight: 900 !important;
+	    padding: 5px 20px !important;
+}
+
+.container.py-5.boxes{
+.card {
+      border: 1px solid #ccc;
+      border-radius: 1rem;
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .icon-circle {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f0f0;
+      margin-right: 1rem;
+    }
+	.text-muted {
+    color: #ffffff !important;
+}
+.card.p-3.d-flex.flex-row.align-items-center h5 {
+    color: #fff !important;
+        font-weight: 900;
+        font-size: 24px;
+        margin-top: 12px;
+        font-family: 'Mada';
+}
+.dash1 {
+   
+	background: linear-gradient(to bottom, #3F51B5 10%, #132585 90%) !important;
+}
+.dash2 {
+    background: linear-gradient(to bottom, #2e971d 10%, #147008 90%) !important;
+}
+.dash3 {
+    background: linear-gradient(to bottom, #86930b 0%, #918308 100%) !important;
+
+}
+.dash4 {
+    background: linear-gradient(to bottom, #D32F2F 0%, #ff4b2b 100%) !important;
+}
+.bg-success, .badge-success {
+    background-color: rgba(0, 0, 0, 0.12) !important;
+}
+.bg-primary, .badge-primary {
+    background-color: rgba(0, 0, 0, 0.12) !important;
+}
+.bg-warning, .badge-warning {
+    background-color: rgba(0, 0, 0, 0.12) !important;
+}
+	}
+	.container.py-5.boxes {
+    padding: 10px !important;
+}
+	.card {
+    margin: 12px;
+}
+.text-muted.small {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Mada';
+}
+i.fi {
+    display: flex;
+    font-weight: 900;
+    font-size: 24px;
+    flex-direction: column;
+}
+.row.g-4 a {
+    width: 100%;
+    display: contents;
+}
+
+			</style>
+			
+    </head>
+    <body>
+	
+		<!-- Main Wrapper -->
+        <div class="main-wrapper">
+		
+			<!-- Header -->
+            <div class="header">
+			
+				<!-- Logo -->
+                
+				<!-- /Logo -->
+				
+				<a href="javascript:void(0);" id="toggle_btn">
+					<i class="fe fe-text-align-left"></i>
+				</a>
+				<div class="header-left">
+                    <a href="index.html" class="logo">
+						<img src="../assets/img/logo.png" alt="Logo">
+					</a>
+					<a href="index.html" class="logo logo-small">
+						<img src="../assets/img/logo.png" alt="Logo" width="30" height="30">
+					</a>
+                </div>
+				<div class="top-nav-search">
+					<form>
+						<p style="
+    width: 200%;
+    margin-top: 26px;
+">Helpdesk: <b>011-23370705, 011-23379752</b>,</p>
+<div id="datetime">
+
+<body onload="startTime()">
+
+	<div id="txt" class="mt-3 font-weight-600"></div>
+
+</body>
+</div>
+
+					</form>
+				</div>
+				
+				<!-- Mobile Menu Toggle -->
+				<a class="mobile_btn" id="mobile_btn">
+					<i class="fa fa-bars"></i>
+				</a>
+				<!-- /Mobile Menu Toggle -->
+				
+				
+				<!-- Header Right Menu -->
+				<ul class="nav user-menu">
+
+					<!-- Notifications -->
+					<li class="nav-item dropdown noti-dropdown">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+							<i class="fe fe-bell"></i> <span class="badge badge-pill">3</span>
+						</a>
+						<div class="dropdown-menu notifications">
+							<div class="topnav-dropdown-header">
+								<span class="notification-title">Notifications</span>
+								<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+							</div>
+							<div class="noti-content">
+								<ul class="notification-list">
+									<li class="notification-message">
+										<a href="#">
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="../assets/img/doctors/doctor-thumb-01.jpg">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"><span class="noti-title">Dr. Ruby Perrin</span> Schedule <span class="noti-title">her appointment</span></p>
+													<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="../assets/img/patients/patient1.jpg">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"><span class="noti-title">Charlene Reed</span> has booked her appointment to <span class="noti-title">Dr. Ruby Perrin</span></p>
+													<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="../assets/img/patients/patient2.jpg">
+												</span>
+												<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Travis Trimble</span> sent a amount of $210 for his <span class="noti-title">appointment</span></p>
+												<p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="media">
+												<span class="avatar avatar-sm">
+													<img class="avatar-img rounded-circle" alt="User Image" src="../assets/img/patients/patient3.jpg">
+												</span>
+												<div class="media-body">
+													<p class="noti-details"><span class="noti-title">Carl Kelly</span> send a message <span class="noti-title"> to his doctor</span></p>
+													<p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href="#">View all Notifications</a>
+							</div>
+						</div>
+					</li>
+					<!-- /Notifications -->
+					
+					<!-- User Menu -->
+					<li class="nav-item dropdown has-arrow">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+							<span class="user-img"><img class="rounded-circle" src="../assets/img/profiles/avatar-01.jpg" width="31" alt="Ryan Taylor"></span>
+						</a>
+						<div class="dropdown-menu">
+							<div class="user-header">
+								<div class="avatar avatar-sm">
+									<img src="../assets/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
+								</div>
+								<div class="user-text">
+									<h6>Pawan Kalyan</h6>
+									<p class="text-muted mb-0">Administrator</p>
+								</div>
+							</div>
+							<a class="dropdown-item" href="profile.html">My Profile</a>
+							<a class="dropdown-item" href="changepassword.html">Change Password</a>
+							<a class="dropdown-item" href="../login.html">Logout</a>
+						</div>
+					</li>
+					<!-- /User Menu -->
+					
+				</ul>
+				<!-- /Header Right Menu -->
+				
+            </div>
+			<!-- /Header -->
+			
+			<!-- Sidebar -->
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-inner slimscroll">
+					<div id="sidebar-menu" class="sidebar-menu">
+						<ul>
+							<li class="menu-title"> 
+								<span>Main</span>
+							</li>
+							<li  class="active"> 
+								<a href="Maindashboard.html"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+							</li>
+
+							<li class="submenu">
+								<a href="javascript:void(0);"><i class="fe fe-layout"></i> <span>e-Services</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li class="submenu">
+										<a href="javascript:void(0);"> <span>Permit</span> <span class="menu-arrow"></span></a>
+										<ul style="display: none;">
+											
+											<li><a href="#">New Permit Application</a></li>
+              <li><a href="#">List of Permit Request</a></li>
+              <li><a href="#">Pending Permits for Supply</a></li>
+              <li><a href="#">Revalidation of Permit</a></li>
+              <li><a href="#">Cancellation of Permit</a></li>
+										</ul>
+									</li>
+
+									<li>
+										<a href="javascript:void(0);"> <span>List of Approved Pass</span></a>
+									</li>
+									<li>
+										<a href="javascript:void(0);"> <span>Apply for New License</span></a>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);"> <span>License Management </span> <span class="menu-arrow"></span></a>
+										<ul style="display: none;">
+											
+											<li><a href="#">Amendment of License</a></li>
+              <li><a href="#">Renewal of License</a></li>
+              <li><a href="#">Surrender of License</a></li>
+              
+										</ul>
+									</li>
+
+									<li class="submenu">
+										<a href="javascript:void(0);"> <span>Stock </span> <span class="menu-arrow"></span></a>
+										<ul style="display: none;">
+											
+											<li><a href="#">Stock against Pass</a></li>
+              <li><a href="#">Stock against Drafted Pass </a></li>
+              <li><a href="#">Stock Ledger of Bottled spirit</a></li>
+              <li><a href="#">Enter Stock Breakage </a></li>
+       
+										</ul>
+									</li>
+
+
+
+									<li>
+										<a href="javascript:void(0);"> <span>Application for Refund</span></a>
+									</li>
+
+									<li class="submenu">
+										<a href="javascript:void(0);"> <span>Application for Brand/Label  </span> <span class="menu-arrow"></span></a>
+										<ul style="display: none;">
+											
+											<li><a href="#">New Brand/Label Registration </a></li>
+       
+										</ul>
+									</li>
+									
+								</ul>
+							</li>
+							
+							<li> 
+								<a href="#"><i class="fe fe-users"></i> <span>Licensee Leder</span></a>
+							</li>
+							
+							
+
+					<li class="submenu">
+								<a href="#"><i class="fe fe-document"></i> <span> Download</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="#">Download License </a></li>
+									<li><a href="#">Download L-1C Copy</a></li>
+								</ul>
+							</li>
+
+
+							<!-- <li><a href="index.html"><i class="fe fe-lock"></i> <span>Forgot Password</span></a></li> -->
+
+
+							<!-- <li> 
+								<a href="transactions-list.html"><i class="fe fe-activity"></i> <span>Transactions</span></a>
+							</li>
+							<li> 
+								<a href="settings.html"><i class="fe fe-vector"></i> <span>Settings</span></a>
+							</li>
+							
+							<li class="menu-title"> 
+								<span>Pages</span>
+							</li>
+							<li> 
+								<a href="profile.html"><i class="fe fe-user-plus"></i> <span>Profile</span></a>
+							</li>
+							<li class="submenu">
+								<a href="#"><i class="fe fe-document"></i> <span> Authentication </span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="login.html"> Login </a></li>
+									<li><a href="register.html"> Register </a></li>
+									<li><a href="forgot-password.html"> Forgot Password </a></li>
+									<li><a href="lock-screen.html"> Lock Screen </a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#"><i class="fe fe-warning"></i> <span> Error Pages </span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="error-404.html">404 Error </a></li>
+									<li><a href="error-500.html">500 Error </a></li>
+								</ul>
+							</li>
+							<li> 
+								<a href="blank-page.html"><i class="fe fe-file"></i> <span>Blank Page</span></a>
+							</li>
+							<li class="menu-title"> 
+								<span>UI Interface</span>
+							</li>
+							<li> 
+								<a href="components.html"><i class="fe fe-vector"></i> <span>Components</span></a>
+							</li>
+							<li class="submenu">
+								<a href="#"><i class="fe fe-layout"></i> <span> Forms </span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="form-basic-inputs.html">Basic Inputs </a></li>
+									<li><a href="form-input-groups.html">Input Groups </a></li>
+									<li><a href="form-horizontal.html">Horizontal Form </a></li>
+									<li><a href="form-vertical.html"> Vertical Form </a></li>
+									<li><a href="form-mask.html"> Form Mask </a></li>
+									<li><a href="form-validation.html"> Form Validation </a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#"><i class="fe fe-table"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="tables-basic.html">Basic Tables </a></li>
+									<li><a href="data-tables.html">Data Table </a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);"><i class="fe fe-code"></i> <span>Multi Level</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li class="submenu">
+										<a href="javascript:void(0);"> <span>Level 1</span> <span class="menu-arrow"></span></a>
+										<ul style="display: none;">
+											<li><a href="javascript:void(0);"><span>Level 2</span></a></li>
+											<li class="submenu">
+												<a href="javascript:void(0);"> <span> Level 2</span> <span class="menu-arrow"></span></a>
+												<ul style="display: none;">
+													<li><a href="javascript:void(0);">Level 3</a></li>
+													<li><a href="javascript:void(0);">Level 3</a></li>
+												</ul>
+											</li>
+											<li><a href="javascript:void(0);"> <span>Level 2</span></a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="javascript:void(0);"> <span>Level 1</span></a>
+									</li>
+								</ul>
+							</li> -->
+						</ul>
+					</div>
+                </div>
+            </div>
+			<!-- /Sidebar -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">Welcome to To Do Summary</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#"><i class="fi fi-tr-dashboard-monitor"></i> Main Menu</a>
+        </li>
+
+        <!-- Main Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="modulesDropdown" role="button" data-bs-toggle="dropdown">
+            <i class="fi fi-tr-module"></i> Admin Menu
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">User Management</a></li>
+            <li><a class="dropdown-item" href="#">MIS Reports</a></li>
+
+            <!-- Submenu -->
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">Applications</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">New License</a></li>
+                <li><a class="dropdown-item" href="#">Renewal</a></li>
+                <li><a class="dropdown-item" href="#">Status Tracking</a></li>
+              </ul>
+            </li>
+
+            <li><a class="dropdown-item" href="#">DMS / RMS</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="#"><i class="fi fi-tr-newspaper"></i> Reports</a></li>
+        <li class="nav-item"><a class="nav-link" href="#"><i class="fi fi-tr-admin-alt"></i> Admin</a></li>
+        <li class="nav-item"><a class="nav-link" href="#"><i class="fi fi-tr-seal-question"></i> Help</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+			
+			<!-- Page Wrapper -->
+            <div class="page-wrapper">
+			<nav aria-label="breadcrumb" class="">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">Hi, Kalyanbabu</a></li>
+    
+    <ul class="d-flex flex-row" style="list-style-type: none; margin-left: auto;">
+      <!-- <li class="mr-3"><input type="date" id="filterDate" class="form-control"></li> -->
+      <li class="mr-3"><i class="fi fi-tr-calendar-lines-pen"></i><select id="filterStatus date" class="form-select date">
+          <option value=""> Last 7 Days</option>
+          <option value="Total" selected>Last 30 Days</option>
+          <option value="Open">Last 90 Days</option>
+          <option value="Assigned">Custom Range</option>
+        </select></li>
+      <li class="mr-3"><select id="filterStatus" class="form-select">
+          <option value="">Filter by Status</option>
+          <option value="Total">Applications</option>
+          <option value="Open">Forms</option>
+          <option value="Assigned">Inspections</option>
+          <option value="Assessments">Assessments</option>
+          <option value="Others / Special Tasks">Others / Special Tasks</option>
+        </select></li>
+      <li><input type="text" id="searchInput" class="form-control" placeholder="Search by To Do Type..."></li>
+    <li class="mr-1">
+      <p class="btn-sm btn-click btn-info"><i class="fi fi-tr-floppy-disks"></i></p></li>
+      <li class="mr-1">
+      <p class="btn-sm btn-click btn-info"><i class="fi fi-tr-feedback-cycle-loop"></i></p></li>
+   
+    </ul>
+  </ol>
+</nav>
+
+
+
+
+            <div class="container-fluid">
+  <div class="row d-flex">
+    
+    <!-- Left Side (col-8) -->
+    <div class="col-lg-8 card">
+      
+      <!-- Section 1 -->
+      <h4 class="">Applications</h4>
+      <hr/>
+      <div class="row g-4">
+        <!-- PSRM -->
+        <div class="table-responsive shadow-sm rounded">
+      <table class="table table-striped align-middle">
+        <thead>
+          <tr>
+            <th>To Do Type</th>
+            <th class="text-center">Total</th>
+            <th class="text-center">Open</th>
+            <th class="text-center">Assigned</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width:55%">Application for Initiation of Suo Moto Registration</td>
+            <td class="text-center"><span class="badge badge-total">29</span></td>
+            <td class="text-center"><span class="badge badge-open">21</span></td>
+            <td class="text-center"><span class="badge badge-assigned">8</span></td>
+          </tr>
+          <tr>
+            <td>Application for GST - Suo Moto Registration</td>
+            <td class="text-center"><span class="badge badge-total">395</span></td>
+            <td class="text-center"><span class="badge badge-open">386</span></td>
+            <td class="text-center"><span class="badge badge-assigned">9</span></td>
+          </tr>
+          <tr>
+            <td>Application for VAT Amendment</td>
+            <td class="text-center"><span class="badge badge-total">30</span></td>
+            <td class="text-center"><span class="badge badge-open">30</span></td>
+            <td class="text-center"><span class="badge badge-assigned">0</span></td>
+          </tr>
+          <tr>
+            <td>Application for VAT Registration (Regular)</td>
+            <td class="text-center"><span class="badge badge-total">15</span></td>
+            <td class="text-center"><span class="badge badge-open">15</span></td>
+            <td class="text-center"><span class="badge badge-assigned">0</span></td>
+          </tr>
+          <tr>
+            <td>Application for VAT Amendment Send Back</td>
+            <td class="text-center"><span class="badge badge-total">65</span></td>
+            <td class="text-center"><span class="badge badge-open">64</span></td>
+            <td class="text-center"><span class="badge badge-assigned">1</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      </div>
+
+    </div>
+
+    <!-- Right Side (col-4) -->
+    <div class="col-lg-4 card">
+      <h4 class="">Monitoring & Schemes</h4>
+      <hr/>
+      <div class="row g-4">
+        <!-- MIS -->
+        <div class="col-12 col-sm-6">
+          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash13"  
+               data-toggle="tooltip" data-placement="bottom" 
+               title="Management Information System">
+            <div class="icon-circle bg-white text-danger me-3">
+              <i class="fi fi-tr-book-user"></i>
+            </div>
+            <div>
+              <div class="small opacity-75">View</div>
+              <h5 class="mb-0">MIS</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- NTUR -->
+         
+        <div class="col-12 col-sm-6">
+          <a href="Maindashboard.html">
+          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash13" 
+               data-toggle="tooltip" data-placement="bottom" 
+               title="New Taxpayers Under Radar">
+               
+            <div class="icon-circle bg-white text-danger me-3">
+              <i class="fi fi-tr-add-document"></i>
+            </div>
+            <div>
+              <div class="small opacity-75">Go to</div>
+              <h5 class="mb-0">Main Menu</h5>
+            </div>
+          </div></a>
+        </div>
+
+        <!-- OTS-2025 -->
+        <div class="col-12 col-sm-6">
+          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash13" 
+               data-toggle="tooltip" data-placement="bottom" 
+               title="One Time Settlement 2025">
+            <div class="icon-circle bg-white text-danger me-3">
+              <i class="fi fi-tr-clock-one-thirty"></i>
+            </div>
+            <div>
+              <div class="small opacity-75">New Module</div>
+              <h5 class="mb-0">OTS-2025</h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- OTS -->
+        <div class="col-12 col-sm-6">
+          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash13" 
+               data-toggle="tooltip" data-placement="bottom" 
+               title="One Time Settlement">
+            <div class="icon-circle bg-white text-danger me-3">
+              <i class="fi fi-tr-pending"></i>
+            </div>
+            <div>
+              <div class="small opacity-75">-</div>
+              <h5 class="mb-0">OTS</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row d-flex">
+    
+    <!-- Left Side (col-8) -->
+    <div class="col-lg-8 card">
+      
+      <!-- Section 1 -->
+      <h4 class="">Forms</h4>
+      <hr/>
+      <div class="row g-4">
+        <!-- PSRM -->
+        <div class="table-responsive shadow-sm rounded">
+      <table class="table table-striped align-middle">
+        <!-- <thead>
+          <tr>
+            <th style="width:55%">To Do Type</th>
+            <th class="text-center">Total</th>
+            <th class="text-center">Open</th>
+            <th class="text-center">Assigned</th>
+          </tr>
+        </thead> -->
+        <tbody>
+          <tr>
+            <td style="width:55%">Central Statutory Form</td>
+            <td class="text-center"><span class="badge badge-total">29</span></td>
+            <td class="text-center"><span class="badge badge-open">21</span></td>
+            <td class="text-center"><span class="badge badge-assigned">8</span></td>
+          </tr>
+          <tr>
+            <td>Central Statutory Form Cancellation</td>
+            <td class="text-center"><span class="badge badge-total">395</span></td>
+            <td class="text-center"><span class="badge badge-open">386</span></td>
+            <td class="text-center"><span class="badge badge-assigned">9</span></td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+      </div>
+
+    </div>
+
+    <!-- Right Side (col-4) -->
+    <div class="col-lg-4 card">
+      <h4 class="">🔔 Notifications</h4>
+      <hr/>
+      <div class="row g-4">
+        <!-- MIS -->
+        <div class="col-12 col-sm-12">
+          <ul class="list-group list-group-flush">
+          <li class="list-group-item">New policy update uploaded</li>
+          <li class="list-group-item">3 Licenses pending approval</li>
+          <li class="list-group-item">System maintenance at 10 PM</li>
+        </ul>
+        </div>
+
+        <!-- NTUR -->
+        <!-- <div class="col-12 col-sm-6">
+          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash13" 
+               data-toggle="tooltip" data-placement="bottom" 
+               title="New Taxpayers Under Radar">
+            <div class="icon-circle bg-white text-danger me-3">
+              <i class="fi fi-tr-add-document"></i>
+            </div>
+            <div>
+              <div class="small opacity-75">-</div>
+              <h5 class="mb-0">NTUR</h5>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- OTS-2025 -->
+        <!-- <div class="col-12 col-sm-6">
+          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash13" 
+               data-toggle="tooltip" data-placement="bottom" 
+               title="One Time Settlement 2025">
+            <div class="icon-circle bg-white text-danger me-3">
+              <i class="fi fi-tr-clock-one-thirty"></i>
+            </div>
+            <div>
+              <div class="small opacity-75">New Module</div>
+              <h5 class="mb-0">OTS-2025</h5>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- OTS -->
+        <!-- <div class="col-12 col-sm-6">
+          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash13" 
+               data-toggle="tooltip" data-placement="bottom" 
+               title="One Time Settlement">
+            <div class="icon-circle bg-white text-danger me-3">
+              <i class="fi fi-tr-pending"></i>
+            </div>
+            <div>
+              <div class="small opacity-75">-</div>
+              <h5 class="mb-0">OTS</h5>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row d-flex">
+    
+    <!-- Left Side (col-8) -->
+    <div class="col-lg-8 card">
+      
+      <!-- Section 1 -->
+      <h4 class="">Inspections</h4>
+      <hr/>
+      <div class="row g-4">
+        <!-- PSRM -->
+        <div class="table-responsive shadow-sm rounded">
+      <table class="table table-striped align-middle">
+        <!-- <thead>
+          <tr>
+            <th style="width:55%">To Do Type</th>
+            <th class="text-center">Total</th>
+            <th class="text-center">Open</th>
+            <th class="text-center">Assigned</th>
+          </tr>
+        </thead> -->
+        <tbody>
+          <tr>
+            <td style="width:55%">Inspection – Best Judgement Assessment for AA</td>
+            <td class="text-center"><span class="badge badge-total">29</span></td>
+            <td class="text-center"><span class="badge badge-open">21</span></td>
+            <td class="text-center"><span class="badge badge-assigned">8</span></td>
+          </tr>
+          <tr>
+            <td>Inspection – Provisional Assessment for AA</td>
+            <td class="text-center"><span class="badge badge-total">395</span></td>
+            <td class="text-center"><span class="badge badge-open">386</span></td>
+            <td class="text-center"><span class="badge badge-assigned">9</span></td>
+          </tr>
+          <tr>
+            <td>Inspection – Scrutiny Assessment for AA</td>
+            <td class="text-center"><span class="badge badge-total">30</span></td>
+            <td class="text-center"><span class="badge badge-open">30</span></td>
+            <td class="text-center"><span class="badge badge-assigned">0</span></td>
+          </tr>
+          <tr>
+            <td>Inspection – Unregistered Assessment for AA</td>
+            <td class="text-center"><span class="badge badge-total">15</span></td>
+            <td class="text-center"><span class="badge badge-open">15</span></td>
+            <td class="text-center"><span class="badge badge-assigned">0</span></td>
+          </tr>
+          <tr>
+            <td>Survey To Do for ETO</td>
+            <td class="text-center"><span class="badge badge-total">65</span></td>
+            <td class="text-center"><span class="badge badge-open">64</span></td>
+            <td class="text-center"><span class="badge badge-assigned">1</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      </div>
+
+    </div>
+
+    <!-- Right Side (col-4) -->
+    <!-- <div class="col-lg-4 card">
+      <h4 class="">Monitoring & Schemes</h4>
+      <hr/>
+      <div class="row g-4">
+        
+        <div class="col-12 col-sm-6">
+          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash13"  
+               data-toggle="tooltip" data-placement="bottom" 
+               title="Management Information System">
+            <div class="icon-circle bg-white text-danger me-3">
+              <i class="fi fi-tr-book-user"></i>
+            </div>
+            <div>
+              <div class="small opacity-75">-</div>
+              <h5 class="mb-0">MIS</h5>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-12 col-sm-6">
+          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash13" 
+               data-toggle="tooltip" data-placement="bottom" 
+               title="New Taxpayers Under Radar">
+            <div class="icon-circle bg-white text-danger me-3">
+              <i class="fi fi-tr-add-document"></i>
+            </div>
+            <div>
+              <div class="small opacity-75">-</div>
+              <h5 class="mb-0">NTUR</h5>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-12 col-sm-6">
+          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash13" 
+               data-toggle="tooltip" data-placement="bottom" 
+               title="One Time Settlement 2025">
+            <div class="icon-circle bg-white text-danger me-3">
+              <i class="fi fi-tr-clock-one-thirty"></i>
+            </div>
+            <div>
+              <div class="small opacity-75">New Module</div>
+              <h5 class="mb-0">OTS-2025</h5>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-12 col-sm-6">
+          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash13" 
+               data-toggle="tooltip" data-placement="bottom" 
+               title="One Time Settlement">
+            <div class="icon-circle bg-white text-danger me-3">
+              <i class="fi fi-tr-pending"></i>
+            </div>
+            <div>
+              <div class="small opacity-75">-</div>
+              <h5 class="mb-0">OTS</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row d-flex">
+    
+    <!-- Left Side (col-8) -->
+    <div class="col-lg-8 card">
+      
+      <!-- Section 1 -->
+      <h4 class="">Assessments</h4>
+      <hr/>
+      <div class="row g-4">
+        <!-- PSRM -->
+        <div class="table-responsive shadow-sm rounded">
+      <table class="table table-striped align-middle">
+        <!-- <thead>
+          <tr>
+            <th style="width:55%">To Do Type</th>
+            <th class="text-center">Total</th>
+            <th class="text-center">Open</th>
+            <th class="text-center">Assigned</th>
+          </tr>
+        </thead> -->
+        <tbody>
+          <tr>
+            <td style="width:55%">VAT Provisional Assessment</td>
+            <td class="text-center"><span class="badge badge-total">29</span></td>
+            <td class="text-center"><span class="badge badge-open">21</span></td>
+            <td class="text-center"><span class="badge badge-assigned">8</span></td>
+          </tr>
+          <tr>
+            <td>VAT Best Judgment Assessment under section 15(5)</td>
+            <td class="text-center"><span class="badge badge-total">395</span></td>
+            <td class="text-center"><span class="badge badge-open">386</span></td>
+            <td class="text-center"><span class="badge badge-assigned">9</span></td>
+          </tr>
+          <tr>
+            <td>VAT Casual Dealer Assessment</td>
+            <td class="text-center"><span class="badge badge-total">30</span></td>
+            <td class="text-center"><span class="badge badge-open">30</span></td>
+            <td class="text-center"><span class="badge badge-assigned">0</span></td>
+          </tr>
+          <tr>
+            <td>VAT Deemed Assessment</td>
+            <td class="text-center"><span class="badge badge-total">15</span></td>
+            <td class="text-center"><span class="badge badge-open">15</span></td>
+            <td class="text-center"><span class="badge badge-assigned">0</span></td>
+          </tr>
+          <tr>
+            <td>VAT Penalty and Interest – To Do For AA</td>
+            <td class="text-center"><span class="badge badge-total">65</span></td>
+            <td class="text-center"><span class="badge badge-open">64</span></td>
+            <td class="text-center"><span class="badge badge-assigned">1</span></td>
+          </tr>
+          <tr>
+            <td>VAT Reassessment</td>
+            <td class="text-center"><span class="badge badge-total">65</span></td>
+            <td class="text-center"><span class="badge badge-open">64</span></td>
+            <td class="text-center"><span class="badge badge-assigned">1</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      </div>
+
+    </div>
+
+    <!-- Right Side (col-4) -->
+    <!-- <div class="col-lg-4 card">
+      <h4 class="">Notofications</h4>
+      <hr/>
+      <div class="row g-4 mt-2">
+        
+        <p>Scrolling News</p>
+      </div>
+    </div> -->
+    
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row d-flex">
+    
+    <!-- Left Side (col-8) -->
+    <div class="col-lg-8 card">
+      
+      <!-- Section 1 -->
+      <h4 class="">Others / Special Tasks</h4>
+      <hr/>
+      <div class="row g-4">
+        <!-- PSRM -->
+        <div class="table-responsive shadow-sm rounded">
+      <table class="table table-striped align-middle">
+        <!-- <thead>
+          <tr>
+            <th style="width:55%">To Do Type</th>
+            <th class="text-center">Total</th>
+            <th class="text-center">Open</th>
+            <th class="text-center">Assigned</th>
+          </tr>
+        </thead> -->
+        <tbody>
+          <tr>
+            <td style="width:55%">Miscellaneous items (if any new ones are added later)</td>
+            <td class="text-center"><span class="badge badge-total">29</span></td>
+            <td class="text-center"><span class="badge badge-open">21</span></td>
+            <td class="text-center"><span class="badge badge-assigned">8</span></td>
+          </tr>
+          
+          
+          
+          
+        </tbody>
+      </table>
+    </div>
+      </div>
+
+    </div>
+
+    <!-- Right Side (col-4) -->
+    <!-- <div class="col-lg-4 card">
+      <h4 class="">Monitoring & Schemes</h4>
+      <hr/>
+      <div class="row g-4 mt-2">
+        
+        <p>News</p>
+      </div>
+    </div> -->
+    
+  </div>
+</div>
+
+
+				
+
+				
+				
+			</div>
+			<!-- /Page Wrapper -->
+		
+        </div>
+		<!-- /Main Wrapper -->
+		
+		<!-- jQuery -->
+        <script src="../assets/js/jquery-3.2.1.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+        <script src="../assets/js/popper.min.js"></script>
+        <script src="../assets/js/bootstrap.min.js"></script>
+		
+		<!-- Slimscroll JS -->
+        <script src="../assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+		
+		<script src="../assets/plugins/raphael/raphael.min.js"></script>    
+		<script src="../assets/plugins/morris/morris.min.js"></script>  
+		<script src="../assets/js/chart.morris.js"></script>
+		
+		<!-- Custom JS -->
+		<script  src="../assets/js/script.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+		<script>
+		function startTime() {
+			var today = new Date();
+			var day = today.getDate();
+			var month = today.getMonth();
+			var year = today.getFullYear();
+			var h = today.getHours();
+			var m = today.getMinutes();
+			var s = today.getSeconds();
+			m = checkTime(m);
+			s = checkTime(s);
+			document.getElementById('txt').innerHTML = "Date: " + day + "/" + month + "/" + year + " " + ": " + h + ":" + m + ":" + s;
+			var t = setTimeout(function () { startTime() }, 500);
+		}
+
+		function checkTime(i) {
+			if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+			return i;
+		}
+	</script>
+	<script>
+	 function toggleMenu() {
+	  const nav = document.getElementById('navLinks');
+	  nav.classList.toggle('active');
+	 } // Added missing closing brace here
+  </script>
+  <script>
+// Enable dropdown submenu
+document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach(function (element) {
+  element.addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    let nextMenu = this.nextElementSibling;
+    if (nextMenu) {
+      nextMenu.classList.toggle('show');
+    }
+  });
+});
+</script>
+	</body>
+</html>
