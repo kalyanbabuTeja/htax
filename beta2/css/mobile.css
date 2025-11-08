@@ -1,0 +1,125 @@
+@media (max-width: 767px) {
+ header.header {
+    background: #fff;
+}
+.btn-group.btn-group-sm.pull-right a {
+    display: none;
+}
+    .header__logo {
+        padding: 0px 0 0px;
+        text-align: center;
+    }
+    .textcat {
+    width: 92%;
+}
+}
+
+/* Hide mobile menu by default (desktop) */
+.mobile-navbar {
+  display: none;
+}
+
+/* Mobile only */
+@media (max-width: 767px) {
+  .mobile-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #003366;
+    padding: 10px 15px;
+
+  }
+
+  .mobile-hamburger {
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .mobile-nav-links {
+    position: fixed;
+    top: 0;
+   right: -240px;
+   display: none;
+   width: 240px;
+    height: 100%;
+    background: #003366;
+    list-style: none;
+    padding: 14px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: scroll;
+        height: 300px;
+  }
+
+  .mobile-nav-links li a {
+    display: block;
+    padding: 2px 17px;
+    border-radius: 0px;
+    background: #f1f7ff;
+    color: #003366;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+ul.submenu li {
+    list-style: none;
+}
+  .mobile-nav-links li a:hover {
+    background: #4e73df;
+    color: #fff;
+  }
+
+  .mobile-nav-links.active {
+    right: 0px;
+  }
+
+  .login-btn {
+    background: #4e73df !important;
+    color: #fff !important;
+  }
+  /* Submenu styling */
+  .submenu {
+    display: none;
+    flex-direction: column;
+    gap: 1px;
+    padding-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+
+  .submenu li a {
+    background: #4e73df;
+        font-size: 14px;
+        color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding-bottom: 0px;
+        list-style: none !important;
+  }
+
+  .has-submenu.open > .submenu {
+    display: flex;
+    background: #4e73df;
+  }
+
+  .has-submenu > a {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .has-submenu > a::after {
+    content: "▸";
+    position: absolute;
+    right: 10px;
+  }
+
+  .has-submenu.open > a::after {
+    content: "▾";
+  }
+}

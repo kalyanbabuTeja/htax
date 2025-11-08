@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
   <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" href="css/mobile.css" type="text/css">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -767,64 +768,32 @@
   </header>
   <!-- Header Section End -->
   <!-- Humberger Begin -->
-  <div class="humberger__menu__overlay"></div>
-  <div class="humberger__menu__wrapper">
-    <div class="humberger__menu__logo">
-      <a href="./index.html"><img src="img/humberger/humberger-logo.png" alt=""></a>
-    </div>
-    <nav class="humberger__menu__nav mobile-menu">
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="#">Recipes</a></li>
-        <li><a href="#">Dinner</a></li>
-        <li><a href="#">Desserts</a></li>
-        <li class="dropdown"><a href="#">Pages</a>
-          <ul class="dropdown__menu">
-            <li><a href="./categories-grid.html">Categories Grid</a></li>
-            <li><a href="./categories-list.html">Categories List</a></li>
-            <li><a href="./single-post.html">Single Post</a></li>
-            <li><a href="./signin.html">Sign In</a></li>
-            <li><a href="./404.html">404</a></li>
-            <li><a href="./typography.html">Typography</a></li>
-          </ul>
-        </li>
-        <li><a href="./about.html">About</a></li>
-        <li><a href="./contact.html">Contact</a></li>
+  <!-- Mobile Menu -->
+<nav class="mobile-navbar">
+  <button class="mobile-hamburger" id="mobile-hamburger">☰</button>
+  <ul class="mobile-nav-links" id="mobile-nav-links">
+    <li><a href="./login.html" class="login-btn mb-2 text-center">Login</a></li>
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./about.html">About Us</a></li>
+
+    <!-- Submenu Example -->
+    <li class="has-submenu">
+      <a href="#">Services</a>
+      <ul class="submenu">
+        <li><a href="./gst.html">GST</a></li>
+        <li><a href="./vat.html">VAT</a></li>
+        <li><a href="./excise.html">Excise</a></li>
       </ul>
-    </nav>
-    <div id="mobile-menu-wrap"></div>
-    <div class="humberger__menu__about">
-      <div class="humberger__menu__title sidebar__item__title">
-        <h6>About me</h6>
-      </div>
-      <img src="img/humberger/humberger-about.jpg" alt="">
-      <h6>Hi every one! I,m Lena Mollein.</h6>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-        dolore magna aliqua.</p>
-      <div class="humberger__menu__about__social sidebar__item__follow__links">
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-youtube-play"></i></a>
-        <a href="#"><i class="fa fa-instagram"></i></a>
-        <a href="#"><i class="fa fa-envelope-o"></i></a>
-      </div>
-    </div>
-    <div class="humberger__menu__subscribe">
-      <div class="humberger__menu__title sidebar__item__title">
-        <h6>Subscribe</h6>
-      </div>
-      <p>Subscribe to our newsletter and get our newest updates right on your inbox.</p>
-      <form action="#">
-        <input type="text" class="email-input" placeholder="Your email">
-        <label for="agree-check">
-          I agree to the terms & conditions
-          <input type="checkbox" id="agree-check">
-          <span class="checkmark"></span>
-        </label>
-        <button type="submit" class="site-btn">Subscribe</button>
-      </form>
-    </div>
-  </div>
+    </li>
+
+    <li><a href="./orders.html">Government Orders</a></li>
+    <li><a href="./help.html">Help</a></li>
+    <li><a href="./rti.html">RTI</a></li>
+    <li><a href="./defaulters.html">Defaulters</a></li>
+    
+  </ul>
+</nav>
+
   <!-- Humberger End -->
   <div class="quick-quote mb-1">
     <div class="container">
@@ -939,7 +908,7 @@
 
 
   <section id="faq" class="faq section-bg">
-    <div class="container aos-init aos-animate" data-aos="" id="headpara">
+    <div class="container-fluid aos-init aos-animate" data-aos="" id="headpara">
 
 
 
@@ -957,7 +926,12 @@
 
 
             <div class="demo12 d-flex ">
-              <div class="card">
+              <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 d-flex justify-content-center flex-wrap">
+                <div class="col-md-1 col-lg-1 col-sm-12 col-xs-12">
+                &nbsp;
+              </div>
+                <div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
+                <div class="card">
                 <div class="card-content">
                   <i data-lucide="edit"></i>
                   <div class="default-text">EODB</div>
@@ -970,7 +944,9 @@
                   </ul>
                 </div>
               </div>
-              <div class="card">
+              </div>
+              <div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
+                <div class="card">
                 <div class="card-content">
                   <i data-lucide="log-in"></i>
                   <div class="default-text">Departments Login</div>
@@ -982,7 +958,9 @@
                   </ul>
                 </div>
               </div>
-              <div class="card">
+              </div>
+              <div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
+                <div class="card">
                 <div class="card-content">
 
                   <i data-lucide="shield-check"></i>
@@ -997,7 +975,9 @@
                   </ul>
                 </div>
               </div>
-              <div class="card">
+              </div>
+              <div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
+                <div class="card">
                 <div class="card-content">
                   <i data-lucide="monitor"></i>
                   <div class="default-text">Transit Slip</div>
@@ -1008,7 +988,9 @@
                   </ul>
                 </div>
               </div>
-              <div class="card">
+              </div>
+              <div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
+                <div class="card">
                 <div class="card-content">
                   <i data-lucide="building"></i>
                   <div class="default-text">OTS Scheme</div>
@@ -1024,6 +1006,16 @@
                   </ul>
                 </div>
               </div>
+              </div>
+              <div class="col-md-1 col-lg-1 col-sm-12 col-xs-12">
+                &nbsp;
+              </div>
+              </div>
+              
+              
+              
+              
+              
 
 
 
@@ -1385,6 +1377,25 @@
         document.querySelector('.' + target).classList.add('active');
       });
     });
+  </script>
+  <script>
+    const mobileHamburger = document.getElementById("mobile-hamburger");
+const mobileNavLinks = document.getElementById("mobile-nav-links");
+
+mobileHamburger.addEventListener("click", () => {
+  mobileNavLinks.classList.toggle("active");
+});
+
+// Handle submenu toggle
+document.querySelectorAll(".has-submenu > a").forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault(); // prevent "#" navigation
+    const parentLi = link.parentElement;
+    parentLi.classList.toggle("open");
+  });
+});
+
+
   </script>
 </body>
 

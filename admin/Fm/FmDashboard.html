@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Flowmeter Dashboard</title>
+<style>
+    body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: #f4f6f9;
+    }
+
+    header {
+        background: #b22222;
+        color: white;
+        padding: 15px 30px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .container {
+        padding: 25px;
+    }
+
+    .cards {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 25px;
+    }
+
+    .card {
+        flex: 1;
+        background: white;
+        padding: 18px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .flow-container {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .block {
+        width: 200px;
+        height: 80px;
+        background: #fff;
+        border: 2px solid #000;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        margin: 20px auto;
+        position: relative;
+    }
+
+    .flow-line {
+        width: 120px;
+        height: 8px;
+        background: red;
+        margin: 10px auto;
+        border-radius: 5px;
+        animation: flow 2s infinite;
+    }
+
+    @keyframes flow {
+        0% { opacity: 0.4; }
+        50% { opacity: 1; }
+        100% { opacity: 0.4; }
+    }
+
+    .flow-label {
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: -8px;
+    }
+
+</style>
+</head>
+<body>
+<header>
+    FLOWMETER SETUP - ASHOKA DISTILLERS & CHEMICALS PVT. LTD.
+</header>
+
+<div class="container">
+
+    <!-- Summary Cards -->
+    <div class="cards">
+        <div class="card">Total Flow Today: <b id="totalFlow">0 KL</b></div>
+        <div class="card">Tanker Dispatch: <b id="dispatch">0 KL</b></div>
+        <div class="card">Active Flowmeters: <b>7</b></div>
+        <div class="card">Alerts: <b style="color:red">0</b></div>
+    </div>
+
+    <!-- Flow Diagram -->
+    <div class="flow-container">
+
+        <div class="block">Distillation Unit</div>
+
+        <div class="flow-line" style="background:#d9534f"></div>
+        <div class="flow-label">Impure Spirit - MFT 601</div>
+
+        <div class="block">Receiver & Storage</div>
+
+        <div class="flow-line" style="background:#0275d8"></div>
+        <div class="flow-label">MFT 201 - Impure Spirit Sale</div>
+
+        <br><br>
+
+        <div class="flow-line" style="background:#f0ad4e"></div>
+        <div class="flow-label">ENA - MFT 501</div>
+
+        <div class="block">Receiver & Storage</div>
+
+        <div class="flow-line" style="background:#5bc0de"></div>
+        <div class="flow-label">MFT 301 - ENA Tanker Loading</div>
+
+        <div class="flow-line" style="background:#5cb85c"></div>
+        <div class="flow-label">MFT 101 - ENA Tanker Loading</div>
+
+        <br><br>
+
+        <div class="flow-line" style="background:#f7e45c"></div>
+        <div class="flow-label">MFT 401</div>
+
+        <div class="block">Blending</div>
+        <div class="flow-label">Country Liquor | IMFL</div>
+
+    </div>
+
+</div>
+
+<script>
+    // Dummy Live Data Simulation
+    function updateFlowData() {
+        const total = (Math.random() * 150).toFixed(2);
+        const dispatch = (Math.random() * 90).toFixed(2);
+
+        document.getElementById("totalFlow").innerText = total + " KL";
+        document.getElementById("dispatch").innerText = dispatch + " KL";
+    }
+
+    setInterval(updateFlowData, 2000);
+</script>
+
+</body>
+</html>

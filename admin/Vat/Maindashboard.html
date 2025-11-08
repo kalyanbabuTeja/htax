@@ -5,7 +5,7 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Htax - Dashboard</title>
+        <title>Htax - VAT Dashboard</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png">
@@ -27,7 +27,66 @@
         <link rel="stylesheet" href="../assets/css/style.css">
 		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
 		
-			
+			<style>
+        i.fi.fi-tr-calendar-lines-pen {
+    top: 22px;
+}
+thead.bg-info tr th {
+    background: #c8ceed !important;
+}
+button#export-csv {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.card.per.p-3.text-center.bg-light {
+    width: 35%;
+}
+.bifurcation {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.bif-item {
+    background: #f1f5f9;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: 0.2s;
+	margin: 0px 15px;
+}
+.bif-item:hover {
+    background: #e0f2fe;
+	box-shadow: 1px 2px 3px 1px #959292;
+}
+.details-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.details-table th {
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 600;
+}
+.details-table th, .details-table td {
+    border: 1px solid #e2e8f0;
+    padding: 10px;
+    text-align: center;
+}
+.details-table td {
+    background: #ffffff;
+}
+.modal-dialog.modal-lg {
+    margin-top: 200px !important;
+}
+      </style>
 </head>
     <body>
 	
@@ -359,19 +418,19 @@
 
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="#">Welcome to Deptartment Dashboard</a>
+    <a class="navbar-brand fw-bold" href="#">Welcome to VAT Dashboard</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <!-- <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link active" href="PSRM.html"><i class="fi fi-tr-dashboard-monitor"></i> PSRM</a>
         </li>
 
-        <!-- Main Dropdown -->
+        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="modulesDropdown" role="button" data-bs-toggle="dropdown">
             <i class="fi fi-tr-module"></i> Modules
@@ -380,7 +439,7 @@
             <li><a class="dropdown-item" href="#">User Management</a></li>
             <li><a class="dropdown-item" href="#">MIS Reports</a></li>
 
-            <!-- Submenu -->
+            
             <li class="dropdown-submenu">
               <a class="dropdown-item dropdown-toggle" href="#">Applications</a>
               <ul class="dropdown-menu">
@@ -398,7 +457,7 @@
         <li class="nav-item"><a class="nav-link" href="#"><i class="fi fi-tr-admin-alt"></i> Admin</a></li>
         <li class="nav-item"><a class="nav-link" href="#"><i class="fi fi-tr-seal-question"></i> Help</a></li>
       </ul>
-    </div>
+    </div> -->
   </div>
 </nav>
 
@@ -416,262 +475,158 @@
   <div class="row">
     
     <!-- Left Section (8 cols) -->
-    <div class="col-lg-8 col-md-12 mb-4">
+    <div class="col-lg-12 col-md-12">
       <div class="card shadow-sm p-3">
-        <h5 class="mb-3 d-flex"><i class="fi fi-tr-dashboard-panel"></i>&nbsp; Dashboard Overview</h5>
+        <div class="d-flex justify-content-between">
+<h5 class="mb-3 d-flex"><i class="fi fi-tr-dashboard-panel"></i>&nbsp; Total Revenue Collection</h5>
+
+<h5 class="">
+  <i class="fi fi-tr-calendar-lines-pen"></i>
+  <select id="filterStatus date" class="form-select date">
+          <option value="" selected=""> FY 2024-25</option>
+          <option value="Total" >FY 2025-26</option>
+        </select></h5>
+        </div>
+       
         <div class="row g-3">
-          <div class="col-6 col-md-4">
-            <div class="card p-3 text-center bg-light">
-              <h6>Total Revenue</h6>
-              <p class="fw-bold">₹12.5 Cr</p>
+			
+          <div class="col-3 col-md-3">
+			<p>&nbsp;</p>
+            <div class="p-3 text-center bg-light">
+              <h6 style="margin-top: -10px;">Up to the month</h6>
+              
             </div>
           </div>
-          <div class="col-6 col-md-4">
+          <div class="col-3 col-md-3">
+			<h6 style="text-align: center;">2024 - 25</h6>
             <div class="card p-3 text-center bg-light">
-              <h6>Active Licenses</h6>
-              <p class="fw-bold">1,245</p>
+              <h5>₹ 1724.01</h5>
+              <!-- <p class="fw-bold">₹ 1724.01</p> -->
             </div>
           </div>
-          <div class="col-6 col-md-4">
+          <div class="col-3 col-md-3">
+			<h6 style="text-align: center;">2025 - 26</h6>
             <div class="card p-3 text-center bg-light">
-              <h6>Pending Cases</h6>
-              <p class="fw-bold">98</p>
+              <h5>₹ 1724.01</h5>
+              <!-- <p class="fw-bold">₹ 35.61</p> -->
+            </div>
+          </div>
+		  <div class="col-3 col-md-3">
+			<h6 class="ml-4">% Growth</h6>
+			
+            <div class="card per p-3 text-center bg-light">
+              <h6>7%</h6>
+              <!-- <p class="fw-bold">₹ 35.61</p> -->
+            </div>
+          </div>
+        </div>
+		 <div class="row g-3" style="margin-top: -35px;">
+			
+          <div class="col-3 col-md-3">
+			
+            <div class="p-3 text-center bg-light">
+              <h6>During the month</h6>
+              
+            </div>
+          </div>
+          <div class="col-3 col-md-3 mt-0">
+			
+            <div class="card p-3 text-center bg-light">
+              <h5>₹ 1724.01</h5>
+              <!-- <p class="fw-bold">₹ 1724.01</p> -->
+            </div>
+          </div>
+          <div class="col-3 col-md-3 mt-0">
+			
+            <div class="card p-3 text-center bg-light">
+              <h5>₹ 1724.01</h5>
+              <!-- <p class="fw-bold">₹ 35.61</p> -->
+            </div>
+          </div>
+		  <div class="col-3 col-md-3 mt-0">
+			
+            <div class="card per p-3 text-center bg-light">
+              <h6>71%</h6>
+              <!-- <p class="fw-bold">₹ 35.61</p> -->
             </div>
           </div>
         </div>
       </div>
     </div>
-
+	 <h6 class="ml-3 mb-3">Displays revenue comparison for financial years with detailed bifurcation on click.</h6>
+<div class="bifurcation">
+	
+          <div class="bif-item" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Petrol + Diesel</div>
+          <div class="bif-item" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Natural Gas</div>
+          <div class="bif-item" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Liquor</div>
+          <div class="bif-item" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">ATF</div>
+          <div class="bif-item" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Recoveries</div>
+        </div>
+	
     <!-- Right Section (4 cols) -->
-    <div class="col-lg-4 col-md-12">
-      <div class="card shadow-sm p-3" style="height: 198px;    margin-left: -15px;">
-        <h6 class="d-flex"><i class="fi fi-tr-engine-warning"></i>&nbsp; Notifications</h6>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="fi fi-tr-angle-double-small-right"></i> New policy update uploaded</li>
-          <li class="list-group-item"><i class="fi fi-tr-angle-double-small-right"></i> 3 Licenses pending approval</li>
-          <li class="list-group-item"><i class="fi fi-tr-angle-double-small-right"></i> System maintenance at 10 PM</li>
-        </ul>
-      </div>
-
-      <!-- <div class="card shadow-sm p-3">
-        <h6>👤 Profile</h6>
-        <p class="mb-1"><strong>Name:</strong> Dept. Officer</p>
-        <p class="mb-1"><strong>Role:</strong> Admin</p>
-        <button class="btn btn-sm btn-primary">View Profile</button>
-      </div> -->
-    </div>
+   
 
   </div>
 </div>
 
 
-            <div class="container-fluid">
+            <!-- <div class="container-fluid">
   <div class="row d-flex">
     
-    <!-- Left Side (col-8) -->
-    <div class="col-lg-8 card">
+    
+    <div class="col-lg-12 card">
       
-      <!-- Section 1 -->
-      <h4 class="">Task & Record Systems</h4>
+     
+       <div class="d-flex justify-content-between">
+        <h4 class="">VAT Record Details</h4>
+        <button id="export-csv" class="btn btn-sm btn-success mt-3"><i class="fi fi-tr-file-export"></i>&nbsp; Export CSV</button>
+       </div>
+      
       <hr/>
       <div class="row g-4">
-        <!-- PSRM -->
-        <div class="col-12 col-sm-6 col-lg-3">
-          <a href="PSRM.html">
-          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash11" 
-               data-toggle="tooltip" data-placement="bottom" 
-               title="Public Sector Revenue Management">
-            <div class="icon-circle bg-white text-primary me-3">
-              <i class="fi fi-tr-holding-hand-revenue"></i>
-            </div>
-            <div>
-              <div class="small opacity-75">-</div>
-              <h5 class="mb-0">PSRM</h5>
-            </div>
-          </div></a>
-        </div>
+       
+        
+<div class="table-responsive mt-4">
+  <table class="table table-striped table-bordered align-middle table-hover">
+    <thead class="bg-info">
+      <tr class="bg-info">
+        <th>Sl No</th>
+        <th>Name of Taxpayer</th>
+        <th>Nature of License</th>
+        <th>VAT Paid</th>
+        <th>Return Filed (Quarter)</th>
+        <th>Payment Made upto Month</th>
+        <th>Payment to be Made</th>
+        <th>Payment Made</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Verma Filling Station</td>
+        <td>Petrol and Diesel</td>
+        <td>₹ 37,800</td>
+        <td>Q2 (Jul-Sep)</td>
+        <td>September</td>
+        <td>₹ 37,800</td>
+        <td>₹ 37,800</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-        <!-- PMS -->
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash11" 
-               data-toggle="tooltip" data-placement="bottom" 
-               title="Policy Management System">
-            <div class="icon-circle bg-white text-primary me-3">
-             <i class="fi fi-tr-operating-system-upgrade"></i>
-            </div>
-            <div>
-              <div class="small opacity-75">-</div>
-              <h5 class="mb-0">PMS</h5>
-            </div>
-          </div>
-        </div>
-
-        <!-- RMS -->
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash11" 
-               data-toggle="tooltip" data-placement="bottom" 
-               title="Record Management System">
-            <div class="icon-circle bg-white text-primary me-3">
-              <i class="fi fi-tr-catalog-magazine"></i>
-            </div>
-            <div>
-              <div class="small opacity-75">-</div>
-              <h5 class="mb-0">RMS</h5>
-            </div>
-          </div>
-        </div>
-
-        <!-- PR -->
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash11" 
-               data-toggle="tooltip" data-placement="bottom" 
-               title="Periodic Reporting">
-            <div class="icon-circle bg-white text-primary me-3">
-              <i class="fi fi-tr-newspaper"></i>
-            </div>
-            <div>
-              <div class="small opacity-75">-</div>
-              <h5 class="mb-0">PR</h5>
-            </div>
-          </div>
-        </div>
+       
       </div>
 
-      <!-- Section 2 -->
-      <h4 class="mt-5">User & Document Management</h4>
-      <hr/>
-      <div class="row g-4 mb-3">
-        <!-- My Profile -->
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash12" 
-               data-toggle="tooltip" data-placement="bottom" 
-               title="Manage profile in end user">
-            <div class="icon-circle bg-white text-primary me-3">
-             <i class="fi fi-tr-user-pen"></i>
-            </div>
-            <div>
-              <div class="small opacity-75">-</div>
-              <h5 class="mb-0">My Profile</h5>
-            </div>
-          </div>
-        </div>
-
-        <!-- DMS -->
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash12" 
-               data-toggle="tooltip" data-placement="bottom" 
-               title="Document Management System">
-            <div class="icon-circle bg-white text-success me-3">
-             <i class="fi fi-tr-clip-file"></i>
-            </div>
-            <div>
-              <div class="small opacity-75">-</div>
-              <h5 class="mb-0">DMS</h5>
-            </div>
-          </div>
-        </div>
-
-        <!-- E-Mail -->
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash12"  
-               data-toggle="tooltip" data-placement="bottom" 
-               title="E-Mail Management System">
-            <div class="icon-circle bg-white text-warning me-3">
-             <i class="fi fi-tr-newsletter-subscribe"></i>
-            </div>
-            <div>
-              <div class="small opacity-75">-</div>
-              <h5 class="mb-0">E-Mail</h5>
-            </div>
-          </div>
-        </div>
-
-        <!-- CAS -->
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash12" 
-               data-toggle="tooltip" data-placement="bottom" 
-               title="Call Attention Sheet">
-            <div class="icon-circle bg-white text-warning me-3">
-              <i class="fi fi-tr-audit"></i>
-            </div>
-            <div>
-              <div class="small opacity-75">-</div>
-              <h5 class="mb-0">CAS</h5>
-            </div>
-          </div>
-        </div>
-      </div>
+      
+      
+      
     </div>
 
-    <!-- Right Side (col-4) -->
-    <div class="col-lg-4 card">
-      <h4 class="">Monitoring & Schemes</h4>
-      <hr/>
-      <div class="row g-4">
-        <!-- MIS -->
-        <div class="col-12 col-sm-6">
-          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash13"  
-               data-toggle="tooltip" data-placement="bottom" 
-               title="Management Information System">
-            <div class="icon-circle bg-white text-danger me-3">
-              <i class="fi fi-tr-book-user"></i>
-            </div>
-            <div>
-              <div class="small opacity-75">-</div>
-              <h5 class="mb-0">MIS</h5>
-            </div>
-          </div>
-        </div>
-
-        <!-- NTUR -->
-        <div class="col-12 col-sm-6">
-          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash13" 
-               data-toggle="tooltip" data-placement="bottom" 
-               title="New Taxpayers Under Radar">
-            <div class="icon-circle bg-white text-danger me-3">
-              <i class="fi fi-tr-add-document"></i>
-            </div>
-            <div>
-              <div class="small opacity-75">-</div>
-              <h5 class="mb-0">NTUR</h5>
-            </div>
-          </div>
-        </div>
-
-        <!-- OTS-2025 -->
-        <div class="col-12 col-sm-6">
-          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash13" 
-               data-toggle="tooltip" data-placement="bottom" 
-               title="One Time Settlement 2025">
-            <div class="icon-circle bg-white text-danger me-3">
-              <i class="fi fi-tr-clock-one-thirty"></i>
-            </div>
-            <div>
-              <div class="small opacity-75">New Module</div>
-              <h5 class="mb-0">OTS-2025</h5>
-            </div>
-          </div>
-        </div>
-
-        <!-- OTS -->
-        <div class="col-12 col-sm-6">
-          <div class="card p-3 d-flex flex-row align-items-center bg-primary text-white dash13" 
-               data-toggle="tooltip" data-placement="bottom" 
-               title="One Time Settlement">
-            <div class="icon-circle bg-white text-danger me-3">
-              <i class="fi fi-tr-pending"></i>
-            </div>
-            <div>
-              <div class="small opacity-75">-</div>
-              <h5 class="mb-0">OTS</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+   
     
   </div>
-</div>
+</div> -->
 
 
 				
@@ -682,6 +637,56 @@
 			<!-- /Page Wrapper -->
 		
         </div>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Bifurcation by Commodity</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="details-table">
+          <thead>
+			
+            <tr>
+				<th>&nbsp;</th>
+              <th>Target</th>
+              <th>Previous Year</th>
+              <th>Current Year</th>
+              <th>% Growth</th>
+              <th>% Target Achieved</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+				<th>Up to the Month</th>
+              <td>1000</td>
+              <td>950</td>
+              <td>1020</td>
+              <td>7%</td>
+              <td>102%</td>
+            </tr>
+            <tr>
+				<th>During the Month</th>
+              <td>2000</td>
+              <td>1900</td>
+              <td>1980</td>
+              <td>4.2%</td>
+              <td>99%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+	
 		<!-- /Main Wrapper -->
 		
 		<!-- jQuery -->

@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VAT Dashboard - AI Mode</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- Fuse.js for fuzzy search -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+  <style>
+    :root{
+      --gov-blue: #003366;
+      --accent: #1E88E5;
+      --muted: #64748b;
+      --bg: #f4f7fb;
+    }
+    body{ background: var(--bg); font-family: Inter, Poppins, "Segoe UI", system-ui, Arial; }
+    .card-ghost{ background:linear-gradient(180deg,#ffffff 0%, #fbfdff 100%); border-radius:12px; box-shadow:0 6px 20px rgba(2,6,23,0.06);}
+    .stat-number{ font-size:1.25rem; font-weight:700; color:var(--gov-blue); }
+    .chip { font-size:.8rem; padding:.25rem .6rem; border-radius:999px; background:#eef5ff; color:var(--accent); }
+    .nl-box { resize: none; min-height:58px; }
+    .table-container{ max-height:420px; overflow:auto; }
+    .highlight { background: #fff7cc; }
+    @media (max-width:767px){
+      .d-desktop-only{ display:none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-4">
+    <!-- Header / Breadcrumb -->
+    <header class="d-flex align-items-start justify-content-between mb-3">
+      <div>
+        <h1 class="h4 mb-0" style="color:var(--gov-blue)">VAT Dashboard (AI Mode)</h1>
+        <small class="text-muted">Department of Commercial Taxes — FY Overview & Smart Insights</small>
+      </div>
+      <div class="text-end">
+        <small class="text-muted d-block">User: <strong>Kalyanbabu</strong></small>
+        <small class="text-muted">Location: Kottagudem</small>
+      </div>
+    </header>
+
+    <!-- Yearly summary and NL query -->
+    <div class="row gy-3">
+      <div class="col-lg-8">
+        <div class="d-flex gap-3">
+          <div class="card card-ghost p-3 flex-fill">
+            <div class="d-flex justify-content-between mb-2">
+              <div>
+                <div class="text-muted">2024 – 25</div>
+                <div class="stat-number" id="total-2024">—</div>
+                <small class="text-muted">Total collected</small>
+              </div>
+              <div class="text-end">
+                <div class="chip">Auto-updated</div>
+                <div class="text-muted small mt-1">Last refresh: <span id="last-refresh">—</span></div>
+              </div>
+            </div>
+            <div class="row text-muted small">
+              <div class="col"><strong id="taxpayers-2024">—</strong><div>Taxpayers</div></div>
+              <div class="col"><strong id="to-pay-2024">—</strong><div>Amount to pay</div></div>
+              <div class="col"><strong id="collected-2024">—</strong><div>Amount collected</div></div>
+            </div>
+          </div>
+
+          <div class="card card-ghost p-3 flex-fill">
+            <div class="d-flex justify-content-between mb-2">
+              <div>
+                <div class="text-muted">2025 – 26</div>
+                <div class="stat-number" id="total-2025">—</div>
+                <small class="text-muted">Projected / Current</small>
+              </div>
+              <div class="text-end">
+                <div class="chip">Projection</div>
+                <div class="text-muted small mt-1">Confidence: <span id="proj-conf">—</span></div>
+              </div>
+            </div>
+            <div class="row text-muted small">
+              <div class="col"><strong id="taxpayers-2025">—</strong><div>Taxpayers</div></div>
+              <div class="col"><strong id="to-pay-2025">—</strong><div>Amount to pay</div></div>
+              <div class="col"><strong id="collected-2025">—</strong><div>Amount collected</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NL Query + Quick Actions -->
+        <div class="card mt-3 p-3">
+          <div class="d-flex gap-2 align-items-center mb-2">
+            <i class="fa-solid fa-robot fa-lg" style="color:var(--accent)"></i>
+            <div>
+              <strong>Ask the dashboard (natural language)</strong>
+              <div class="text-muted small">Try: "Top 5 districts by VAT paid", "Show anomalies", "Predict next month collection for Hyderabad"</div>
+            </div>
+          </div>
+
+          <div class="row g-2 align-items-center">
+            <div class="col-md-9">
+              <textarea id="nl-input" class="form-control nl-box" placeholder="Type your question..."></textarea>
+            </div>
+            <div class="col-md-3 d-flex gap-2">
+              <button id="ask-btn" class="btn btn-primary w-100">Ask</button>
+              <button id="insight-btn" class="btn btn-outline-secondary w-100">Generate Insights</button>
+            </div>
+          </div>
+
+          <div id="nl-response" class="mt-3 small text-muted"></div>
+        </div>
+      </div>
+
+      <!-- Right column: Filters & small chart -->
+      <div class="col-lg-4">
+        <div class="card p-3 mb-3">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div><strong>Filters</strong><div class="text-muted small">Refine table & charts</div></div>
+            <button id="reset-filters" class="btn btn-sm btn-outline-secondary">Reset</button>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label small">Year</label>
+            <select id="filter-year" class="form-select form-select-sm">
+              <option value="all">All</option>
+              <option value="2024">2024–25</option>
+              <option value="2025">2025–26</option>
+            </select>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label small">District</label>
+            <input id="filter-district" class="form-control form-control-sm" placeholder="Type district name">
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label small">Search (fuzzy)</label>
+            <input id="fuzzy-search" class="form-control form-control-sm" placeholder="Name / License / Amount">
+          </div>
+
+          <div class="my-2">
+            <button id="export-csv" class="btn btn-sm btn-success w-100"><i class="fa-solid fa-file-csv"></i> Export CSV</button>
+          </div>
+        </div>
+
+        <div class="card p-3">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div><strong>Trend</strong><div class="text-muted small">Total collected (monthly)</div></div>
+            <div class="small text-muted">Live</div>
+          </div>
+          <canvas id="trendChart" height="200"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table / Details -->
+    <div class="card mt-4 p-3 card-ghost">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <div><strong>Detailed VAT Report</strong> <span class="text-muted small"> | Showing <span id="row-count">—</span> records</span></div>
+        <div class="d-flex gap-2">
+          <input id="page-size" type="number" min="5" max="100" value="10" class="form-control form-control-sm" style="width:75px">
+          <button id="prev-page" class="btn btn-sm btn-outline-primary">Prev</button>
+          <button id="next-page" class="btn btn-sm btn-primary">Next</button>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="table table-bordered table-hover align-middle" id="vat-table">
+          <thead class="table-light position-sticky top-0" style="z-index:1;">
+            <tr>
+              <th style="width:60px">Sl No</th>
+              <th>Name of Taxpayer</th>
+              <th>Nature of License</th>
+              <th>VAT Paid</th>
+              <th>Return Filed (Quarter)</th>
+              <th>Payment Made upto Month</th>
+              <th>Payment to be Made</th>
+              <th>Payment Made</th>
+              <th style="width:110px">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="vat-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Insights / Alerts -->
+    <div class="row mt-3 g-3">
+      <div class="col-lg-6">
+        <div class="card p-3">
+          <h6>AI Insights</h6>
+          <ul id="insights-list" class="mb-0 small"></ul>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card p-3">
+          <h6>Anomalies / Alerts</h6>
+          <ul id="alerts-list" class="mb-0 small text-danger"></ul>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-center text-muted small py-3">Built with ❤️ — AI-like heuristics, client-side only demo</footer>
+  </div>
+
+<script>
+/* ---------------------
+   Sample dataset
+   In real app, fetch from API. Each record includes sample monthly series for prediction demo.
+   --------------------- */
+const sampleData = [
+  { id:1, name:'ABC Traders', district:'Kottagudem', license:'Wholesale', year:2024, vatPaid:120000, returnQ:'Q2', paidUpto:'Aug', toBePaid:80000, paid:40000, monthly:[10000,12000,9000,11000,11500,13000] },
+  { id:2, name:'Hyderabad Retail Pvt Ltd', district:'Hyderabad', license:'Retail', year:2024, vatPaid:450000, returnQ:'Q4', paidUpto:'Dec', toBePaid:20000, paid:430000, monthly:[40000,38000,42000,36000,45000,46000] },
+  { id:3, name:'Solar Equipments Co', district:'Warangal', license:'Manufacturing', year:2025, vatPaid:250000, returnQ:'Q1', paidUpto:'Mar', toBePaid:50000, paid:200000, monthly:[20000,22000,21000,21000,24000,27000] },
+  { id:4, name:'Rural Supplies', district:'Kothagudem', license:'Wholesale', year:2024, vatPaid:78000, returnQ:'Q2', paidUpto:'Jul', toBePaid:10000, paid:68000, monthly:[8000,7000,6000,9000,10000,13000] },
+  { id:5, name:'AP Constructions', district:'Warangal', license:'Contractor', year:2025, vatPaid:320000, returnQ:'Q2', paidUpto:'May', toBePaid:60000, paid:260000, monthly:[30000,28000,32000,34000,32000,37000] },
+  { id:6, name:'GreenMart', district:'Hyderabad', license:'Retail', year:2025, vatPaid:150000, returnQ:'Q1', paidUpto:'Feb', toBePaid:10000, paid:140000, monthly:[12000,14000,16000,15000,13000,14000] },
+  { id:7, name:'Coastal Traders', district:'Kakinada', license:'Wholesale', year:2024, vatPaid:220000, returnQ:'Q3', paidUpto:'Sep', toBePaid:30000, paid:190000, monthly:[15000,16000,20000,21000,22000,25000] },
+  { id:8, name:'Metro Foods', district:'Hyderabad', license:'Food Service', year:2024, vatPaid:90000, returnQ:'Q2', paidUpto:'Jun', toBePaid:10000, paid:80000, monthly:[7000,8000,9000,10000,11000,12000] },
+  // ... add more rows as needed to test pagination
+];
+
+/* ---------------------
+   Globals and UI elements
+   --------------------- */
+let data = sampleData.slice();
+let fuse = null;
+let currentPage = 1;
+let pageSize = 10;
+const tbody = document.getElementById('vat-tbody');
+const rowCountEl = document.getElementById('row-count');
+const lastRefreshEl = document.getElementById('last-refresh');
+const trendCtx = document.getElementById('trendChart').getContext('2d');
+let trendChart = null;
+
+/* ---------------------
+   Initialization
+   --------------------- */
+function init(){
+  // Fuse.js setup for fuzzy search (search on multiple keys)
+  fuse = new Fuse(data, {
+    keys: ['name','district','license','returnQ'],
+    threshold: 0.35,
+    ignoreLocation: true,
+  });
+
+  // Populate UI with computed stats
+  renderSummaries();
+  renderTable();
+  setupEventListeners();
+  renderTrendChart();
+  refreshTimestamp();
+}
+function refreshTimestamp(){ lastRefreshEl.textContent = new Date().toLocaleString(); }
+
+/* ---------------------
+   Render summaries (year totals, projected)
+   --------------------- */
+function renderSummaries(){
+  const years = [2024,2025];
+  years.forEach(y=>{
+    const subset = data.filter(r=>r.year===y);
+    const total = subset.reduce((s,r)=>s + (r.vatPaid||0),0);
+    const taxpayers = subset.length;
+    const toBe = subset.reduce((s,r)=>s + (r.toBePaid||0),0);
+    document.getElementById(`total-${y}`).textContent = total ? `₹ ${formatNumber(total)}` : '—';
+    document.getElementById(`taxpayers-${y}`).textContent = taxpayers;
+    document.getElementById(`to-pay-${y}`).textContent = toBe ? `₹ ${formatNumber(toBe)}` : '—';
+    document.getElementById(`collected-${y}`).textContent = total ? `₹ ${formatNumber(total - toBe)}` : '—';
+  });
+
+  // Simple projection for 2025 based on growth rate (average growth)
+  const total2024 = data.filter(r=>r.year===2024).reduce((s,r)=>s+r.vatPaid,0);
+  const total2025 = data.filter(r=>r.year===2025).reduce((s,r)=>s+r.vatPaid,0);
+  let conf = 'Low';
+  if (total2024 && total2025) {
+    const growth = ((total2025 - total2024)/Math.max(1,total2024))*100;
+    conf = Math.abs(growth) > 10 ? 'Medium' : 'High';
+    document.getElementById('proj-conf').textContent = `${conf} (${growth.toFixed(1)}%)`;
+  } else {
+    document.getElementById('proj-conf').textContent = 'N/A';
+  }
+}
+
+/* ---------------------
+   Table rendering with pagination & highlighting
+   --------------------- */
+function renderTable(filtered=null){
+  const display = filtered || applyFilters();
+  const totalRows = display.length;
+  rowCountEl.textContent = totalRows;
+
+  // pagination
+  pageSize = parseInt(document.getElementById('page-size').value) || 10;
+  const totalPages = Math.max(1, Math.ceil(totalRows/pageSize));
+  if (currentPage > totalPages) currentPage = totalPages;
+  const start = (currentPage-1)*pageSize;
+  const paged = display.slice(start, start+pageSize);
+
+  tbody.innerHTML = '';
+  paged.forEach((r, idx)=>{
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${start + idx + 1}</td>
+      <td>${escapeHtml(r.name)}</td>
+      <td>${escapeHtml(r.license)}</td>
+      <td>₹ ${formatNumber(r.vatPaid)}</td>
+      <td>${r.returnQ}</td>
+      <td>${r.paidUpto}</td>
+      <td>₹ ${formatNumber(r.toBePaid)}</td>
+      <td>₹ ${formatNumber(r.paid)}</td>
+      <td>
+        <button class="btn btn-sm btn-outline-primary" onclick="showPredict(${r.id})">Predict</button>
+        <button class="btn btn-sm btn-outline-secondary" onclick="highlightRecord(${r.id})">Highlight</button>
+      </td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  // Update Prev/Next buttons
+  document.getElementById('prev-page').disabled = currentPage <= 1;
+  document.getElementById('next-page').disabled = currentPage >= totalPages;
+}
+
+/* ---------------------
+   Filters: year, district, fuzzy search
+   --------------------- */
+function applyFilters(){
+  const year = document.getElementById('filter-year').value;
+  const district = document.getElementById('filter-district').value.trim().toLowerCase();
+  const fuzzy = document.getElementById('fuzzy-search').value.trim();
+
+  let result = data.slice();
+
+  if (year !== 'all') result = result.filter(r=>String(r.year) === year);
+  if (district) result = result.filter(r=>r.district.toLowerCase().includes(district));
+
+  if (fuzzy){
+    // use Fuse for fuzzy; search across dataset and return matching items
+    const f = fuse.search(fuzzy).map(hit=>hit.item);
+    // keep order unique and intersect
+    const ids = new Set(f.map(x=>x.id));
+    result = result.filter(r=>ids.has(r.id));
+  }
+
+  return result;
+}
+
+/* ---------------------
+   Natural-language parsing (basic)
+   --------------------- */
+function handleNLQuery(q){
+  q = q.trim().toLowerCase();
+  const insights = [];
+  if (!q) {
+    return "Please type a question. Examples: 'Top 5 districts by VAT paid', 'show anomalies', 'predict next month collection for Hyderabad'.";
+  }
+
+  // Top N by VAT
+  let m;
+  if (m = q.match(/top\s+(\d+)\s+districts\s+by\s+vat/)) {
+    const n = parseInt(m[1]);
+    const byDistrict = aggregateBy('district');
+    const top = Object.entries(byDistrict).sort((a,b)=>b[1]-a[1]).slice(0,n);
+    return `Top ${n} districts by VAT: ` + top.map(t=>`${t[0]} (₹ ${formatNumber(t[1])})`).join(', ');
+  }
+
+  if (q.includes('top') && q.includes('district') && q.includes('vat')) {
+    const byDistrict = aggregateBy('district');
+    const top = Object.entries(byDistrict).sort((a,b)=>b[1]-a[1]).slice(0,5);
+    return `Top districts: ` + top.map(t=>`${t[0]} (₹ ${formatNumber(t[1])})`).join(', ');
+  }
+
+  if (q.includes('show anomalies') || q.includes('anomaly') || q.includes('alerts')) {
+    const anomalies = detectAnomalies();
+    if (!anomalies.length) return 'No anomalies detected in current dataset.';
+    return 'Anomalies detected: ' + anomalies.map(a=>`${a.name} (${a.district}) — VAT ₹${formatNumber(a.vatPaid)} [z=${a.z.toFixed(2)}]`).join('; ');
+  }
+
+  // Predict next month for a district
+  if (m = q.match(/predict\s+next\s+month\s+collection\s+for\s+([a-z\s]+)/)) {
+    const district = m[1].trim();
+    const recs = data.filter(r=>r.district.toLowerCase().includes(district));
+    if (!recs.length) return `No records found for '${district}'.`;
+    // aggregate monthly arrays
+    const monthsAgg = [];
+    recs.forEach(r=>{
+      r.monthly.forEach((v,i)=>{
+        monthsAgg[i] = (monthsAgg[i]||0)+v;
+      });
+    });
+    const pred = simpleGrowthPredict(monthsAgg);
+    return `Predicted next month collection for ${capitalizeWords(district)}: ₹ ${formatNumber(Math.round(pred))}`;
+  }
+
+  // Fallback: try fuzzy search as a "show" command
+  if (q.startsWith('show') || q.startsWith('find') || q.startsWith('search')) {
+    const term = q.replace(/^(show|find|search)\s+/, '').trim();
+    const results = fuse.search(term).map(x=>x.item);
+    if (!results.length) return `No matches for "${term}".`;
+    return `Found ${results.length} matching records. Use filters to refine or view table.`;
+  }
+
+  // default fallback: echo + suggestion
+  return "I couldn't interpret that query. Try: 'Top 5 districts by VAT paid', 'Show anomalies', or 'Predict next month collection for Hyderabad'.";
+}
+
+/* ---------------------
+   Aggregation helpers
+   --------------------- */
+function aggregateBy(key){
+  const map = {};
+  data.forEach(r=>{
+    const k = r[key]||'Unknown';
+    map[k] = (map[k]||0) + (r.vatPaid||0);
+  });
+  return map;
+}
+
+/* ---------------------
+   Anomaly detection (z-score heuristic)
+   --------------------- */
+function detectAnomalies(){
+  const values = data.map(r=>r.vatPaid||0);
+  const mean = values.reduce((s,v)=>s+v,0)/values.length;
+  const std = Math.sqrt(values.reduce((s,v)=>s+Math.pow(v-mean,2),0)/Math.max(1,values.length-1));
+  const anomalies = [];
+  data.forEach(r=>{
+    const z = std ? (r.vatPaid - mean)/std : 0;
+    if (Math.abs(z) > 1.9) anomalies.push({...r, z});
+  });
+  // sort biggest anomalies first
+  anomalies.sort((a,b)=>Math.abs(b.z)-Math.abs(a.z));
+  return anomalies;
+}
+
+/* ---------------------
+   Prediction: simple growth predictor (average monthly delta)
+   --------------------- */
+function simpleGrowthPredict(monthlyArr){
+  // monthlyArr: array of last N months aggregated
+  // Predict next value by average of recent month deltas (last 3 months weighted)
+  if (!monthlyArr || monthlyArr.length < 2) return monthlyArr[monthlyArr.length-1]||0;
+  const diffs = [];
+  for (let i=1;i<monthlyArr.length;i++) diffs.push(monthlyArr[i]-monthlyArr[i-1]);
+  // weighted average of last 3 diffs
+  const k = Math.min(3, diffs.length);
+  let sum = 0, wsum = 0;
+  for (let i=0;i<k;i++){
+    const w = (i+1); // give more weight to recent
+    sum += diffs[diffs.length-1-i] * w;
+    wsum += w;
+  }
+  const avgDiff = sum / Math.max(1, wsum);
+  return monthlyArr[monthlyArr.length-1] + avgDiff;
+}
+
+/* ---------------------
+   Interaction handlers
+   --------------------- */
+function setupEventListeners(){
+  document.getElementById('ask-btn').addEventListener('click', ()=>{
+    const q = document.getElementById('nl-input').value;
+    const ans = handleNLQuery(q);
+    document.getElementById('nl-response').textContent = ans;
+  });
+
+  document.getElementById('insight-btn').addEventListener('click', generateInsights);
+
+  document.getElementById('filter-year').addEventListener('change', ()=>{ currentPage=1; renderTable(); renderTrendChart(); });
+  document.getElementById('filter-district').addEventListener('input', ()=>{ currentPage=1; renderTable(); renderTrendChart(); });
+  document.getElementById('fuzzy-search').addEventListener('input', ()=>{ currentPage=1; renderTable(); });
+
+  document.getElementById('page-size').addEventListener('change', ()=>{ currentPage=1; renderTable(); });
+  document.getElementById('prev-page').addEventListener('click', ()=>{ if (currentPage>1) currentPage--; renderTable(); });
+  document.getElementById('next-page').addEventListener('click', ()=>{ currentPage++; renderTable(); });
+
+  document.getElementById('reset-filters').addEventListener('click', ()=>{
+    document.getElementById('filter-year').value='all';
+    document.getElementById('filter-district').value='';
+    document.getElementById('fuzzy-search').value='';
+    document.getElementById('nl-input').value='';
+    document.getElementById('nl-response').textContent='';
+    currentPage = 1;
+    renderTable();
+    renderTrendChart();
+  });
+
+  document.getElementById('export-csv').addEventListener('click', exportCSV);
+}
+
+/* ---------------------
+   Small utilities
+   --------------------- */
+function formatNumber(n){ return n.toLocaleString('en-IN'); }
+function escapeHtml(s){ return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'); }
+function capitalizeWords(s){ return s.split(' ').map(w=> w.charAt(0).toUpperCase()+w.slice(1)).join(' '); }
+
+/* ---------------------
+   Insights & Alerts rendering
+   --------------------- */
+function generateInsights(){
+  const insights = [];
+  // 1. Top 3 districts
+  const byDistrict = aggregateBy('district');
+  const top3 = Object.entries(byDistrict).sort((a,b)=>b[1]-a[1]).slice(0,3);
+  insights.push('Top districts: ' + top3.map(t=>`${t[0]} (₹ ${formatNumber(t[1])})`).join(', '));
+
+  // 2. Growth or decline % between years
+  const total2024 = data.filter(r=>r.year===2024).reduce((s,r)=>s+r.vatPaid,0);
+  const total2025 = data.filter(r=>r.year===2025).reduce((s,r)=>s+r.vatPaid,0);
+  if (total2024) {
+    const g = ((total2025 - total2024)/total2024)*100;
+    insights.push(`Year-on-year change: ${g.toFixed(1)}% (${total2024? '₹'+formatNumber(total2024):'—'} → ₹${formatNumber(total2025)})`);
+  }
+
+  // 3. Detect anomalies
+  const anomalies = detectAnomalies();
+  const alertsList = document.getElementById('alerts-list');
+  alertsList.innerHTML = '';
+  if (anomalies.length) {
+    anomalies.forEach(a=> {
+      const li = document.createElement('li');
+      li.textContent = `${a.name} (${a.district}) — VAT ₹${formatNumber(a.vatPaid)} (z=${a.z.toFixed(2)})`;
+      alertsList.appendChild(li);
+    });
+  } else {
+    alertsList.innerHTML = '<li>No critical anomalies detected.</li>';
+  }
+
+  const insEl = document.getElementById('insights-list');
+  insEl.innerHTML = '';
+  insights.forEach(i=> { const li = document.createElement('li'); li.textContent = i; insEl.appendChild(li); });
+}
+
+/* ---------------------
+   Table actions: show prediction modal (simple alert here)
+   --------------------- */
+function showPredict(id){
+  const rec = data.find(r=>r.id===id);
+  if (!rec) return alert('Record not found');
+  const pred = simpleGrowthPredict(rec.monthly);
+  alert(`Predicted next month VAT for ${rec.name}: ₹ ${formatNumber(Math.round(pred))}\n\n(Using simple month-to-month growth heuristic)`);
+}
+
+function highlightRecord(id){
+  // scroll table and visually highlight the row if present
+  const rows = Array.from(tbody.querySelectorAll('tr'));
+  rows.forEach(r=> r.classList.remove('highlight'));
+  const index = data.findIndex(r=>r.id===id);
+  if (index >= 0){
+    const pageIndex = index - ((currentPage-1)*pageSize);
+    const row = rows[pageIndex];
+    if (row) {
+      row.classList.add('highlight');
+      row.scrollIntoView({behavior:'smooth', block:'center'});
+    } else {
+      // adjust page to show it
+      currentPage = Math.floor(index/pageSize) + 1;
+      renderTable();
+      setTimeout(()=> highlightRecord(id), 200);
+    }
+  }
+}
+
+/* ---------------------
+   Trend chart: aggregated monthly (simple)
+   --------------------- */
+function renderTrendChart(){
+  const filtered = applyFilters();
+  // aggregate months (assume monthly arrays length same)
+  const maxMonths = Math.max(...filtered.map(r=>r.monthly.length));
+  const months = Array.from({length:maxMonths}, (_,i)=>i+1);
+  const agg = months.map((_,i)=> filtered.reduce((s,r)=> s + (r.monthly[i]||0),0));
+
+  if (trendChart) trendChart.destroy();
+  trendChart = new Chart(trendCtx, {
+    type: 'line',
+    data: {
+      labels: months.map(m=>'M'+m),
+      datasets: [{
+        label: 'Collection (monthly aggregate)',
+        data: agg,
+        tension: 0.35,
+        fill: true,
+        backgroundColor: 'rgba(30,136,229,0.08)',
+        borderColor: 'rgba(30,136,229,0.9)',
+        pointRadius: 3
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { ticks: { callback: v => '₹ ' + v.toLocaleString('en-IN') } }
+      }
+    }
+  });
+}
+
+/* ---------------------
+   Export CSV
+   --------------------- */
+function exportCSV(){
+  const rows = applyFilters();
+  if (!rows.length) return alert('No data to export');
+  const header = ['Sl No','Name','District','License','Year','VAT Paid','Return Quarter','Paid Upto','To Be Paid','Paid'];
+  const csv = [header.join(',')].concat(
+    rows.map((r,i)=> [
+      i+1,
+      `"${r.name.replace(/"/g,'""')}"`,
+      `"${r.district}"`,
+      `"${r.license}"`,
+      r.year,
+      r.vatPaid,
+      r.returnQ,
+      r.paidUpto,
+      r.toBePaid,
+      r.paid
+    ].join(','))
+  ).join('\n');
+
+  const blob = new Blob([csv], {type: 'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'vat_export.csv';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+/* ---------------------
+   Small helpers invoked from UI
+   --------------------- */
+window.showPredict = showPredict;
+window.highlightRecord = highlightRecord;
+
+/* ---------------------
+   Init on load
+   --------------------- */
+init();
+generateInsights(); // initial insights
+renderTrendChart();
+
+</script>
+</body>
+</html>
