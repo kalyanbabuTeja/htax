@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VAT Compliances Dashboard</title>
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #e0f2fe 0%, #f8fafc 100%);
+    margin: 0;
+    padding: 0;
+    color: #1e293b;
+  }
+
+  .dashboard-container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 50px auto;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1e3a8a;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  /* Summary Cards */
+  .summary-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .card {
+    background: linear-gradient(135deg, #60a5fa, #2563eb);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    width: 280px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.35s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.3);
+  }
+
+  .card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .card p {
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  /* Subcategory Section */
+  .subcategory {
+    margin-top: 50px;
+    text-align: center;
+    display: none;
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  .subcategory.active {
+    display: block;
+  }
+
+  .subcategory h2 {
+    font-size: 20px;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+  }
+
+  .subcategory button {
+    background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .subcategory button:hover {
+    background: linear-gradient(135deg, #60a5fa, #2563eb);
+    transform: scale(1.05);
+  }
+
+  /* Table Styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  }
+
+  thead {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    color: white;
+  }
+
+  th, td {
+    padding: 15px 18px;
+    text-align: left;
+    font-size: 15px;
+  }
+
+  tbody tr:nth-child(even) {
+    background: #f9fafb;
+  }
+
+  tbody tr:hover {
+    background: #eff6ff;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  @media (max-width: 768px) {
+    .summary-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      width: 90%;
+    }
+
+    table {
+      font-size: 13px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="dashboard-container">
+  <h1>VAT Compliances Dashboard</h1>
+
+  <!-- Summary Cards -->
+  <div class="summary-cards">
+    <div class="card" onclick="showSubcategory('filed')">
+      <h2>Total No of Returns Filed</h2>
+      <p>245</p>
+    </div>
+    <div class="card" onclick="showSubcategory('defaulters')">
+      <h2>Total No of Return Defaulters</h2>
+      <p>32</p>
+    </div>
+  </div>
+
+  <!-- Subcategory Section -->
+  <div id="subcategory" class="subcategory">
+    <h2>Select Category</h2>
+    <button>Petrol + Diesel + Crude Oil</button>
+    <button>ATF</button>
+    <button>Natural Gas</button>
+    <button>Liquor</button>
+  </div>
+
+  <!-- Data Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Sl No</th>
+        <th>Name of Dealer</th>
+        <th>Nature of License</th>
+        <th>Return Filed upto</th>
+        <th>Payment made upto Month</th>
+        <th>Payment Made</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>M/s Bharat Petroleum</td>
+        <td>Petrol & Diesel</td>
+        <td>Oct 2025</td>
+        <td>Oct 2025</td>
+        <td>₹12,50,000</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>M/s Indian Oil Corporation</td>
+        <td>Petrol & Crude Oil</td>
+        <td>Oct 2025</td>
+        <td>Sep 2025</td>
+        <td>₹8,75,000</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>M/s HP Gas Ltd.</td>
+        <td>Natural Gas</td>
+        <td>Sep 2025</td>
+        <td>Sep 2025</td>
+        <td>₹6,20,000</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>M/s Kingfisher Beverages</td>
+        <td>Liquor</td>
+        <td>Oct 2025</td>
+        <td>Oct 2025</td>
+        <td>₹3,40,000</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  function showSubcategory(type) {
+    const subcategory = document.getElementById("subcategory");
+    subcategory.classList.add("active");
+
+    if (type === 'filed') {
+      subcategory.querySelector("h2").innerText = "Filed Returns - Select Category";
+    } else {
+      subcategory.querySelector("h2").innerText = "Defaulters - Select Category";
+    }
+  }
+</script>
+
+</body>
+</html>
