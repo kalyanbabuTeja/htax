@@ -489,35 +489,79 @@ table.table.table-striped.table-bordered.align-middle.table-hover {
         <div class="d-flex justify-content-between">
 <h5 class="mb-3 d-flex"><i class="fi fi-tr-dashboard-panel"></i>&nbsp; VAT Compliances</h5>
 
-<h5 class="">
+<h5 class=""> 
   <i class="fi fi-tr-calendar-lines-pen"></i>
   <select id="filterStatus date" class="form-select date">
-          <option value="" selected=""> FY 2024-25</option>
-          <option value="Total" >FY 2025-26</option>
+	<option value="Select Year">Select Year</option>
+	<option value="Total"  selected="">FY 2025-26</option>
+          <option value="" > FY 2024-25</option>
+          <option value="Total" >FY 2023-24</option>
         </select></h5>
+		<h5></h5>
+		<h5 class="ml-2">
+  <i class="fi fi-tr-calendar-lines-pen"></i>
+  <select id="filterStatus date" class="form-select date">
+          <option value="" > Select Quarter</option>
+          <option value="Total" >Q1 - (Apr-Jun)</option>
+		  <option value="Total" selected="">Q2 - (Jul-Sep)</option>
+		  <option value="Total" >Q3 - (Oct-Dec)</option>
+		  <option value="Total" >Q4 - (Jan-Mar)</option>
+        </select></h5>
+		<h5></h5>
+		<h5></h5>
+		<h5></h5>
+		<h5></h5>
         </div>
        <hr/>
         <div class="row g-3">
-			<div class="col-md-3">&nbsp;</div>
+			<div class="col-md-3">
+				<div class="p-3 text-center bg-light mt-4" style="margin-top: 40px !important;">
+              <h6 style="margin-top: 10px;font-size:x-large;">Total No. of Return </h6>
+              
+            </div>
+				
+			</div>
 			<div class="col-md-3">
 <div class="">
+	<h6 class="text-center" style="font-size:x-large;">Filed</h6>
 				 <div class="bif-item" type="button" class="btn btn-primary" 
-				   style="background: linear-gradient(135deg, #10b981, #047857);color: #fff;padding: 25px 0px;">Total No of Returns Filed<br/><br/>
+				   style="background: linear-gradient(135deg, #10b981, #047857);color: #fff;padding: 25px 0px;">
 				<h2>245</h2>
 				</div>
 			</div>
 			</div>
 			<div class="col-md-3">
-<div class="">
+<div class="ml-4">
+	<h6 class="text-center" style="font-size:x-large;">Defaulters</h6>
 				 <div class="bif-item" type="button" class="btn btn-primary" 
-				   style="background: linear-gradient(135deg, #ef4444, #b91c1c);color: #fff;padding: 25px 0px;">Total No of Return Defaulters<br/>
-				<br/>
+				   style="background: linear-gradient(135deg, #ef4444, #b91c1c);color: #fff;padding: 25px 0px;">
 			<h2>32</h2></div>
 			</div>
 			</div>
           <div class="col-md-3">&nbsp;</div>
         </div>
-		 
+		 <div class="row g-3">
+			<div class="col-md-3">
+				<div class="p-3 text-center bg-light mt-4" style="margin-top: 40px !important;">
+              <h6 style="margin-top: 10px;font-size:x-large;" >Voluntary Tax Defaulters</h6>
+              
+            </div>
+				
+			</div>
+			<div class="col-md-3">
+<div class="">
+	<h6 class="ml-5">&nbsp;</h6>
+				 <div class="bif-item" type="button" class="btn btn-primary" 
+				   style="background: linear-gradient(135deg, #10b981, #047857);color: #fff;padding: 25px 0px;">
+				<h2>245</h2>
+				</div>
+			</div>
+			</div>
+			<div class="col-md-3">
+
+			</div>
+          <div class="col-md-3">&nbsp;</div>
+        </div>
       </div>
     </div>
 	 <!-- <h6 class="ml-3 mb-3">Displays revenue comparison for financial years with detailed bifurcation on click.</h6> -->
@@ -535,7 +579,7 @@ table.table.table-striped.table-bordered.align-middle.table-hover {
           <div class="bif-item" type="button" data-toggle="modal" data-target=".bd-example-modal-lg" style="background: linear-gradient(45deg, #10b981, #009688);color: #fff;">Natural Gas</div>
           <div class="bif-item" type="button" data-toggle="modal" data-target=".bd-example-modal-lg" style="background: linear-gradient(45deg, #673AB7, #8c4dfbb5);color: #fff;">Liquor</div>
           
-          <div class="bif-item" type="button" data-toggle="modal" data-target=".bd-example-modal-lg" style="background: linear-gradient(45deg, #ff0000, #ff93b8e8);color: #fff;">Recoveries</div>
+          <!-- <div class="bif-item" type="button" data-toggle="modal" data-target=".bd-example-modal-lg" style="background: linear-gradient(45deg, #ff0000, #ff93b8e8);color: #fff;">Recoveries</div> -->
         </div>
 
 <div class="container-fluid">
@@ -564,7 +608,7 @@ table.table.table-striped.table-bordered.align-middle.table-hover {
         
         <th>Return Filed Up To</th>
         <th>Payment Made upto Month</th>
-        <th>Payment to be Made</th>
+        <th>Payment Made</th>
        
       </tr>
     </thead>
